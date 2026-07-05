@@ -1,0 +1,155 @@
+\documentclass[a4paper,12pt]{extarticle}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[rus]{datetime2}          % русская локализация
+\usepackage{etoolbox}                % для удобных манипуляций
+\usepackage{amsmath, amssymb}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{stackengine}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % очистить все поля
+\fancyhead[L]{\leftmark}   % слева вверху – текущий раздел (section)
+\fancyhead[R]{\thepage}    % справа вверху – номер страницы
+\renewcommand{\headrulewidth}{0.4pt} % тонкая линия под заголовком
+\setlength{\headwidth}{\paperwidth}
+\fancyheadoffset{0pt}   % или \fancyhfoffset{0pt}
+
+\usepackage{hyperref}
+\hypersetup{
+    linktocpage,
+    colorlinks=true
+}
+
+\usepackage{makecell}
+\topmargin=-2cm
+\oddsidemargin=-2cm
+\textheight=27.5cm
+\textwidth=19cm
+\parindent=0em
+\parskip=0mm
+
+
+% Базовые символы(теорема, лемма и др.)
+\newcommand{\TheoMark}{%
+	\hspace{5.5pt}%
+  \scalebox{2.3}{\stackengine{3.85pt}{\scalebox{1.5}{$\triangledown$}}{\scriptsize \textnormal{T}}{O}{c}{F}{T}{L}}%
+}
+\newcommand{\lemmaMark}{%
+  	\hspace{5.4pt}%
+    \scalebox{1.5}{\stackinset{c}{0pt}{c}{0pt}{\scalebox{1.43}{$\Lambda$}}{\scalebox{1.5}{$\bigcirc$}}}%
+}
+\newcommand{\DefMark}{%
+    \scalebox{2}{\underline{O}}%
+}
+
+
+% Окружения для часто появляющихся конструкций
+\newenvironment{theorem}[1][]{%
+  \par\medskip
+  \noindent
+  \begin{tabular}{@{}p{0.03\textwidth} p{0.97\textwidth}@{}}
+    \raggedright \makebox[0.03\textwidth][c]{\TheoMark} & 
+    \begin{minipage}[t]{\linewidth}
+      \textbf{%
+        \if\relax\detokenize{#1}\relax\else #1\fi
+      }%
+      \par\nobreak\noindent\ignorespaces
+}{%
+      \end{minipage}
+  \end{tabular}%
+  \par
+}
+
+\newenvironment{lemma}[1][]{%
+  \par\medskip
+  \noindent
+  \begin{tabular}{@{}p{0.03\textwidth} p{0.97\textwidth}@{}}
+    \raggedright \makebox[0.03\textwidth][c]{\lemmaMark} & 
+    \begin{minipage}[t]{\linewidth}
+      \textbf{%
+        \if\relax\detokenize{#1}\relax\else #1\fi
+      }%
+      \par\nobreak\noindent\ignorespaces
+}{%
+      \end{minipage}
+  \end{tabular}%
+  \par\medskip
+}
+
+\newenvironment{definition}[1][]{%
+  \par\medskip
+  \noindent
+  \begin{tabular}{@{}p{0.03\textwidth} p{0.97\textwidth}@{}}
+    \raggedright \DefMark & 
+    \begin{minipage}[t]{\linewidth}
+      \textbf{%
+        \if\relax\detokenize{#1}\relax\else #1\fi
+      }%
+      \par\nobreak\noindent\ignorespaces
+}{%
+      \end{minipage}
+  \end{tabular}%
+  \par\medskip
+}
+
+\newenvironment{proof}{%
+  \par\medskip
+  \noindent
+  $\blacktriangleright$\
+  \par\nobreak\noindent\ignorespaces
+}{%
+  \par\nobreak
+  \noindent
+  \hfill$\blacksquare$
+  \par\medskip
+}
+
+\newenvironment{note}[1][]{\par\medskip\textbf{Замечание\relax #1. }}{\par\medskip}
+
+\usepackage{iftex}
+
+\ifPDFTeX
+  \newcommand{\compilerinfo}{\pdftexbanner}
+\else\ifLuaTeX
+  \newcommand{\compilerinfo}{\luatexbanner}
+\else\ifXeTeX
+  \newcommand{\compilerinfo}{XeTeX, версия \the\XeTeXversion\ (rev. \the\XeTeXrevision)}
+\else
+  \newcommand{\compilerinfo}{(неизвестный движок)}
+\fi\fi\fi
+
+\DTMnewdatestyle{russiandate}{%
+  \renewcommand{\DTMdisplaydate}[4]{%
+    \number##3\space \DTMmonthname{##2}\space ##1\space г.%
+  }%
+}
+\DTMsetdatestyle{russiandate}
+
+\DTMlangsetup{showdayofmonth=false}
+
+\newcommand{\currenttime}{%
+  \DTMcurrenttime%
+}
+
+% Переопределяем \date
+\date{Скомпилирован: \today\ в \currenttime \\ \compilerinfo}
+
+\begin{document}
+\title{Уравнения математической физики\\Лекционный материал}
+\maketitle
+
+\tableofcontents
+\break
+
+\section{Лекция 1: Уравнения в частных производных 2-го порядка}
+{\input{sem1/lect1}}
+
+\section{Лекция 2: Линейная невыр. замена независимых переменных}
+{\input{sem1/lect2}}
+
+\end{document}

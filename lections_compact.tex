@@ -1,0 +1,92 @@
+\documentclass{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[rus]{datetime2}          % русская локализация
+\usepackage{etoolbox}                % для удобных манипуляций
+\usepackage{amsmath, amssymb}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{stackengine}
+\usepackage{hyperref}
+\hypersetup{
+    linktocpage,
+    colorlinks=true
+}
+
+% Создаём счётчики для нумерации
+\newcounter{theorem}
+\newcounter{lemma}[theorem]   % леммы нумеруются вместе с теоремами
+\newcounter{definition}
+
+% Окружение для теоремы
+\newenvironment{theorem}[1][]{%
+  \par\medskip\noindent
+  \refstepcounter{theorem}%
+  \textbf{Теорема \thetheorem.}%
+  \ifx\relax#1\relax\else\ {\normalfont(#1)}\fi
+  \par\nobreak\noindent\ignorespaces
+}{%
+  \par\medskip
+}
+
+% Окружение для леммы
+\newenvironment{lemma}[1][]{%
+  \par\medskip\noindent
+  \refstepcounter{lemma}%
+  \textbf{Лемма \thelemma.}%
+  \ifx\relax#1\relax\else\ {\normalfont(#1)}\fi
+  \par\nobreak\noindent\ignorespaces
+}{%
+  \par\medskip
+}
+
+% Окружение для определения
+\newenvironment{definition}[1][]{%
+  \par\medskip\noindent
+  \refstepcounter{definition}%
+  \textbf{Определение \thedefinition.}%
+  \ifx\relax#1\relax\else\ {\normalfont(#1)}\fi
+  \par\nobreak\noindent\ignorespaces
+}{%
+  \par\medskip
+}
+
+% Окружение для доказательства
+\newenvironment{proof}{%
+  \par\medskip\noindent
+  \textbf{Доказательство. }%
+  \par\nobreak\noindent\ignorespaces
+}{%
+  \par\nobreak
+  \noindent\hfill$\square$%
+  \par\medskip
+}
+
+% Окружение для замечания (без номера)
+\newenvironment{note}{%
+  \par\medskip\noindent
+  \textbf{Замечание. }%
+  \par\nobreak\noindent\ignorespaces
+}{%
+  \par\medskip
+}
+
+% Заголовок и дата
+\title{Уравнения математической физики\\Лекционный материал}
+\author{}
+\date{Скомпилирован: \today}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\section{Лекция 1: Уравнения в частных производных 2-го порядка}
+
+\input{sem1/lect1}
+
+\end{document}
