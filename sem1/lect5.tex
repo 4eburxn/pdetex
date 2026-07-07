@@ -1,0 +1,163 @@
+Линейная замена: $\xi = \alpha + \beta,\ \eta = \alpha - \beta$ приводит исходное уравнение ко второй форме: $\hat{u}_{\alpha\alpha} - \hat{u}_{\beta\beta} = \hat{\Phi}$
+
+\textbf{2. ЭТ}: пусть в некоторой области $G,\ a \ge 0,\ D < 0$ тогда $\phi(x, y)=C$ --- общий 1\textsuperscript{ый} интеграл  уравнения $(3_+^\prime) \Rightarrow \bar{\phi}(x, y) = \bar C$ --- тоже общий интеграл уравнения $(3_-^\prime)$.
+
+Сделаем замену:
+
+$\quad \xi=\phi(x, y),\ \eta = \bar\phi(x, y)$, получим: $\tilde u_{\xi \eta} = \tilde{\tilde{\Phi}}$.
+
+Перейдем к $\mathbf{Re}$ - переменным:
+
+$\quad \xi = \alpha + i\beta,\ \eta = \alpha - i\beta$, тогда имеем $\hat{u}_{\alpha\alpha} + \hat{u}_{\beta\beta} = \hat{\Phi}$
+
+\textbf{3. ПТ}: пусть в некоторой области $G,\ a \ge 0,\ D = 0$. Пусть $b \ge 0$, тогда $b=\sqrt{a}\sqrt{c}$.
+
+Уравнения $(3_+^\prime)$ и $(3_-^\prime)$ совпадают. Пусть $\phi(x, y)=C$ --- общий 1\textsuperscript{ый} интеграл уравнения $(3_+^\prime)$.
+
+Пусть $\psi(x, y) \in C^2(G)$ --- произвольная функция, независимая с $\phi(x, y)$, т.е. $\frac{\partial(\phi,\ \psi)}{\partial(x,\ y)} \neq 0$.
+
+Совершим НЗНП: $\xi = \phi(x, y),\ \eta=\psi(x, y) \overset{G}{\Rightarrow} \tilde a = 0 = (\sqrt{a}\xi_x+\sqrt{c}\xi_y)^2=0$, при этом \\ $\tilde b=(\sqrt{a}\xi_x + \sqrt{c}\xi_y)(\sqrt{a}\eta_x + \sqrt{c}\eta_y)=0\ \Rightarrow\ \tilde c \neq 0$ и уравнение $(1)$ примет вид: $\tilde c \tilde u_{\eta\eta} + \tilde \Phi = 0,$ или\\ $\tilde u_{\eta\eta} = \tilde{\tilde{\Phi}}$ --- 1\textsuperscript{ая} каноническая форма.
+
+Аналогично, если $b \le 0$.
+
+\subsection{Уравнения гиперболического типа(УГТ)}
+
+Простейший случай:
+
+$\quad u_{xx}-u_{yy}=0$ --- уравнение малых поперечны колебаний струны.
+
+Процесс колебаний (малых поперечных) будем описывать поперечным смещением струны $u(x, t)$.
+
+\begin{definition}[Струна]
+Струной будем называть упругую гибкую нить(не сопротивляющуюся изгибу).
+\end{definition}
+
+Тогда натяжение струны в каждой точке направлено по касательной к мгновенному профилю струны в этой точке.
+
+Малые поперечные колебания означают, что $|u| << l,\ l$ --- длина струны, $u_x^2 << 1$.
+
+Тогда $\alpha \approx sin(\alpha) \approx tg(\alpha) \approx u_x << 1,\ cos(\alpha)=\frac{1}{\sqrt{1+u_x^2}} \approx 1$
+
+Рассмотрим участок струны $(x_1,x_2)$:
+
+\[
+S^` = \int_{x_1}^{x_2} \sqrt{1+u_x^2}\,dx \approx \int_{x_1}^{x_2}\,dx = x_2 - x_1 = S = const
+\]
+
+Следовательно, $T(x, t) = T(x)$, т.е. натяжение струны $T(x, t)$ не зависит от времени $t$.
+
+На самом деле, $T(x, t)=T_0=const$.
+
+Действительно, при равновесии на $(x_1,\ x_2)$ вдоль $Ox$:
+\[
+T(x_2)cos(\alpha(x_2, t))=T(x_1)cos(\alpha(x_1, t)) \Rightarrow T(x_2) \approx T(x_1)
+\](т.к. $cos(\alpha(x_2, t)) \approx cos(\alpha(x_1, t)) \approx 1$).
+
+Выведем уравнение малых поперечных колебаний струны(УМПКС):
+
+Второй закон Ньютона на $Ox$:
+\[
+T_x(x_2) \approx T(x_2) = T(x_1) = T_x(x_1) \Rightarrow T(x) \equiv T_0 = const
+\]
+
+Второй закон Ньютона на $Ou$: 
+\[
+\rho(x_1, t) \Delta x \frac{\partial^2 u}{\partial t^2}(x_1, t) \approx T_0 \frac{\partial u(x_2, t)}{\partial x} - T_0 \frac{\partial u(x_1, t)}{\partial x} + F(x_1, t) \Delta x;
+\]
+где $F(x_1, t) \Delta x$ --- распределенная нагрузка
+
+\[
+\rho(x_1, t) \frac{\partial^2 u}{\partial t^2}(x_1, t)
+\approx \frac{T_0 \left[\frac{\partial u(x_2, t)}{\partial x} - \frac{\partial u(x_1, x)}{\partial x}\right]}{\Delta x} + F(x_1, t);\ \Delta x \to 0\
+\]
+
+\begin{equation}
+\rho(x, t) \frac{\partial^2 u}{\partial t^2}
+= T_0 \frac{\partial^2 u}{\partial x^2} + F(x, t);\ x \in (0; l)\ t > 0
+\tag{1.F}
+\end{equation}
+
+\begin{itemize}[label={}, leftmargin=1.5cm, nosep]
+  \item $\rho(x, t)$ --- линейная плотность струны
+  \item $F(x, t)$ --- плотность поперечной нагрузки
+  \item $T_0$ --- натяжение струны
+\end{itemize}
+
+В дальнейшем будем считать, что $\rho(x, t) = \rho_0 = const$.
+
+Поделим на $\rho_0$, получим:
+
+\begin{equation}
+\frac{\partial^2 u}{\partial t^2} = 
+a^2 \frac{\partial^2 u}{\partial x^2} + f(x, t), \quad x \in (0, l),\ t > 0,
+\tag{1.f}
+\end{equation} где
+$
+a = \sqrt{\frac{T_0}{\rho_0}} - \text{скорость};\ f(x, t) = \frac{F(x, t)}{\rho_0}
+$
+
+\textbf{Замечание.} Если в т. $x=x_0$ к струне приложена сосредоточенная сила $\Phi_0(t)$[$\delta-$функция с плотностью --- $\Phi(t) \delta(x-x_0)$], то в этой точке получим:
+\[
+T_0(u_x(x_0+0,t)-u_x(x_0-0,t)) = -\Phi_0(t)
+\] или
+\[
+u_x(x, t)|_{x_0-0}^{x_0+0} = -\frac{\Phi_0(t)}{T_0}
+\text{ --- излом струны в т. $x_0$.}
+\]
+\subsection{Простейшая смешанная задача уравнения колебаний струны(УКС) длины l, закрепленной на концах}
+
+Неизвестная функция --- u(x, t)
+
+\begin{equation}
+\frac{\partial^2 u}{\partial t^2} = 
+a^2 \frac{\partial^2 u}{\partial x^2} + f(x, t), \quad x \in (0, l),\ t > 0,
+\tag{1.f}
+\end{equation}
+
+\textbf{Начальные условия(НУ):}
+
+\begin{equation}
+\begin{split}
+u|_{t=0} &= u(x, 0) = u_0(x);\quad x \in [0, l] \ \text{(начальный профиль струны)} \\
+u_t|_{t=0} &= u_t(x, 0) = u_1(x);\quad x \in [0, l] \ \text{(начальная скорость струны)}
+\end{split}
+\tag{2}
+\end{equation}
+
+\textbf{Однородные граничные условия 1 типа(ОГУ1Т):}
+
+\begin{equation}
+\begin{split}
+u|_{x=0} &= u(0, t) = 0;\quad t \ge 0 \ \\
+u|_{x=l} &= u(l, t) = 0;\quad t \ge 0 \ 
+\end{split}
+\tag{3.1.0}
+\end{equation}
+
+\textbf{Условия сшивки:}
+
+\begin{equation}
+\begin{split}
+u_0(0) &= 0;(\text{т.к. }\ u_0(0)=u(0, 0)=0)\\
+u_0(l) &= 0;(\text{т.к. }\ u_0(l)=u(l, 0)=0)\\
+u_1(0) &= 0;(\text{т.к. }\ u_1(0)=u_t(0, 0)=0)\\
+u_1(l) &= 0;(\text{т.к. }\ u_1(l)=u_t(l, 0)=0)\\
+\end{split}
+\tag{4.1.0}
+\end{equation}
+
+Введем $G=(0, l) \times (0, +\infty)$ и $\overline{G}=[0, l] \times [0, +\infty)$.
+
+Решение ищем в классе $u \in C^2(G) \cap C^1(\overline{G})$
+
+На $u_0(x),\ u_1(x),\ f(x,t)$ накладываем следующие требования:
+\begin{itemize}[nosep, leftmargin=1.5cm]
+  \item $u_0(x) \in C^2([0,l])$,
+  \item $u_1(x) \in C^1([0,l])$,
+  \item $f(x,t) \in C^1(\overline{G})$.
+\end{itemize}
+
+\begin{theorem}[Существования и единственности]
+Решение простейшей краевой задачи для уравнения колебаний струны длины l, закрепленной на концах, $(1.f),\ (2),\ (3.1.0),\ (4.1.0)$ --- существует и единственно в рассматриевых классах функций.
+\end{theorem}
+
