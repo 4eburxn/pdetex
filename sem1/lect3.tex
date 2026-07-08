@@ -1,26 +1,25 @@
-ЛНЗНП:
+Рассмотрим квадратичную форму вида:
+$$ K=\sum_{i,j=1}^n a_{ij}(x^{(0)})y_i y_j = y^T A(x^{(0)})y, \qquad y = (y_1, \dots , y_n) $$
+при ЛНЗНП:
 \[
 y=S\eta,\ \eta=(\eta_1, \ldots, \eta_n)^T,\ detS \neq 0:
-\]
-\[
-K=y^TA(x^{(0)})y=\eta^T\tilde A(\xi^{(0)})\eta
+\quad
+K=y^TA(x^{(0)})y= \eta^T S^T A(x^{(0)}) S\eta =\eta^T\tilde A(\xi^{(0)})\eta
 \]
 
-Линейной невырожденной замене независимых переменных:
+Линейной невырожденной замене независимых переменных
 
-\[y=S\eta\ (y_i=\sum_{k=1}^ns_{ik}\eta_k)\] соответствует: \[\xi=S^T(x-x^{(0)})\ (\xi_i=\sum_{k=1}^ns_{ik}(x_i-x_i^{(0)})) \]
+\[y=S\eta\quad (y_i=\sum_{k=1}^ns_{ik}\eta_k)\] соответствует: \[\xi=S^T(x-x^{(0)});\qquad (\xi_k=\sum_{k=1}^ns_{ik}(x_i-x_i^{(0)})) \]
 
 Распишем это подробнее:
 
-\setlength{\parindent}{1.cm}   % или любое другое значение
-Для $\forall$ квадратичной формы \[K=y^TA(x^{(0)})y\] $\exists$ ЛНЗНП: $y=S\eta$, приводящая эту форму к каноническому виду:
-\setlength{\parindent}{0pt}
+Для любой квадратичной формы $K=y^TA(x^{(0)})y$ существует ЛНЗНП: $y=S\eta$, приводящая эту форму к каноническому виду:
 \[
-K = \sum_{k=1}^p \eta_k^2 - \sum_{k=p+1}^n \eta_k^2,
-\] где $p - \text{ПИИ},\ q - \text{ОИИ},\ r=p+q - \text{ранг.}$
+  K = \sum_{k=1}^p \eta_k^2 - \sum_{k=p+1}^{p+q} \eta_k^2,
+\] 
+где $p$ -- ПИИ, $q$ -- ОИИ(индексы инерции); $r=p+q$ -- ранг.
 
 \subsection{Классификация ДУЧП2ПЛОСП в точке}
-
 \begin{enumerate}[label=\Roman*., leftmargin=*]
   \item \textbf{Эллиптический тип}
     \begin{itemize}[nosep, leftmargin=*]
@@ -50,7 +49,7 @@ K = \sum_{k=1}^p \eta_k^2 - \sum_{k=p+1}^n \eta_k^2,
 \end{enumerate}
 
 \begin{note}
-Ранг r, ПИИ --- p, ОИИ --- q не инвариантны для фиксированной точки $x^{(0)}$ (или функции фиксированной точки), поэтому тип ДУЧП2ПЛОСП зависит от выбора $x^{(0)} \in G$
+Ранг $r$, ПИИ --- $p$, ОИИ --- $q$ не инвариантны для фиксированной точки $x^{(0)}$ (или функции фиксированной точки), поэтому тип ДУЧП2ПЛОСП зависит от выбора $x^{(0)} \in G$.
 \end{note}
 
 \textbf{\underline{Пример:}} уравнение Трикоми
@@ -76,43 +75,40 @@ y \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0
 
 \begin{note}
 Лапласиан в декартовой, сферической и цилиндрической системах координат.
-\begin{enumerate}[nosep, leftmargin=5em]
+\begin{enumerate}[ leftmargin=5em]
 % Прямоугольная
-\item $\text{Декартовы координаты: }
-\Delta = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} 
+\item Декартовы координаты: $\displaystyle\Delta = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} 
 $
 
 % Цилиндрическая
-\item $\text{Цилиндрические координаты: }
-\Delta = \frac{1}{r}\frac{\partial}{\partial r}\left(r \frac{\partial}{\partial r}\right) + \frac{1}{r^2}\frac{\partial^2}{\partial \varphi^2} + \frac{\partial^2}{\partial z^2}
+\item Цилиндрические координаты: $\displaystyle\Delta = \frac{1}{r}\frac{\partial}{\partial r}\left(r \frac{\partial}{\partial r}\right) + \frac{1}{r^2}\frac{\partial^2}{\partial \varphi^2} + \frac{\partial^2}{\partial z^2}
 $
 
 % Сферическая
-\item $\text{Сферические координаты: }
-\Delta = \frac{1}{\rho^2}\frac{\partial}{\partial \rho}\left(\rho^2 \frac{\partial}{\partial \rho}\right) + \frac{1}{\rho^2 \sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta \frac{\partial}{\partial \theta}\right) + \frac{1}{\rho^2 \sin^2\theta}\frac{\partial^2}{\partial \varphi^2}
+\item Сферические координаты: $\displaystyle\Delta = \frac{1}{\rho^2}\frac{\partial}{\partial \rho}\left(\rho^2 \frac{\partial}{\partial \rho}\right) + \frac{1}{\rho^2 \sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta \frac{\partial}{\partial \theta}\right) + \frac{1}{\rho^2 \sin^2\theta}\frac{\partial^2}{\partial \varphi^2}
 $
 \end{enumerate}
 \end{note}
-
+%FIXME НЕТ КАРТИИИИНОК
 Попробуем обнулить коэффициенты $\tilde a_{kl}(\xi)$
 
 \subsection{Характеристические поверхности(линии). Характеристики.}
 \begin{definition}[Характеристические поверхности(линии). Характеристики.]
-Пусть функция $\omega(x_1, \ldots, x_n) \in C^1(G)$ такова, что на плоскости $\omega(x)=0: grad\ \omega \neq0$.
+Пусть функция $\omega(x_1, \ldots, x_n) \in C^1(G)$ такова, что на плоскости $\omega(x)=0: \operatorname{grad}(\omega)  \neq0$.
 Если на данной плоскости $\omega(x)$ удовлетворяет уравнению 
 $\sum_{i, j=1}^n a_{ij}(x)\frac{\partial\omega}{\partial x_i}\frac{\partial\omega}{\partial x_j}=0$, то эта плоскость ($\omega(x)=0$) называется характеристической плоскостью (линией) или характеристикой для ДУЧП2ПЛОСП(1).
 \end{definition}
 
-Рассмотрим семейство характеристик $\omega(x, y)=C$, где $\alpha < C < \beta \Rightarrow$ некоторая достаточно малая область $G_\epsilon$ будет целиком заполнена этими характеристиками, которые не будут пересекаться друг с другом, т.е. через каждую точку из $G_\epsilon$ будет проходить единственная характеристика.
+Рассмотрим семейство характеристик $\omega(x, y)=C$, где $\alpha < C < \beta \Rightarrow$ некоторая достаточно малая область $G_\varepsilon$ будет целиком заполнена этими характеристиками, которые не будут пересекаться друг с другом, т.е. через каждую точку из $G_\varepsilon$ будет проходить единственная характеристика.
 
-Если в НЗНП положить $\xi_1=\omega(x)$, то в $(\tilde1)$ коэффициент $\tilde a_{11} \equiv 0$.
+Если в НЗНП положить $\xi_1=\omega(x)$, то в $(\widetilde{1})$ коэффициент $\tilde a_{11} \equiv 0$.
 
-Рассмотрим возможность приведения ДУЧП2ПЛОСП к каноническому виду в некоторой достаточно малой области $G_\epsilon$. Для этого необходимо выполнение в $G_\epsilon$ следующих условий:
+Рассмотрим возможность приведения ДУЧП2ПЛОСП к каноническому виду в некоторой достаточно малой области $G_\varepsilon$. Для этого необходимо выполнение в $G_\varepsilon$ следующих условий:
 
 \begin{quote}
-$\tilde a_{kl}(\xi)=0,\ k \neq l$
+$\tilde a_{kl}(\xi)=0,\quad k \neq l$
 
-$\tilde a_{kk}(\xi)=\epsilon_k\tilde a_{11}(\xi),\ k=\overline{2, n}, \epsilon_k=0,\pm1$
+$\tilde a_{kk}(\xi)=\varepsilon_k\tilde a_{11}(\xi),\quad k=\overline{2, n},\ \varepsilon_k=0,\pm1$
 \end{quote}
 
 Всего наших соотношений:
@@ -130,7 +126,7 @@ N=\frac{n^2-n}{2}+n-1 \leq n,
 
 \subsection{ДУЧП2ПЛОСП с двумя независимыми переменными}
 
-Итак, \[a(x, y)\frac{\partial^2u}{\partial x^2} + 2b(x, y)\frac{\partial^2u}{\partial x \partial y} + c(x, y)\frac{\partial^2u}{\partial y^2} + \Phi(x, y, u, u_x, u_y)=0,\ (x, y) \in G \subset \mathbb{R}^2, a, b, c \in C(G)\ (1)\]
+Итак, \[a(x, y)\frac{\partial^2u}{\partial x^2} + 2b(x, y)\frac{\partial^2u}{\partial x \partial y} + c(x, y)\frac{\partial^2u}{\partial y^2} + \Phi(x, y, u, u_x, u_y)=0;\ (x, y) \in G \subset \mathbb{R}^2, a, b, c \in C(G)\ (1)\]
 
 Рассмотрим НЗНП:
 \begin{quote}
@@ -139,7 +135,7 @@ $\xi = \xi(x, y) \in C^2(G)$
 $\eta = \eta(x, y) \in C^2(G)$
 \end{quote}
 
-Тогда в некоторой окрестности точки $\exists$ обратная замена \[x=x(\xi, \eta)\ и\ y=y(\xi, \eta) \Rightarrow \tilde u(\xi, \eta)=u(x(\xi, \eta), y(\xi, \eta)) \text{ или } u(x, y)=u(\xi(x, y), \eta(x, y))\]
+Тогда в некоторой окрестности точки $\exists$ обратная замена \[x=x(\xi, \eta) \text{ и } y=y(\xi, \eta) \Rightarrow \tilde u(\xi, \eta)=u(x(\xi, \eta), y(\xi, \eta)) \text{ или } u(x, y)=u(\xi(x, y), \eta(x, y))\]
 
 \noindent
 Очевидно,
