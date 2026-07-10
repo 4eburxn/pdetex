@@ -26,7 +26,7 @@ $$
   \tilde{L} \tilde{u} =
     \sum^p_{k=1}\frac{\partial^2\tilde u}{\partial \xi^2_k} -
     \sum^{p+q}_{k=p+1}\frac{\partial^2\tilde u}{\partial \xi^2_k} +
-    \sum^{n}_{k=1}\frac{\partial\tilde u}{\partial \xi_k} + c \tilde u = \tilde f(\xi)
+    \sum^{n}_{k=1} \tilde{b}_{k}\frac{\partial\tilde u}{\partial \xi_k} + c \tilde u = \tilde f(\xi)
 $$
 
 \subsection{Классификация ЛДУЧП2ППК}
@@ -39,14 +39,14 @@ $$
 Если для квадратичной формы $K = y^TAy$, $r=n$ и в её каноническом виде $1\le p \le n-1,\,q \in [1,n-1]$, то \LDUChPSPPK{} называется уравнением гиперболического типа.\medskip\\
 \emph{Пример:} Волновое уравнение: $\displaystyle \frac{\partial^2 u}{\partial t^2} = c^2 \Delta u + f(x, y, z, t)$
 \begin{note}
-  Если $p=1,\,q=n-1$ или $p=n-1,q=1$ -- нормально гиперболичкеский вид
+  Если $p=1,\,q=n-1$ или $p=n-1,q=1$ -- нормальный гиперболичкеский вид
 \end{note}
 
 \textbf{III. Параболический.}
 Если для квадратичной формы $K = y^TAy$, $r<n$, то \LDUChPSPPK{} называется уравнением гиперболического типа.\medskip\\
 \emph{Пример:} Уравнение теплопроводности: $\displaystyle \frac{\partial u}{\partial t} = c^2 \Delta u + f(x, y, z, t)$
 \begin{note}
-  Если $p=r,\,q=0$ или $p=0,q=r$ -- нормально параболический вид
+  Если $p=r,\,q=0$ или $p=0,q=r$ -- нормальный параболический вид
 \end{note}
 
 Вернемся к ДУЧП2ПЛОСП:\\
@@ -59,7 +59,7 @@ $$
 
 ЛДУЧП2П:%FIXME Че тут вообще произошло? Нить повествования потеряна
 $$
-Lu=\sum_{i,j=1}^{n} a_{ij}(x)\frac{\partial^2u}{\partial x_i \partial x_j} + \sum_{i=1}^{n} b_{i}(x)\frac{\partial u}{\partial x_i} + cu = f(x), \quad x \in G,
+Lu=\sum_{i,j=1}^{n} a_{ij}(x)\frac{\partial^2u}{\partial x_i \partial x_j} + \sum_{i=1}^{n} b_{i}(x)\frac{\partial u}{\partial x_i} + c(x)u = f(x), \quad x \in G,
 $$
 
 Рассмотрим $\forall$ невырожденную замену переменных $\displaystyle \xi=\xi(x)\in C^2(G) : \frac{\partial(\xi_1,\dots,\xi_n)}{\partial(x_1,\dots,x_n)}\ne0 \Longrightarrow$ локально $\exists$ обратная замена $x=x(\xi)$ \\
@@ -67,7 +67,7 @@ $$
 $$ 
   \frac{\partial u}{\partial x_i} = \sum^n_{k=1} \frac{\partial \tilde u}{\partial \xi_k}\cdot\frac{\partial \xi_k}{\partial x_i} 
   \Longrightarrow \frac{\partial^2 u}{\partial x_i \partial x_j}=
-      \sum^n_{k=1} \frac{\partial^2 \tilde u}{\partial \xi_k\partial \xi_l}
+      \sum^n_{k, l=1} \frac{\partial^2 \tilde u}{\partial \xi_k\partial \xi_l}
       \cdot\frac{\partial \xi_k}{\partial x_i}\cdot\frac{\partial \xi_l}{\partial x_j}+
       \sum^n_{k=1} \frac{\partial \tilde u}{\partial \xi_k}\cdot\frac{\partial^2 \xi_k}{\partial x_i\partial x_j}
 $$
@@ -75,7 +75,7 @@ $$
 $$ 
   \frac{\partial}{\partial x_i} = \sum^n_{k=1} \frac{\partial \xi_k}{\partial x_i}\cdot\frac{\partial}{\partial \xi_k}
   \Longrightarrow \frac{\partial^2}{\partial x_i \partial x_j}=
-      \sum^n_{k=1} \frac{\partial \xi_k}{\partial x_i}\cdot\frac{\partial \xi_l}{\partial x_j}
+      \sum^n_{k, l=1} \frac{\partial \xi_k}{\partial x_i}\cdot\frac{\partial \xi_l}{\partial x_j}
       \cdot\frac{\partial^2 }{\partial \xi_k\partial \xi_l}+
       \sum^n_{k=1} \frac{\partial^2 \xi_k}{\partial x_i\partial x_j}\cdot\frac{\partial}{\partial \xi_k}
 $$
@@ -100,17 +100,17 @@ $$ \sum^n_{k,l=1}\tilde a_{kl}(\xi) \frac{\partial^2 \tilde u}{\partial \xi_k \p
 
 При этом ЛДУЧП2П принимает вид: 
 $$ \tilde L \tilde u = \sum^n_{k,l=1}\tilde a_{kl} \frac{\partial^2\tilde u}{\partial \xi_k \partial \xi_l} +
-\sum^n_{k=1} \tilde b_k (\xi) \frac{\partial \xi_k}{\partial x_i}, \qquad k=\overline{1,n}
+\sum^n_{k=1} \tilde b_k (\xi) \frac{\partial \tilde{u}}{\partial \xi_k} + \tilde{c}(\xi)\tilde{u} = \tilde{f}(\xi), \qquad k=\overline{1,n}
 $$
-где: $$\displaystyle \tilde b_n(\xi) = \sum^n_{i,j=1}a_{i,j}(x)\frac{\partial^2 \xi_k}{\partial x_i\partial x_j}+\sum^n_{i=1}b_i(x)\frac{\partial\xi_k}{\partial x_i},\qquad k=\overline{1,n}$$\\
+где: $$\displaystyle \tilde b_k(\xi) = \sum^n_{i,j=1}a_{ij}(x)\frac{\partial^2 \xi_k}{\partial x_i\partial x_j}+\sum^n_{i=1}b_i(x)\frac{\partial\xi_k}{\partial x_i},\qquad k=\overline{1,n}$$\\
 $$\tilde c(\xi)=c(x(\xi)),\qquad\tilde f(\xi) = f(x(\xi))$$
 
-Считаем матрицу старших коэффициентов $A(x)=(a_{ij}(x))$ -- симметрической. Аналогично, $ \tilde A(\xi)=(\tilde a_{ij}) $ в ДУЧП2ПЛОСП(ЛДУЧП2П).\\
+Считаем матрицу старших коэффициентов $A(x)=(a_{ij}(x))$ -- симметрической. Аналогично, $ \tilde A(\xi)=(\tilde a_{ij}(\xi)) $ в ДУЧП2ПЛОСП(ЛДУЧП2П).\\
 Фиксируем некоторую точку $x=x^{(0)}\in G$.\\
-Обозначим $\displaystyle\xi^{(0)} = \xi(x^{(0)}) \Longrightarrow \tilde a_{kl}(\xi^{(0)}) = \sum^n_{i,j=1}a_{ij}(x^{(0)})\xi_{ik}\xi_{jl}$,
-где $\displaystyle \xi_{ik} = \frac{\partial \xi_k}{\partial x_i}$ (и т.п.), или
+Обозначим $\displaystyle\xi^{(0)} = \xi(x^{(0)}) \Longrightarrow \tilde a_{kl}(\xi^{(0)}) = \sum^n_{i,j=1}a_{ij}(x^{(0)})s_{ik}s_{jl}$,
+где $\displaystyle s_{ik} = \frac{\partial \xi_k}{\partial x_i}(x^{(0)})$ (и т.п.), или
 $$ 
-\tilde A(\xi^{(0)}) = S^T A(x^{(0)}) \Longrightarrow \sum^n_{k,l=1}\tilde a_{kl}\frac{\partial^2 \tilde u}{\partial \xi_k \partial \xi_l}+
+\tilde A(\xi^{(0)}) = S^T A(x^{(0)}) S \Longrightarrow \sum^n_{k,l=1}\tilde a_{kl}(\xi)\frac{\partial^2 \tilde u}{\partial \xi_k \partial \xi_l}+
 \tilde\Phi(\xi,\tilde u,\operatorname{grad}(\tilde u))=0
 $$
 и в фиксированной точке $ x^{(0)} \in G \rightarrow A(\xi^{(0)}) = S^TA(x^{(0)})S $
