@@ -1,0 +1,134 @@
+\subsection{Редукция задачи Коши для УКБС}
+\[
+u(x, t) = U(x, t) + V(x, t) + W(x, t),
+\] где $U(x, t), V(x, t), W(x, t)$ - решения следующих задач Коши для УКБС:
+
+\begin{align*}
+	& U_{tt} = a^2 U_{xx}, \quad x \in \mathbf{R}, \ t>0,\\
+	\text{НУ: } \quad & U|_{t=0}=u_0(x),\ U_t|_{t=0}=0,\ x \in \mathbf{R} \\
+	& V_{tt} = a^2 V_{xx}, \quad x \in \mathbf{R}, \ t>0,\\
+	\text{НУ: } \quad & V|_{t=0}=0,\ V_t|_{t=0}=u_1(x),\ x \in \mathbf{R} \\
+	& W_{tt} = a^2 W_{xx} + f(x,t), \quad x \in \mathbf{R}, \ t>0,\\
+	\text{НУ: } \quad & W|_{t=0}=W_t|_{t=0}=0,\ x \in \mathbf{R}
+\end{align*}
+В формуле Даламбера:
+
+\begin{itemize}[nosep, leftmargin=1.5cm]
+\item $
+U(x, t) = \frac{1}{2}[u_0(x-at) + u_0(x+at)]
+$
+
+\item $
+V(x, t) = \frac{1}{2a} \int_{x-at}^{x+at}u_1(\xi)\,dx
+$
+
+\item $
+W(x, t) = \frac{1}{2a} \int_0^t \,dt \int_{x-a(t-\tau)}^{x+a(t-\tau)} f(\xi, \tau) \,d\tau
+$
+\end{itemize}
+
+\subsection{Принцип Дюамеля}
+
+\begin{lemma}
+Пусть функция u(x, t, $\tau$) при всех $\tau \ge 0$ является решением ЗК для ОУКБС:
+\[
+u_{tt}=a^2u_{xx},\ x \in \mathbf{R},\ t > \tau \ \\
+\text{НУ: }u|_{t=\tau}=0,\ u_t|_{t=\tau}=f(x, \tau),\ x \in \mathbf{R}
+\]
+Тогда функция $v(x, t) = \int_0^t u(x, t, \tau)d\tau$ является решением ЗК для УКБС:
+\[
+v_{tt}=a^2v_{xx} + f(x, t),\ x \in \mathbf{R},\ t > 0 \ \\
+\text{НУ: }v|_{t=0}=u_t|_{t=0}=0,\ x \in \mathbf{R}
+\]
+\end{lemma}
+
+\begin{proof}
+В самом деле, если $v(x, t) = \int_0^tu(x, t, \tau)d\tau$, где $u(x, t, \tau)$ при $\forall \tau \ge 0$ является решением ЗК для ОУКБС $(1.0),\ (2.f)$, то
+\[
+v_{t=0} = v(x, 0) = \int_0^0u(x, t, \tau) = 0,\ x \in \mathbf{R}
+\]
+
+\[
+v_t = u(x, t, t) + \int_0^tu_t(x, t, \tau) d\tau \Rightarrow v_t|_{t=0}=0+0=0
+\]
+Проверили, что решение $v(x, t)$ удовлетворяет НУ.
+
+Далее
+\[
+v_{tt} = u_t(x, t, t) + \int_0^t u_{tt}(x, t, \tau) d\tau = f(x, t) + a^2 \int_0^t u_{xx} d\tau = f(x, t) + a^2 \frac{\partial^2}{\partial x^2} \int_0^tu(x, t, \tau) d\tau = a^2v_{xx} + f(x, t)
+\]
+\end{proof}
+
+Таким образом, в соответствии с принципом Дюамеля, решение $W(x, t)$ ЗК $(1.f),\ (2.0)$ для УКБС имеет вид: 
+\[
+W(x, t) = \int_0^tu(x, t, \tau) d\tau,
+\]где $u(x, t,\tau)$ --- решение ЗК $\forall \tau \ge 0 (1.0), (2.f)$ для ОУКБС. А по (ФДО):
+\[
+u(x, t, \tau) = \frac{1}{2a} \int_{x-a(t-\tau)}^{x+a(t-\tau)} f(\xi, \tau) d\xi \Rightarrow
+\]
+\[
+W(x, t) = \frac{1}{2a}\int_0^T d\tau \int_{x-a(t-\tau)}^{x+a(t-\tau)} f(\xi, \tau) d\xi
+\]
+
+\subsection{Интеграл энергии}
+
+Рассмоитри простейшую СЗ для ОУКС длины l, закрепленной на концах
+\begin{align*}
+& u_{tt} = a^2 u_{xx}, \quad x \in (0,l),\ t > 0 \tag{1.0} \\
+\textbf{НУ: } \quad & u|_{t=0} = u_0(x),\ u_t|_{t=0} = u_1(x),\ x \in [0,l] \tag{2} \\
+\textbf{ОГУ1Т: } \quad & u|_{x=0} = u|_{x=l} = 0,\ t \ge 0 \tag{3.1.0} \\
+\textbf{ОУС: } \quad & u_0(0) = u_0(l) = u_1(0) = u_1(l) = 0
+\end{align*}
+\[
+u(x, t) \in C^2(G) \cap C^1(\overline{G}),
+\]
+\[
+u_0(x) \in C^2([0, l]),\ u_1(x) \in C^1([0, l]),
+\]
+где $G=(0, l) \times (0, +\infty)$ и $\overline{G}=[0, l] \times [0, +\infty)$.
+
+И рассмотрим интеграл
+\begin{align*}
+0 &= \int_0^l \frac{\partial u}{\partial t} Lu\ dx = \int_0^l\left[\rho \frac{\partial u}{\partial t} \frac{\partial^2 u}{\partial t^2} -T \frac{\partial u}{\partial t} \frac{\partial^2 u}{\partial x^2} \right]dx = \int_0^l \frac{\rho}{2} \frac{\partial}{\partial t}\left(\frac{\partial^2 u}{\partial t^2} \right)dx - \int_0^l T \frac{\partial u}{\partial t} d\left(\frac{\partial u}{\partial x} \right) \\
+&= \int_0^l \rho \frac{\partial u}{\partial t} \frac{\partial^2 u}{\partial t^2} - T \frac{\partial u}{\partial t} \left. \frac{\partial u}{\partial x}\right|_0^l + \int_0^l \frac{\partial u}{\partial x} \left(d \left(T \frac{\partial u}{\partial t} \right) \right) = \int_0^l \frac{\rho}{2} \frac{\partial}{\partial t} \left( \frac{\partial u}{\partial t} \right)^2 dx + \int_0^l \frac{T}{2} \frac{\partial}{\partial t} \left( \frac{\partial u}{\partial t} \right)^2 dx \\
+&= \left(\text{т.к.} \frac{\partial u}{\partial x} \frac{\partial^2 u}{\partial x \partial t} =
+\frac{1}{2} \frac{\partial }{\partial t} \left( \frac{\partial u}{\partial x} \right)^2
+\right) = \int_0^l \frac{\partial}{\partial t} \left[ \frac{\rho}{2} \left( \frac{\partial u}{\partial t} \right)^2 + \frac{T}{2}\left( \frac{\partial u}{\partial x} \right)^2 \right] dx \\
+&= \frac{d}{dt} \int_0^l \left[ \frac{\rho}{2} \left( \frac{\partial u}{\partial t} \right)^2 + \frac{T}{2}\left( \frac{\partial u}{\partial x} \right)^2 \right]dx = 0 \Rightarrow
+\end{align*}
+
+\[
+E(t) = \int_0^l \left[ \frac{\rho}{2} \left( \frac{\partial u}{\partial t} \right)^2 + \frac{T}{2}\left( \frac{\partial u}{\partial x} \right)^2 \right]dx = E(0) = const \text{ --- интеграл энергии колебания струны}
+\]
+При этом
+\[
+\omega(x, t) = \frac{\rho}{2} \left( \frac{\partial u}{\partial t} \right)^2 + \frac{T}{2}\left( \frac{\partial u}{\partial x} \right)^2 \text{ --- плотность энергии колебания струны}
+\]
+
+\subsection{Смешанная задача для УКС с ГУ1Т(длина l)}
+
+\begin{align*}
+& u_{tt} = a^2 u_{xx} + f(x, t), \quad x \in (0,l),\ t > 0 \tag{1.f} \\
+\textbf{НУ: } \quad & u|_{t=0}=u_0(x),\ u_t|_{t=0}=u_1(x),\ x \in [0,l] \tag{2} \\
+\textbf{ГУ1Т: } \quad & u|_{x=0}=\mu(t),\ u|_{x=l}=\nu(t),\ t \ge 0 \tag{3.1} \\
+\textbf{УС: } \quad & u_0(0)=\mu(0),\ u_0(l)=\nu(0), \tag{4}
+\end{align*}
+
+Теперь докажем единственность решения смешанной задачи(СЗ) для УКС(уравнения колебания струны) с ГУ1Т(граничными условиями 1 типа) $(1.f),\ (2),\ (3.1),\ (4)$.
+
+\begin{theorem}[единственность решения]
+Если решение СЗ для УКС длины l с ГУ1Т $(1.f),\ (2),\ (3.1),\ (4)$ существует в рассматриваемых классах функций, то оно единственно
+\end{theorem}
+
+% \begin{proof}
+% Пусть $\tilde u(x, t)$ и $\hat u$ --- решения поставленной задачи, тогда 
+% \[
+% E(t) = \int_0^l \left[ \frac{\rho}{2} \left( \frac{\partial u}{\partial t} \right)^2 + \frac{T}{2}\left( \frac{\partial u}{\partial x} \right)^2 \right]dx = E(0) = const
+% \]
+% и функция $u(x, t) = \tilde{u}(x, t) - \hat{u}(x, t)$ --- является решением СЗ для однородного УКС длины l, закрепленной на концах, удовлетворяющей однородным НУ:
+% \[
+% Lu = \rho u_{tt} - T u_{xx} = 0,\ x \in (0, l), t > 0\quad (1.0) \ \\
+% \textbf{НУ: } u|_{t=0} = u_t|_{t=0} = 0 ,\ x \in [0, l]\quad (2.0) \ \\
+% \textbf{ОГУ1Т: } u|_{x=0} = u_t|_{x=l} = 0 ,\ t \ge 0 \quad (3.1.0)
+% \]
+% \end{proof}
