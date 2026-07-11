@@ -1,26 +1,21 @@
 Рассмотрим новый дифференциальный оператор:\\
 $$\tilde{L}=\sum_{k,l=1}^{n} \tilde{a}_{kl}\frac{\partial}{\partial \xi_k} \frac{\partial}{\partial \xi_l}
 +\sum_{k=1}^{n} \tilde{b}_{k}\frac{\partial }{\partial \xi_k} + \tilde{c}$$
-
-Обозначим: $A = (a_{ij})$ и $\tilde{A} = (\tilde{a}_{ij})$ -- матрицы старших коэффициэнтов(МСК), где $A^T=A$ и $\tilde{A}^T=\tilde{A}$
-
+Обозначим: $A = (a_{ij})$ и $\tilde{A} = (\tilde{a}_{ij})$ -- матрицы старших коэффициэнтов(МСК), где $A^T=A$ и $\tilde{A}^T=\tilde{A}$\\
 В силу того, что $\displaystyle u(x)\in C^2(G)$, выполняется $\displaystyle \frac{\partial^2 u}{\partial x_i \partial x_j}= \frac{\partial^2 u}{\partial x_j \partial x_i}$. А значит:
 $$\sum_{i,j=1}^{n} a_{ij}\frac{\partial^2 u}{\partial x_i\partial x_j}=
   \sum_{i,j=1}^{n} a_{ji}\frac{\partial^2 u}{\partial x_i\partial x_j}=
   \sum_{i,j=1}^{n} \frac{a_{ji}+a_{ij}}{2}\cdot\frac{\partial^2 u}{\partial x_i\partial x_j}$$
-
 Таким образом, для \LDUChPSPPK{} можно заменить МСК $A$ на симметричную, вида: $\displaystyle A_c=\frac{A+A^T}{2}$ \\
 Тогда при ЛНЗНП($\displaystyle\xi=S^T x$) МСК меняется следующим образом: $\displaystyle\tilde{A}=S^T A S$\\
 Сопоставим для МСК $A$ квадратичную форму $K=\sum_{i,j=1}^n a_{ij}y_i y_j$\\
 Квадратичную форму $K$ можно привести к каноническому виду:\\
-
 \begin{tabular}{p{0.35\textwidth} p{0.6\textwidth}}
   \hspace{1cm}\(\displaystyle 
   K=\sum_{k=1}^{p}\eta^2_k-\sum_{k=p+1}^{r=p+q}\eta^2_k,
   \) &
   $p$ и $q$ -- положительные и отрецательные индексы инерции для $K$; $r$ -- ранг; $\sigma=p-q$ -- сигнатура $K$
 \end{tabular}
-
 \textbf{4 инварианта} $K\Longrightarrow$ при линейной невырожденной замене переменных $\xi = S^T x$ (т.е. $ y=S\eta $) приводит $K$  к каноническому виду $\displaystyle K = \eta^T \tilde{A} \eta$, тогда:
 $$ 
   \tilde{L} \tilde{u} =
@@ -28,27 +23,22 @@ $$
     \sum^{p+q}_{k=p+1}\frac{\partial^2\tilde u}{\partial \xi^2_k} +
     \sum^{n}_{k=1} \tilde{b}_{k}\frac{\partial\tilde u}{\partial \xi_k} + c \tilde u = \tilde f(\xi)
 $$
-
 \subsection{Классификация ЛДУЧП2ППК}
-
 \textbf{I. Эллиптический.}
 Если для квадратичной формы $K=y^T A y$, $r=n$ и в её каноническом виде все слагаемые одинакового знака($p=r=n,\,q=0$ либо $p=0,\,q=r=n$), то \LDUChPSPPK{} называется уравнением эллиптического типа.\smallskip\\
-\emph{Пример:} Уравнение Лапласса: $\displaystyle \Delta u = 0$\smallskip
-
+\emph{Пример:} Уравнение Лапласса: $\displaystyle \Delta u = 0$ \smallskip\\
 \textbf{II. Гиперболический.}
 Если для квадратичной формы $K = y^TAy$, $r=n$ и в её каноническом виде $1\le p \le n-1,\,q \in [1,n-1]$, то \LDUChPSPPK{} называется уравнением гиперболического типа.\medskip\\
 \emph{Пример:} Волновое уравнение: $\displaystyle \frac{\partial^2 u}{\partial t^2} = c^2 \Delta u + f(x, y, z, t)$
 \begin{note}
   Если $p=1,\,q=n-1$ или $p=n-1,q=1$ -- нормальный гиперболичкеский вид
 \end{note}
-
 \textbf{III. Параболический.}
 Если для квадратичной формы $K = y^TAy$, $r<n$, то \LDUChPSPPK{} называется уравнением гиперболического типа.\medskip\\
 \emph{Пример:} Уравнение теплопроводности: $\displaystyle \frac{\partial u}{\partial t} = c^2 \Delta u + f(x, y, z, t)$
 \begin{note}
   Если $p=r,\,q=0$ или $p=0,q=r$ -- нормальный параболический вид
 \end{note}
-
 Вернемся к ДУЧП2ПЛОСП:\\
 \begin{tabular}{p{0.55\textwidth} p{0.35\textwidth}}
   \hspace{1cm}\(\displaystyle 
@@ -56,12 +46,10 @@ $$
   \) &
   $x \in G \subset \mathbb R^n$, $u \in C^2(G)$, $a_{ij} \in C(G)$
 \end{tabular}\par\medskip
-
 ЛДУЧП2П:%FIXME Че тут вообще произошло? Нить повествования потеряна
 $$
 Lu=\sum_{i,j=1}^{n} a_{ij}(x)\frac{\partial^2u}{\partial x_i \partial x_j} + \sum_{i=1}^{n} b_{i}(x)\frac{\partial u}{\partial x_i} + c(x)u = f(x), \quad x \in G,
 $$
-
 Рассмотрим $\forall$ невырожденную замену переменных $\displaystyle \xi=\xi(x)\in C^2(G) : \frac{\partial(\xi_1,\dots,\xi_n)}{\partial(x_1,\dots,x_n)}\ne0 \Longrightarrow$ локально $\exists$ обратная замена $x=x(\xi)$ \\
 Обозначим $\tilde u(\xi) = u(x(\xi)) \Longrightarrow u(x)=\tilde u(\xi(x))$. Тогда:
 $$ 
@@ -79,14 +67,7 @@ $$
       \cdot\frac{\partial^2 }{\partial \xi_k\partial \xi_l}+
       \sum^n_{k=1} \frac{\partial^2 \xi_k}{\partial x_i\partial x_j}\cdot\frac{\partial}{\partial \xi_k}
 $$
---- линейные операторы и нелинейные операторы
-
-
-
-
-%FIXME
-
-
+--- линейные операторы и нелинейные операторы \\ 
 Подставляя выражение для $\frac{\partial u}{\partial x_i}$ и $\frac{\partial^2 u}{\partial x_i \partial x_j}$ в ЛДУЧП2ПЛОСП, получим:
 $$ 
 \sum_{k,l=1}^n \frac{\partial^2 \tilde u}{\partial \xi_k \partial \xi_l}( \sum_{i,j=1}^n a_{ij} \frac{\partial \xi_k}{\partial x_i}\cdot \frac{\partial \xi_l}{\partial x_j} )
@@ -94,17 +75,14 @@ $$
 $$%FIXME big ()
 Обозначим:
 $$ \tilde a_{kl}(\xi) = \sum^n_{i,j = 1}a_{ij}\frac{\partial \xi_k }{\partial x_i}\cdot\frac{\partial \xi_l}{\partial x_j}; \quad k,l = \overline{1,n} $$
-
 Тогда ДУЧП2ПЛОСП принимает вид:
 $$ \sum^n_{k,l=1}\tilde a_{kl}(\xi) \frac{\partial^2 \tilde u}{\partial \xi_k \partial \xi_l} + \tilde \Phi(\xi, \tilde u, \operatorname{grad}(\tilde u)) = 0 $$
-
 При этом ЛДУЧП2П принимает вид: 
 $$ \tilde L \tilde u = \sum^n_{k,l=1}\tilde a_{kl} \frac{\partial^2\tilde u}{\partial \xi_k \partial \xi_l} +
 \sum^n_{k=1} \tilde b_k (\xi) \frac{\partial \tilde{u}}{\partial \xi_k} + \tilde{c}(\xi)\tilde{u} = \tilde{f}(\xi), \qquad k=\overline{1,n}
 $$
 где: $$\displaystyle \tilde b_k(\xi) = \sum^n_{i,j=1}a_{ij}(x)\frac{\partial^2 \xi_k}{\partial x_i\partial x_j}+\sum^n_{i=1}b_i(x)\frac{\partial\xi_k}{\partial x_i},\qquad k=\overline{1,n}$$\\
 $$\tilde c(\xi)=c(x(\xi)),\qquad\tilde f(\xi) = f(x(\xi))$$
-
 Считаем матрицу старших коэффициентов $A(x)=(a_{ij}(x))$ -- симметрической. Аналогично, $ \tilde A(\xi)=(\tilde a_{ij}(\xi)) $ в ДУЧП2ПЛОСП(ЛДУЧП2П).\\
 Фиксируем некоторую точку $x=x^{(0)}\in G$.\\
 Обозначим $\displaystyle\xi^{(0)} = \xi(x^{(0)}) \Longrightarrow \tilde a_{kl}(\xi^{(0)}) = \sum^n_{i,j=1}a_{ij}(x^{(0)})s_{ik}s_{jl}$,
