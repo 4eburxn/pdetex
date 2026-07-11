@@ -1,0 +1,57 @@
+Отсюда имеем:
+\begin{equation}
+  \tilde a \frac{\partial^2 \tilde u}{\partial \xi^2}+2\tilde b \frac{\partial^2 \tilde u}{\partial \xi\partial \eta}+
+  \tilde c \frac{\partial^2 \tilde u}{\partial \eta^2} + 
+  \Phi(\xi,\eta,\tilde u, \frac{\partial\tilde u}{\partial \xi},\frac{\partial\tilde u}{\partial \eta}) = 0
+  \tag{$\widetilde 1$}
+\end{equation}
+где: 
+
+\hspace*{2em} $\tilde a=a\xi^2_x+2b\xi_x\xi_y+c\xi^2_y$
+
+\hspace*{2em} $\tilde b=a\xi_x\eta_x+b(\xi_x\eta_y+\xi_y\eta_x)+c\xi_y\eta_y$
+
+\hspace*{2em} $\tilde c=a\eta^2_x+2b\eta_x\eta_y+c\eta^2_y$\\
+Задача: выбрать такие $\xi$ и $\eta$, чтобы $\tilde a=\tilde c=0$, то есть:
+$$ a\xi^2_x+2b\xi_x\xi_y=c\xi^2_y=0, \qquad (a\eta^2_x+2b\eta_x\eta_y+c\eta^2_y=0) $$
+\begin{definition}[Характеристика и характерестическая кривая]
+  Пусть функция $\omega(x,y) \in C^1(G):$ что на кривой $\omega(x,y)=0$ выполняется $\operatorname{grad}(\omega(x,y))=0$ и\\
+   \begin{equation}
+    a\omega^2_x+2b\omega_x\omega_y+c\omega^2_y=0
+    \tag{2}
+   \end{equation}
+  Тогда кривая $\omega(x,y)=0$ называется характерестической кривой(характеристикой уравнения $(1)$), а само уравнение $(2)$ -- характерестическим уравнением $(1)$.
+\end{definition}
+\begin{lemma}[Связь первого интегралла и $\boldsymbol{\omega}$]%FIXME НАЗВАНИЕ КАКА
+  Пусть $\omega(x,y) \in C^1(G)$ такова что $\frac{\partial\omega}{\partial y}\ne 0$.\\
+  Если $\omega(x,y)$ удовлетворяет уравнению $(2)$, то соотношение $\omega(x,y)=C$ является общим(первым) интеграллом ОДУ вида: 
+  \begin{equation}
+    a\cdot\mathrm{d}y^2-2b\cdot\mathrm{d}x\mathrm{d}y+c\cdot\mathrm{d}x^2=0
+    \tag{3}
+  \end{equation}
+  или $ a\cdot\mathrm{d}y^2-2b\cdot\mathrm{d}x\mathrm{d}y+c\cdot\mathrm{d}x^2=0 $, обозначим $(3')$\\
+  Уравнение $(3)$ также называется характерестическим уравнением для $(1)$.
+\end{lemma}
+\begin{proof}
+  Т.к. $\omega(x,y)\in C^1(G),\,\omega_y\ne 0$ и $\omega(x,y)$ удовлетворяет уравнению $(2)$, ир из него получаем:\\
+  $\displaystyle(2'):\; a\left(\frac{\omega_x}{\omega_y}\right)^2+2b\left(\frac{\omega_x}{\omega_y}\right)+c=0$ или 
+  $\displaystyle a\left(-\frac{\omega_x}{\omega_y}\right)^2-2b\left(-\frac{\omega_x}{\omega_y}\right)+c=0$
+\end{proof}
+Вспомним, что соотношение $\omega(x,y)=C$ является общим интеграллом ОДУ, если это соотношение ($\omega(x,y)=C$) неявно задает функцию $y=y(x)$, которая
+является решением указанного ОДУ.\\
+Тогда по теореме ``О неявных функциях'', из $\omega_y\ne0\rightarrow$
+
+\hspace*{1em}  2. Эллиптический тип: $\displaystyle \hat{u}_{\alpha\alpha}+\hat{b}_{\beta\beta}=\hat\Phi $;
+
+\hspace*{1em}  3. Параболический тип: $\displaystyle \widetilde{b}_{\eta\eta}=\widetilde{\widetilde{\Phi}} $;
+\begin{note}
+  Если в некоторой области $G$ уравнение имеет гиперболический тип(ГТ), то в этой области $G$ существует 2 семейства $\mathbb R$ - характеристик, а если эллиптический тип, то в этой области $G$ существует 2 семейства $\mathbb C$ - сопряженных характеристик.
+\end{note}
+
+\hspace*{1em}  1. Гиперболический тип: пусть в некоторой области $G$, $a\ge0$, $D>0$, тогда уравнения $(3)$ и $(3')$ -- различны и у них разлиные незвисимые 1\textsuperscript{ые} интеграллы: $\phi(x,y)=C_1$, $\psi(X,y)=C_2$ и $\displaystyle \frac{\partial(\phi,\psi)}{\partial(x,y)}\ne 0$\\%FIXME ЧТО ТУТ ПРОИСХОДИТ? ПЕРЕМЕШААААААЛИ??? короче структуру надо поправить на основе других лекций
+Перейдем в уравнении $(1)$ к НП: %FIXME КТО ТАКОЙ
+$\xi=\phi(x,y),\,\eta=\psi(x,y)$.\\
+Тогда уравнение $(1)$ в некоторой окрестности из $G$ примет вид:
+
+\hspace*{2em} $2\widetilde b \widetilde u_{\xi\eta}+\widetilde \Phi=0$, откуда $\widetilde u_{\xi\eta}=\widetilde{\widetilde \Phi}$
+

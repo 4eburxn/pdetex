@@ -1,0 +1,72 @@
+\subsection{Классификация.}
+\begin{itemize}
+  \item ГУ 1\textsuperscript{го} типа(рода): $ u|_{x=0}=\mu(t),\,t\ge0 $ -- заданное решение
+  \item ГУ 2\textsuperscript{го} типа(рода): $ u_x|_{x=0}=\mu(t),\,t\ge0 $ -- заданная сила \\
+    \hspace*{2em}$\displaystyle T_0 u_x(0,t)=-\Phi_0(t) \;\Longrightarrow\; \nu(t)=-\frac{\Phi_0(t)}{T_0} $ %FIXME кака 
+  \item Однородное ГУ 2\textsuperscript{го} типа: $ u_x|_{x=0}=0,\,t\ge0 $ -- свободный конец
+  \item Однородное ГУ 1\textsuperscript{го} типа: $ u|_{x=0}=0$ -- зарепленный конец%FIXME а ограничения на t есть?
+  \item ГУ 3\textsuperscript{го} типа(рода): $ (u+\alpha u_x)|_{x=0}=\phi(t),\,t\ge0 $ -- закрепление+сила%FIXME управление??
+  \item Однородное ГУ 3\textsuperscript{го} типа(рода): $ (u+\alpha u_x)|_{x=0}=0$ -- закрепление+сила%FIXME управление??
+\end{itemize}
+\subsection{Задача Коши для уравнения колебания бесконечной струны.}
+\begin{equation}
+  \frac{\partial^2 u}{\partial t^2}=a^2\frac{\partial^2 u}{\partial t^2}+f(x,t),\qquad x\in\mathbb{R},t>0
+  \tag{$1,f$}
+\end{equation}
+\begin{equation}
+  \text{НУ:}\qquad u|_{t=0}= u_0(x),\quad u_t|_{t=0}=u_1(x),\quad x \in \mathbb{R}
+  \tag{2}
+\end{equation}
+$$ u=u(x,t)\in C^2(t>0) \land C^1(t\ge0),$$
+$$f(x,t)\in C^1(t\ge0),\quad u_0(x)\in C^2(\mathbb R),\quad u_1(x)\in C^1(\mathbb R) $$
+\begin{theorem}[Существование и единственность]
+  Задача Коши для УКБС $(1.f),\,(2)$ в рассматриваемом классе функций имеет решение, притом единственное, которое представдяется
+  формулой \emph{Даламбера}(Ф.Д.f):
+  $$ 
+    u(x,t)=\frac{u_0(x-at)+u_0(x+at)}2 +\frac{1}{2a} \int^{x+at}_{x-at}u_1(\xi)\mathrm{d}\xi+
+    \frac{1}{2a}\int^t_0\mathrm d\tau \int^{x+a(t-\tau)}_{x+a(t-\tau)}f(\xi,\tau)\mathrm d\xi
+  $$
+\end{theorem}
+\begin{proof}%FIXME уместно доказательство? расшифровать ОУКБС или бахнуть ссылочкой?
+  Рассмотрим задачу коши для ОУКБС:
+  \begin{equation}
+    u_{tt}= au_{xx},\quad x \in \mathbb{R},\;t>0
+    \tag{1.o}
+  \end{equation}
+  $(2)$, то есть:
+  $$Lu=u_{tt}-a^2u_{xx}$$
+  Уравнение характеристик:
+  \begin{equation}
+    \mathrm d x^2-a^2\mathrm dt^2=0\rightarrow (\mathrm d x-a\mathrm d t)(\mathrm d x+a\mathrm d t)\rightarrow
+    \left[ \begin{array}{ll}
+    C_1=x-at  \\
+    C_2=x+at 
+    \end{array} \right.
+    \tag*{--- первые интеграллы}
+  \end{equation}
+  Переходим к характерестическим переменным $\displaystyle\xi,\eta:\begin{array}{ll}\xi=x-ax\\\eta=x+at\end{array}\rightarrow$
+  приводится к виду: $\tilde u_{\xi\eta}=0$\\%FIXME чет с русским
+  его решение: $\displaystyle \tilde u(\xi,\eta)=\tilde f(\xi)+\tilde g(\eta)$ или $u(x,t)=f(x-at)+g(x+at)$ -- ОРУ,
+  где $\tilde f$ и $\tilde g$ -- достаточно гладкие функции переменных $\xi$ и $\eta$.\\
+  Решение задачи Коши найдем, подобрав соответствующие функции $\tilde f(\xi)$ и $\tilde g(\eta)$ так, чтобы удовлетворять НУ $(2)$.\\
+  найдем $u_t$:\\
+  $u_t(x,t)=-af'(x-at)+ag'(x+at)$, тогда из НУ:\\
+  $\displaystyle
+  \left\{\begin{array}{ll}
+      u|_{t=0}=f(x)+g(x)=u_0(x), & x\in\mathbb R\\
+      u_t|_{t=0}=-af'(x)+ag'(x)=u_1(x), & x\in\mathbb R
+    \end{array}\right. \Longrightarrow -f(x)+g(x)=\frac1a \int^x_0 u_1(\xi)\mathrm d\xi+C,\,x\in\mathbb R
+  $\\
+  Таким образом находим: 
+  $$f(x)=\frac12u_0(x)-\frac1{2a}\int^x_0 u_1(\xi)\mathrm d\xi-\frac C2,\,x \in\mathbb R$$
+  $$g(x)=\frac12u_0(x)-\frac1{2a}\int^x_0 u_1(\xi)\mathrm d\xi+\frac C2,\,x \in\mathbb R$$
+  cледовательно решение задачи коши для ОУКБС имеет вид:
+  \begin{equation}
+    u(x,t)=\frac{u_0(x-at)+u_0(x+at)}2 +\frac{1}{2a} \int^{x+at}_{x-at}u_1(\xi)\mathrm{d}\xi,\quad x\in\mathbb R,\,t\ge0
+    \tag*{--- формула Даламбера(однородная)}
+  \end{equation}
+  \underline{\emph{Физический смысл}}:  ``метод распределения волн''.\\%FIXME КАРТИИИИИИИИИИИИНКААААААААА
+  Рассмотрим ОРУКБС вида
+  $$u(x,t)=f(x-at),\;g=0$$
+  Пусть наблюдатель движется в положительном направлении со скоростью $a$ и $x(t=0)=0$
+\end{proof}
