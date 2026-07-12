@@ -27,46 +27,70 @@ $$f(x,t)\in C^1(t\ge0),\quad u_0(x)\in C^2(\mathbb R),\quad u_1(x)\in C^1(\mathb
     \frac{1}{2a}\int^t_0\mathrm d\tau \int^{x+a(t-\tau)}_{x+a(t-\tau)}f(\xi,\tau)\mathrm d\xi
   $$
 \end{theorem}
-\begin{proof}%FIXME уместно доказательство? расшифровать ОУКБС или бахнуть ссылочкой?
-  Рассмотрим задачу коши для ОУКБС:
-  \begin{equation}
-    u_{tt}= au_{xx},\quad x \in \mathbb{R},\;t>0
-    \tag{1.o}
-  \end{equation}
-  $(2)$, то есть:
-  $$Lu=u_{tt}-a^2u_{xx}$$
-  Уравнение характеристик:
-  \begin{equation}
-    \mathrm d x^2-a^2\mathrm dt^2=0\rightarrow (\mathrm d x-a\mathrm d t)(\mathrm d x+a\mathrm d t)\rightarrow
-    \left[ \begin{array}{ll}
-    C_1=x-at  \\
-    C_2=x+at 
-    \end{array} \right.
-    \tag*{--- первые интеграллы}
-  \end{equation}
-  Переходим к характерестическим переменным $\displaystyle\xi,\eta:\begin{array}{ll}\xi=x-ax\\\eta=x+at\end{array}\rightarrow$
-  приводится к виду: $\tilde u_{\xi\eta}=0$\\%FIXME чет с русским
-  его решение: $\displaystyle \tilde u(\xi,\eta)=\tilde f(\xi)+\tilde g(\eta)$ или $u(x,t)=f(x-at)+g(x+at)$ -- ОРУ,
-  где $\tilde f$ и $\tilde g$ -- достаточно гладкие функции переменных $\xi$ и $\eta$.\\
-  Решение задачи Коши найдем, подобрав соответствующие функции $\tilde f(\xi)$ и $\tilde g(\eta)$ так, чтобы удовлетворять НУ $(2)$.\\
-  найдем $u_t$:\\
-  $u_t(x,t)=-af'(x-at)+ag'(x+at)$, тогда из НУ:\\
-  $\displaystyle
-  \left\{\begin{array}{ll}
-      u|_{t=0}=f(x)+g(x)=u_0(x), & x\in\mathbb R\\
-      u_t|_{t=0}=-af'(x)+ag'(x)=u_1(x), & x\in\mathbb R
-    \end{array}\right. \Longrightarrow -f(x)+g(x)=\frac1a \int^x_0 u_1(\xi)\mathrm d\xi+C,\,x\in\mathbb R
-  $\\
-  Таким образом находим: 
-  $$f(x)=\frac12u_0(x)-\frac1{2a}\int^x_0 u_1(\xi)\mathrm d\xi-\frac C2,\,x \in\mathbb R$$
-  $$g(x)=\frac12u_0(x)-\frac1{2a}\int^x_0 u_1(\xi)\mathrm d\xi+\frac C2,\,x \in\mathbb R$$
-  cледовательно решение задачи коши для ОУКБС имеет вид:
-  \begin{equation}
-    u(x,t)=\frac{u_0(x-at)+u_0(x+at)}2 +\frac{1}{2a} \int^{x+at}_{x-at}u_1(\xi)\mathrm{d}\xi,\quad x\in\mathbb R,\,t\ge0
-    \tag*{--- формула Даламбера(однородная)}
-  \end{equation}
-  \underline{\emph{Физический смысл}}:  ``метод распределения волн''.\\%FIXME КАРТИИИИИИИИИИИИНКААААААААА
-  Рассмотрим ОРУКБС вида
-  $$u(x,t)=f(x-at),\;g=0$$
-  Пусть наблюдатель движется в положительном направлении со скоростью $a$ и $x(t=0)=0$
-\end{proof}
+Рассмотрим задачу коши для ОУКБС:
+\begin{equation}
+  u_{tt}= au_{xx},\quad x \in \mathbb{R},\;t>0
+  \tag{1.o}
+\end{equation}
+$(2)$, то есть:
+$$Lu=u_{tt}-a^2u_{xx}$$
+Уравнение характеристик:
+\begin{equation}
+  \mathrm d x^2-a^2\mathrm dt^2=0\rightarrow (\mathrm d x-a\mathrm d t)(\mathrm d x+a\mathrm d t)\rightarrow
+  \left[ \begin{array}{ll}
+  C_1=x-at  \\
+  C_2=x+at 
+  \end{array} \right.
+  \tag*{--- первые интеграллы}
+\end{equation}
+Переходим к характерестическим переменным $\displaystyle\xi,\eta:\begin{array}{ll}\xi=x-ax\\\eta=x+at\end{array}\rightarrow$
+приводится к виду: $\tilde u_{\xi\eta}=0$\\%FIXME чет с русским
+его решение: $\displaystyle \tilde u(\xi,\eta)=\tilde f(\xi)+\tilde g(\eta)$ или $u(x,t)=f(x-at)+g(x+at)$ -- ОРУ,
+где $\tilde f$ и $\tilde g$ -- достаточно гладкие функции переменных $\xi$ и $\eta$.\\
+Решение задачи Коши найдем, подобрав соответствующие функции $\tilde f(\xi)$ и $\tilde g(\eta)$ так, чтобы удовлетворять НУ $(2)$.\\
+найдем $u_t$:\\
+$u_t(x,t)=-af'(x-at)+ag'(x+at)$, тогда из НУ:\\
+$\displaystyle
+\left\{\begin{array}{ll}
+    u|_{t=0}=f(x)+g(x)=u_0(x), & x\in\mathbb R\\
+    u_t|_{t=0}=-af'(x)+ag'(x)=u_1(x), & x\in\mathbb R
+  \end{array}\right. \Longrightarrow -f(x)+g(x)=\frac1a \int^x_0 u_1(\xi)\mathrm d\xi+C,\,x\in\mathbb R
+$\\
+Таким образом находим: 
+$$f(x)=\frac12u_0(x)-\frac1{2a}\int^x_0 u_1(\xi)\mathrm d\xi-\frac C2,\,x \in\mathbb R$$
+$$g(x)=\frac12u_0(x)-\frac1{2a}\int^x_0 u_1(\xi)\mathrm d\xi+\frac C2,\,x \in\mathbb R$$
+cледовательно решение задачи коши для ОУКБС имеет вид:
+\begin{equation}
+  u(x,t)=\frac{u_0(x-at)+u_0(x+at)}2 +\frac{1}{2a} \int^{x+at}_{x-at}u_1(\xi)\mathrm{d}\xi,\quad x\in\mathbb R,\,t\ge0
+  \tag*{--- формула Даламбера(однородная)}
+\end{equation}
+\underline{\emph{Физический смысл}}:  ``метод распределения волн''.\\%FIXME КАРТИИИИИИИИИИИИНКААААААААА
+Рассмотрим ОРУКБС вида
+$$u(x,t)=f(x-at),\;g=0$$
+Пусть наблюдатель движется в положительном направлении со скоростью $a$ и $x(t=0)=0$.
+Свяжем с наблюдателем $O'x't'\;\Longrightarrow\; x=x'+at',\,t=t'$ (\emph{преобразование Галилея}) или $x'=x-at,\,t'=t\;\Longrightarrow$ в сиситеме координат $O'x't'$, связанной с наблюдателем решение будет иметь вид:
+$u=f(x')$, то есть наблюдатель движется в право со скоростью $a$. В его системе координат будет наблюдаться постоянный профиль струны, следовательно функция $f(x-at)$ описывает волну, бегущую вправо со скоростью $a$.\\
+Аналогично, функция $g(x+at)$ \textbf{---//---}, бегущую влево со скоростью $a$.\\
+Таким образом, в соответствии с формулой Даламбера(однородной):
+$$ f,g(s)=\frac12u_0(s)\pm\frac1{2a}\int_0^xu_1(\xi)\mathrm d\xi\pm\frac C2 $$
+\begin{note}
+  Пусть решение ОУКБС $u(x,t)=f(x-at)$, причем $f(x)=0$ вне интервала $(x_1,\ x_2)$, то есть $f(x)$ -- финитная функция.\\
+  Тогда характеристики $x-at=x_1$ и $x-at=x_2$ разбивают $Oxt$ на 3 подобласти,%FIXME КРТИНКА
+  при это $u(x,t)=0$ в I и III подоблостях, а характеристики $x-at=x_1$ и $x-at=x_2$ зазывают \emph{задним} и \emph{передним фронтами волны}.
+\end{note}
+Рассмотрим формулу Даламбера для однородного уравнения. Зафиксируем $M_0(x_0,t_0)$ и проведем через нее характеристики до пересечения с осью $x$. Получим точки:\\
+$\displaystyle\begin{array}{ll}P:\,x_1=x_0-at_0,\;t_1=0\\Q:\,x_2=x_0+at_0,\;t_2=0\end{array}$, с характеристиками
+$\displaystyle\begin{array}{ll}x+at=x_0-at_0\\x+at=x_0+at_0\end{array}$%КАРТИИИНКА из лекций V2
+\begin{definition}[Характерестический треугольник и область зависимости]
+  Треугольник $MPQ$ называют \emph{характерестическим треугольником} для точки $M$, а интервал $(x_1,x_2)$ -- \emph{областью зависимости} точки $M_0$.  
+\end{definition}
+При этом, значение отклонение струны $u(x_0.t_0)$ точки $M_0$ определяют лишь начальные условия на отрезке $[x_1,x_2]$.\\
+\textbf{\underline{Вывод:}} если Н.У. заданы лишь на отрезке $[x_1,x_2]$, то решение ЗК для ОУКБС однозначно определяется в характерестическом треугольник $MPQ$, в котором $[x_1,x_2]$ является областью зависимости, а соторы ограничены характеристиками.
+
+
+
+
+
+
+
+
