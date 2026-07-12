@@ -11,7 +11,7 @@
   \hspace{1cm}\(\displaystyle 
     \frac{\partial u}{\partial t} = c^2 \Delta u + f(x, y, z, t) ,
   \) &
-  $c=\frac{k}{\rho C}$ -- теплопроводность, $f$ -- источник
+  $c^2 = \frac{k}{\rho C}$ -- теплопроводность, $f$ -- источник
 \end{tabular} \bigskip\\
 3) уравнение Пуассона-Лапласа:\par\medskip
 \begin{tabular}{p{0.45\textwidth} p{0.45\textwidth}}
@@ -30,7 +30,7 @@
 Дополнительные условия.
 \begin{enumerate}[nosep]
   \item граничные условия(краевые)
-  \item начальныые условия
+  \item начальные условия
 \end{enumerate}
 
 \begin{definition}[Корректность постановки задач математической физики(МФ)]
@@ -43,7 +43,7 @@
 \end{definition}
 \label{abbr:U4P2P}
 \begin{definition}[Уравнение в частных производных второго порядка(УЧП2П):]
-Пусть $G$ --- область в $\mathbb{R}^n$, x=($x_1$, \ldots, $x_n$) --- точка в $\mathbb{R}^n$. УЧП2П называется соотношение, связывающее неизвестные функции n переменных u=u(x), и её производных 1\textsuperscript{го} и 2\textsuperscript{го} порядка:
+Пусть $G$ --- область в $\mathbb{R}^n$, x=($x_1$, \ldots, $x_n$) --- точка в $\mathbb{R}^n$. УЧП2П называется соотношение, связывающее значение неизвестной функции n переменных u=u(x), и её производных 1\textsuperscript{го} и 2\textsuperscript{го} порядка:
 \[
 \frac{\partial u}{\partial x_1}, \ldots, \frac{\partial u}{\partial x_n}, \frac{\partial^2 u}{\partial^2 x_1}, \ldots, \frac{\partial^2 u}{\partial^2 x_n}
 \] вида:
@@ -52,7 +52,7 @@ F(x_1, \ldots x_n, \frac{\partial u}{\partial x_1}, \ldots, \frac{\partial u}{\p
 \]
 \end{definition}
 \newcommand{\LDUSP}{\hyperref[abbr:U4P2P]{УЧП2П}}
-Решением \LDUSP{} нзывается функция класса $u(x) \in C^2(G): u(x)$ удовлетворяет данному уравнению.
+Решением \LDUSP{} называется функция класса $u(x) \in C^2(G): u(x)$, которая удовлетворяет данному уравнению.
 \begin{note}
 Здесь мы рассматриваем линейные уравнения относительно старших производных (УЧП2ПЛОСП)
 \[
@@ -115,20 +115,20 @@ u(x(\xi))=\tilde{u}(\xi) \Rightarrow \tilde{u}(\xi)=u(x)\]
 
 
 \begin{note}
-Из $\displaystyle\frac{\partial }{\partial x_i} = \sum_{k=1}s_{ik}\frac{\partial}{\partial \xi_k}$ имеем:
+Из $\displaystyle\frac{\partial }{\partial x_i} = \sum_{k=1}^n s_{ik}\frac{\partial}{\partial \xi_k}$ имеем:
 \[\frac{\partial^2u}{\partial x_i \partial x_j}=\frac{\partial}{\partial x_i}(\frac{\partial u}{\partial x_j})=\sum_{l,k=1}^{n}\frac{\partial^2 \tilde{u}}{\partial\xi_k \partial\xi_l}s_{ik}s_{jl}\]
 Подставляя полученные выражения для $\frac{\partial u}{\partial x_i}$ и $\frac{\partial^2 u}{\partial x_i \partial x_j}$ в \LDUChPSPPK{}, получим:
 
 \[\xi_k=\sum_{i=1}^{n}s_{ik}x_i,\ \xi=S^Tx, x=(S^{-1})^T\xi\Rightarrow\]
 
 \[
-\sum_{k,l=1}^n \frac{\partial^2 u}{\partial \xi_i \partial \xi_j} \sum_{i,j=1}^n a_{ij}s_{ik}s_{jl} + \sum_{k=1}^n \frac{\partial \tilde{u}}{\partial \xi_k}\sum_{i=1}^nb_is_{ik}+c\tilde{u}=\tilde{f}
+\sum_{k,l=1}^n \frac{\partial^2 \tilde{u}}{\partial \xi_k \partial \xi_l} \sum_{i,j=1}^n a_{ij}s_{ik}s_{jl} + \sum_{k=1}^n \frac{\partial \tilde{u}}{\partial \xi_k}\sum_{i=1}^nb_is_{ik}+c\tilde{u}=\tilde{f}
 \]
 Обозначим через 
 \[\tilde{a}_{kl}=\sum_{i,j=1}^na_{ij}s_{ik}s_{jl}, \quad\tilde{b}_k=\sum_{i=1}^nb_is_{ik}\]
 получаем:
 $\displaystyle
-\tilde{L}\tilde{u}=\sum_{k,l=1}^n\tilde{a}_{kl}\frac{\partial^2\tilde{u}}{\partial\xi_k\partial\xi_l}+\sum_{k=1}^n\tilde{b}_k\frac{\partial\tilde{u}}{\xi_k}+c\tilde{u}=\tilde{f}(\xi),
+\tilde{L}\tilde{u}=\sum_{k,l=1}^n\tilde{a}_{kl}\frac{\partial^2\tilde{u}}{\partial\xi_k\partial\xi_l}+\sum_{k=1}^n\tilde{b}_k\frac{\partial\tilde{u}}{\partial\xi_k}+c\tilde{u}=\tilde{f}(\xi),
 $\\
 где $\tilde{f}(\xi)=f(x(\xi))$\\
 При этом матрица $A=(a_{ik})$ старших коэффициентов исходного ЛУЧП2ППК преобразуется по формулам\\
