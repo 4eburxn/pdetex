@@ -1,6 +1,7 @@
 # temps global
 *.pdf
 *.docx
+.venv
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
