@@ -7,12 +7,12 @@ def set_academic_style():
     params = {
         # Размеры фигуры (ширина 8", высота 5" — подходит для страницы А4)
         'figure.figsize': (8, 5),
-        'figure.dpi': 100,
+        'figure.dpi': 1000,
         
         # Шрифты (семейство с засечками, размер 11 pt)
         'font.family': 'serif',
         'font.serif': ['Computer Modern', 'Times New Roman', 'DejaVu Serif'],
-        'font.size': 11,
+        'font.size': 24,
         
         # Оси
         'axes.titlesize': 12,
@@ -63,9 +63,8 @@ def set_academic_style():
         'savefig.pad_inches': 0.05,
     }
     plt.rcParams.update(params)
-
+set_academic_style()
 import numpy as np
-import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 import matplotlib.patheffects as path_effects
@@ -140,7 +139,7 @@ Z = r * z_sphere
 # ----------------------------------------------------------------------
 # 3. Визуализация
 # ----------------------------------------------------------------------
-fig = plt.figure(figsize=(10, 8))
+fig = plt.figure(figsize=(4, 6))
 ax = fig.add_subplot(111, projection='3d')
 
 # Рисуем поверхность
@@ -163,7 +162,7 @@ rx = get_radius(np.pi/2, 0, amplitude=0.5)
 ry = get_radius(np.pi/2, np.pi/2, amplitude=0.5)
 rz = get_radius(0, 0, amplitude=0.5)
 
-margin = 1.3
+margin = 1.4
 x_max = max(np.max(X), rx) * margin
 y_max = max(np.max(Y), ry) * margin
 z_max = max(np.max(Z), rz) * margin
@@ -199,7 +198,7 @@ def draw_axis(ax, direction, radius, limit, color='black', linewidth=1.5):
     ax.plot([p_start[0], p_neg[0]], [p_start[1], p_neg[1]], [p_start[2], p_neg[2]],
             color=color, linewidth=linewidth, linestyle='-')
     ax.plot([p_neg[0], p_pos[0]], [p_neg[1], p_pos[1]], [p_neg[2], p_pos[2]],
-            color=color, linewidth=linewidth, linestyle='--', dashes=(5, 5))
+            color=color, linewidth=linewidth, linestyle='--', dashes=(2, 2))
     ax.plot([p_pos[0], p_end[0]], [p_pos[1], p_end[1]], [p_pos[2], p_end[2]],
             color=color, linewidth=linewidth, linestyle='-', zorder=10)
 
@@ -221,8 +220,8 @@ def draw_axis(ax, direction, radius, limit, color='black', linewidth=1.5):
     # (эти точки больше не нужны, но если оставить, они дублируют)
     # add_cone и текст ...
     add_cone(ax, tip=p_end+arrow_dir*0.1, direction=arrow_dir,
-             length=0.1, radius=0.03, color=color, alpha=1.0)
-    text_pos = np.array(p_end) + 0.3 * np.array(arrow_dir)
+             length=0.15, radius=0.06, color=color, alpha=1.0)
+    text_pos = np.array(p_end) + 0.4 * np.array(arrow_dir)
     ax.text(text_pos[0], text_pos[1], text_pos[2],
             label, color=color, fontsize=14, fontweight='bold')
 
@@ -247,12 +246,12 @@ Z_in = factor * Z_s
 
 # Рисуем внутреннюю точку
 ax.plot([X_in], [Y_in], [Z_in+0.3], 'o', 
-        color='brown', markersize=10, 
+        color='brown', markersize=6, 
         markeredgecolor='brown', markeredgewidth=2,
         zorder=100)
 # Подпись 'x' рядом
 
-txt = ax.text(X_in + 0.03, Y_in + 0.03, Z_in + 0.03+0.3, 'x', color='brown', fontsize=16, fontweight='bold',zorder=20)
+txt = ax.text(X_in + 0.03, Y_in + 0.06, Z_in + 0.03+0.3, 'x', color='brown', fontsize=16, fontweight='bold',zorder=20)
 # Буква G, указывающая на область (точка на поверхности)
 # Размещаем G снаружи, немного дальше от центра
 G_pos = np.array([X_s, Y_s, Z_s]) * 1.8  # снаружи
@@ -271,17 +270,18 @@ if dir_len > 0:
     # Я сделаю так: вершина конуса в (X_s, Y_s, Z_s), а направление указывает от G к поверхности, т.е. конус входит в поверхность?
     # Это некрасиво. Обычно стрелка указывает на объект, так что конец стрелки (остриё) находится в объекте.
     # Поэтому мы рисуем конус с вершиной в (X_s, Y_s, Z_s) и направлением от G к поверхности (т.е. остриё в объекте).
-    add_cone(ax, tip=np.array([X_s, Y_s, Z_s]), direction=dir_vec, length=0.1, radius=0.03, color='navy', alpha=1.0)
+    add_cone(ax, tip=np.array([X_s, Y_s, Z_s]), direction=dir_vec, length=0.15, radius=0.06, color='navy', alpha=1.0)
     # Также рисуем текст G в позиции G_pos
     ax.text(G_pos[0], G_pos[1], G_pos[2], 'G', color='blue', fontsize=16, fontweight='bold')
 
 # ----------------------------------------------------------------------
 # 7. Настройка масштаба
 # ----------------------------------------------------------------------
-ax.set_xlim(-x_max, x_max)
-ax.set_ylim(-y_max, y_max)
-ax.set_zlim(-z_max, z_max)
+scale = 0.8
+ax.set_xlim(-x_max*scale, x_max*scale)
+ax.set_ylim(-y_max*scale, y_max*scale)
+ax.set_zlim(-z_max*scale, z_max*scale)
 ax.set_box_aspect([1, 1, 1])
 
 plt.tight_layout()
-plt.show()
+plt.savefig("s1l1.png")

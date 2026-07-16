@@ -173,4 +173,4 @@ axc.text(2.35, 2.9,
          "$x_3 = h$",
          fontsize=15, color=INK, va="top", linespacing=2.0)
 
-plt.show()
+plt.savefig("s1l2.png")
