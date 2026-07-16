@@ -1,73 +1,72 @@
-\subsection{Примеры}
-1) распростронение волн - волновое уравнение \par\medskip
-\begin{tabular}{p{0.45\textwidth} p{0.45\textwidth}}
-  \hspace{1cm}\(\displaystyle 
-    \frac{\partial^2 u}{\partial t^2} = c^2 \Delta u + f(x, y, z, t),
-  \) &
-  \(c\) -- скорость распространения, $f$ -- источник
-\end{tabular}  \bigskip\\
-2) теплопередача - уравнение теплопроводности \par\medskip
-\begin{tabular}{p{0.45\textwidth} p{0.45\textwidth}}
-  \hspace{1cm}\(\displaystyle 
-    \frac{\partial u}{\partial t} = c^2 \Delta u + f(x, y, z, t) ,
-  \) &
-  $c^2 = \frac{k}{\rho C}$ -- теплопроводность, $f$ -- источник
-\end{tabular} \bigskip\\
-3) уравнение Пуассона-Лапласа:\par\medskip
-\begin{tabular}{p{0.45\textwidth} p{0.45\textwidth}}
-  \hspace{1cm}\(\displaystyle 
-    \Delta u = -\tilde f(x, y, z, t) ,
-  \) &
-  $\tilde f=\frac{f}{a^2}$ -- приведенное уравнение
-\end{tabular} \\
-\begin{tabular}{p{0.45\textwidth} p{0.45\textwidth}}
-  \hspace{1cm}\(\displaystyle 
-    \Delta u = 0
-  \) &
-\end{tabular} \\
-Это основные уравнения математической физики. Они имеют бесчисленное множество решений.
-\subsection{Постановка задачи}
-Дополнительные условия.
-\begin{enumerate}[nosep]
-  \item граничные условия(краевые)
-  \item начальные условия
-\end{enumerate}
+Многие задачи механики сплошной среды и физики приводят к исследованию дифференциальных уравнений с частными производными второго порядка (ДУЧП2П). Так, например.
 
-\begin{definition}[Корректность постановки задач математической физики(МФ)]
-Задача МФ называется поставленной корретно (по Адамару), если её решение:
-\begin{enumerate}[nosep]
-  \item существует;
-  \item единственно;
-  \item устойчиво (непрерывно зависит от данных параметров) - условие физической определенности задачи.
-\end{enumerate}
-\end{definition}
-\label{abbr:U4P2P}
-\begin{definition}[Уравнение в частных производных второго порядка(УЧП2П):]
-\begin{wrapfigure}{l}{0.3\textwidth}
-  \centering
-  % Сама картинка масштабируется до 90% от ширины окружения
-  \includegraphics[width=0.9\linewidth]{pics/s1l1.png}
-  \label{fig:example}
-\end{wrapfigure}
-
-Пусть $G$ --- область в $\mathbb{R}^n$, x=($x_1$, \ldots, $x_n$) --- точка в $\mathbb{R}^n$. УЧП2П называется соотношение, связывающее значение неизвестной функции n переменных u=u(x), и её производных 1\textsuperscript{го} и 2\textsuperscript{го} порядка:
+1) При изучении различных видов волн (упругих, звуковых, электромагнитных) мы приходим к \textsl{волновому уравнению}:
 \[
-\frac{\partial u}{\partial x_1}, \ldots, \frac{\partial u}{\partial x_n}, \frac{\partial^2 u}{\partial^2 x_1}, \ldots, \frac{\partial^2 u}{\partial^2 x_n}
+\frac{\partial^2 u}{\partial t^2} = c^2 \left( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2} \right) + f(x, y, z, t),
+\]
+где $c$ -- скорость распространения волн в данной среде, $f$ -- источник.
+
+2) Процессы распространения тепла в однородном изотропном теле описываются уравнением теплопроводности
+\[
+\frac{\partial u}{\partial t} = a^2 \left( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2} \right) + f(x, y, z, t),
+\]
+где $a^2$ – коэффициент температуропроводности данной среды.
+
+3) При рассмотрении установившегося теплового состояния в однородном изотропном теле мы приходим к уравнению Пуассона:
+\[
+	\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2} = -\tilde{f}(x, y, z),
+\]
+где $\tilde{f}(x, y, z) = \frac{f(x, y, z)}{a^2}$
+
+При отсутствии источников тепла внутри тела уравнение теплопроводности переходит в уравнение Лапласа:
+\[
+	\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2} = 0,
+\]
+
+Волновое уравнение (ВУ), уравнение теплопроводности (УТ), уравнение Пуассона (УП) и уравнение Лапласа (УЛ) часто называют основными уравнениями математической физики.
+
+\bigskip
+
+Каждое из основных уравнений математической физики имеет бесчисленное множество частных решений. При решении конкретной физической задачи, необходимо из всех этих решений выбрать то, которое удовлетворяет некоторым дополнительным условиям, вытекающим из её физического смысла. Итак, задачи математической физики состоят в отыскании решений уравнений в частных производных, удовлетворяющим некоторым дополнительным условиям. Такими дополнительными условиями чаще всего являются так называемые граничные (краевые) условия, т.е. условия, заданные на границе рассматриваемой среды, и начальные условия, относящегося к одному какому-нибудь моменту времени, с которого начинается изучение данного физического явления.
+
+\bigskip
+
+Обратим внимание на одно важное обстоятельство.
+
+\textsl{Задача математической физики считается поставленной корректно (в смысле Адамара), если решение задачи, удовлетворяющее всем её условиям, существует, единственно и устойчиво} (непрерывно зависит от данных (параметров) задачи, т.е. малые изменения любого из данных задачи должно вызывать соответственно малое изменение решения). Требование устойчивости выражает физическую определенность поставленной задачи.
+
+\bigskip
+
+Дадим необходимые определения.
+
+\begin{definition}[Дифференциальное уравнение в частных производных второго порядка (ДУЧП2П)]
+Пусть $G$ --- область в $\mathbb{R}^n$, x=($x_1$, \ldots, $x_n$) --- точка из $G$. Дифференциальным уравнением в частных производных второго порядка (ДУЧП2П) с независимыми переменными $x_1, \ldots, x_n$ называется соотношение, связывающее значение неизвестной функции n переменных $u=u(x_1, \ldots, x_n)$, и её частных производных 1\textsuperscript{го} и 2\textsuperscript{го} порядков:
+\[
+\frac{\partial u}{\partial x_1}, \ldots, \frac{\partial u}{\partial x_n},
+\frac{\partial^2 u}{\partial^2 x_1}, \ldots, \frac{\partial^2 u}{\partial x_i \partial x_j}, \ldots \frac{\partial^2 u}{\partial^2 x_n}
 \] вида:
 \[
-F(x_1, \ldots x_n, \frac{\partial u}{\partial x_1}, \ldots, \frac{\partial u}{\partial x_n}, \frac{\partial^2 u}{\partial^2 x_1}, \ldots, \frac{\partial^2 u}{\partial^2 x_n}, u)=0
+F(x_1, \ldots, x_n, u, \frac{\partial u}{\partial x_1}, \ldots, \frac{\partial u}{\partial x_n},
+\frac{\partial^2 u}{\partial^2 x_1}, \ldots, \frac{\partial^2 u}{\partial x_i \partial x_j}, \ldots \frac{\partial^2 u}{\partial^2 x_n})=0
 \]
 \end{definition}
-\newcommand{\LDUSP}{\hyperref[abbr:U4P2P]{УЧП2П}}
-Решением \LDUSP{} называется функция класса $u(x) \in C^2(G): u(x)$, которая удовлетворяет данному уравнению.
-\begin{note}
-Здесь мы рассматриваем линейные уравнения относительно старших производных (УЧП2ПЛОСП)
+
+Решением ДУЧП2П называется функция  класса , которая удовлетворяет данному уравнению.
+
+Уравнение называется \textsl{линейным} относительно старших производных – производных второго порядка (ДУЧП2ПЛОСП), если оно имеет вид:
+
 \[
-\sum_{i,j=1}^{n} a_{ij}(x)\frac{\partial^2u}{\partial x_i \partial x_j} + \Phi(x_1, \ldots, x_n, u, \operatorname{grad}(u)) = 0
+\sum_{i,j=1}^{n} a_{ij}(x)\frac{\partial^2u}{\partial x_i \partial x_j} + \Phi(x, u, \operatorname{grad}(u)) = 0
 \]
-Где $a_{ij}(x) \in C(G)$ -- старшие коэффициенты $i, j = \overline{1,n}$ и\\
-\hspace*{\fill}  $\Phi(x_1, \ldots, x_n, u, \operatorname{grad}(u))$ -- некоторая функция.
-\end{note}
+где коэффициенты при старших (вторых) производных $a_{ij}(x) \in C(G) (i, j = 1, \ldots,n)$ являются функциями только независимых переменных $x_1, \ldots, x_n$; 
+а $\operatorname{grad}(u) = (\frac{\partial u}{\partial x_1}, \ldots, \frac{\partial u}{\partial x_n})$ --- градиент функции $u(x) = u(x_1, \ldots, x_n)$.
+
+\bigskip
+
+Коэффициенты при старших (вторых) производных образуют квадратную матрицу $A(x) = (a_{ij}(x))$  – матрицу старших коэффициентов:
+
+
+
 \begin{note}
 $\operatorname{grad}(u) = (\frac{\partial u}{\partial x_1}, \ldots, \frac{\partial u}{\partial x_n})$.
 \end{note}
