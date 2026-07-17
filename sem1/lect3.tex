@@ -2,9 +2,9 @@
 $$ K=\sum_{i,j=1}^n a_{ij}(x^{(0)})y_i y_j = y^T A(x^{(0)})y, \qquad y = (y_1, \dots , y_n) $$
 при ЛНЗНП:
 \[
-y=S\eta,\ \eta=(\eta_1, \ldots, \eta_n)^T,\ detS \neq 0:
-\quad
-K=y^TA(x^{(0)})y= \eta^T S^T A(x^{(0)}) S\eta =\eta^T\tilde A(\xi^{(0)})\eta
+	y=S\eta,\ \eta=(\eta_1, \ldots, \eta_n)^T,\ detS \neq 0:
+	\quad
+	K=y^TA(x^{(0)})y= \eta^T S^T A(x^{(0)}) S\eta =\eta^T\tilde A(\xi^{(0)})\eta
 \]
 
 Линейной невырожденной замене независимых переменных
@@ -15,112 +15,112 @@ K=y^TA(x^{(0)})y= \eta^T S^T A(x^{(0)}) S\eta =\eta^T\tilde A(\xi^{(0)})\eta
 
 Для любой квадратичной формы $K=y^TA(x^{(0)})y$ существует ЛНЗНП: $y=S\eta$, приводящая эту форму к каноническому виду:
 \[
-  K = \sum_{k=1}^p \eta_k^2 - \sum_{k=p+1}^{p+q} \eta_k^2,
-\] 
+	K = \sum_{k=1}^p \eta_k^2 - \sum_{k=p+1}^{p+q} \eta_k^2,
+\]
 где $p$ -- ПИИ, $q$ -- ОИИ(индексы инерции); $r=p+q$ -- ранг.
 
 \subsection{Классификация ДУЧП2ПЛОСП в точке}
 \begin{enumerate}[label=\Roman*.]
-  \item \textbf{Эллиптический тип}
-    \begin{itemize}[nosep]
-      \item $r = n$ --- ранг $K$
-      \item в каноническом виде все слагаемые одного знака 
-            ($p = r = n,\ q = 0$ или $q = r = n,\ p = 0$)
-      \item \textbf{\underline{Пример:}} уравнение Лапласа.
-    \end{itemize}
+	\item \textbf{Эллиптический тип}
+	      \begin{itemize}[nosep]
+		      \item $r = n$ --- ранг $K$
+		      \item в каноническом виде все слагаемые одного знака
+		            ($p = r = n,\ q = 0$ или $q = r = n,\ p = 0$)
+		      \item \textbf{\underline{Пример:}} уравнение Лапласа.
+	      \end{itemize}
 
-  \item \textbf{Гиперболический тип}
-    \begin{itemize}[nosep]
-      \item $r = n$ --- ранг $K$
-      \item в каноническом виде слагаемые имеют разные знаки 
-            ($p \in [1, n-1]$ и $q \in [1, n-1]$)
-      \item \textbf{Замечание:} при $p = n-1,\ q = 1$ или $p = 1,\ q = n-1$ --- 
-            \emph{нормальный гиперболический} тип.
-      \item \textbf{\underline{Пример:}} волновое уравнение.
-    \end{itemize}
+	\item \textbf{Гиперболический тип}
+	      \begin{itemize}[nosep]
+		      \item $r = n$ --- ранг $K$
+		      \item в каноническом виде слагаемые имеют разные знаки
+		            ($p \in [1, n-1]$ и $q \in [1, n-1]$)
+		      \item \textbf{Замечание:} при $p = n-1,\ q = 1$ или $p = 1,\ q = n-1$ ---
+		            \emph{нормальный гиперболический} тип.
+		      \item \textbf{\underline{Пример:}} волновое уравнение.
+	      \end{itemize}
 
-  \item \textbf{Параболический тип}
-    \begin{itemize}[nosep]
-      \item $r < n$ --- ранг $K$
-      \item \textbf{Замечание:} при $p < n,\ q = 0$ или $p = 0,\ q < n$ --- 
-            \emph{нормальный параболический} тип.
-      \item \textbf{\underline{Пример:}} уравнение теплопроводности.
-    \end{itemize}
+	\item \textbf{Параболический тип}
+	      \begin{itemize}[nosep]
+		      \item $r < n$ --- ранг $K$
+		      \item \textbf{Замечание:} при $p < n,\ q = 0$ или $p = 0,\ q < n$ ---
+		            \emph{нормальный параболический} тип.
+		      \item \textbf{\underline{Пример:}} уравнение теплопроводности.
+	      \end{itemize}
 \end{enumerate}
 
 \begin{note}
-Ранг $r$, ПИИ --- $p$, ОИИ --- $q$ не инвариантны для фиксированной точки $x^{(0)}$ (или функции фиксированной точки), поэтому тип ДУЧП2ПЛОСП зависит от выбора $x^{(0)} \in G$.
+	Ранг $r$, ПИИ --- $p$, ОИИ --- $q$ не инвариантны для фиксированной точки $x^{(0)}$ (или функции фиксированной точки), поэтому тип ДУЧП2ПЛОСП зависит от выбора $x^{(0)} \in G$.
 \end{note}
 
 \textbf{\underline{Пример:}} уравнение Трикоми
 
 \[
-y \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0
+	y \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0
 \]
 Оно является \textbf{эллиптическим} при $y > 0$, \textbf{гиперболическим} при $y < 0$ и \textbf{параболическое} на линии вырождения $y = 0$.
 
 \textbf{\underline{Пример:}} стационарное линеаризованное уравнение для потенциала скорости
 \[
-(1-M^2) \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2} = 0
+	(1-M^2) \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2} = 0
 \]
 \begin{enumerate}[nosep]
-  \item если \(M<1\) (дозвуковое течение), уравнение становится \textbf{эллиптическим};
-  \item если \(M>1\) (сверхзвуковое течение), уравнение становится \textbf{гиперболическим};
-  \item если \(M=1\) (звуковое течение), уравнение вырождается в \textbf{параболическое}.
+	\item если \(M<1\) (дозвуковое течение), уравнение становится \textbf{эллиптическим};
+	\item если \(M>1\) (сверхзвуковое течение), уравнение становится \textbf{гиперболическим};
+	\item если \(M=1\) (звуковое течение), уравнение вырождается в \textbf{параболическое}.
 \end{enumerate}
 
 \begin{note}
-Если в ДУЧП2ПЛОСП старшие коэффициенты $a_{ij} \neq a_{ij}(x)$(т.е. постоянные коэффициенты), то ЛНЗНП $\xi=\xi(x)$ можно привести это уравнение к уравнению канонического вида во всей $G$.
+	Если в ДУЧП2ПЛОСП старшие коэффициенты $a_{ij} \neq a_{ij}(x)$(т.е. постоянные коэффициенты), то ЛНЗНП $\xi=\xi(x)$ можно привести это уравнение к уравнению канонического вида во всей $G$.
 \end{note}
 
 %ДИПСИЧНОЕ begin
 \begin{note}(Классификация для случая двух независимых переменных через дискриминант)\\
-Для уравнения
-\[
-a(x,y)u_{xx}+2b(x,y)u_{xy}+c(x,y)u_{yy}+\Phi(x,y,u,u_x,u_y)=0,\qquad a>0,
-\]
-в фиксированной точке $(x_0,y_0)$ введём дискриминант
-\[
-D(x_0,y_0)=b^2(x_0,y_0)-a(x_0,y_0)c(x_0,y_0).
-\]
-Тогда тип уравнения определяется знаком $D$:
+	Для уравнения
+	\[
+		a(x,y)u_{xx}+2b(x,y)u_{xy}+c(x,y)u_{yy}+\Phi(x,y,u,u_x,u_y)=0,\qquad a>0,
+	\]
+	в фиксированной точке $(x_0,y_0)$ введём дискриминант
+	\[
+		D(x_0,y_0)=b^2(x_0,y_0)-a(x_0,y_0)c(x_0,y_0).
+	\]
+	Тогда тип уравнения определяется знаком $D$:
 
-\begin{enumerate}[label=\arabic*)]
-\item \textbf{Гиперболический} $\; \Longleftrightarrow D>0$;  
-      при этом матрица старших коэффициентов $A=\begin{pmatrix}a&b\\b&c\end{pmatrix}$ имеет $\det A = -D<0$, т.е. квадратичная форма неопределена, ранк $r=2$, индексы инерции $p=q=1$.
+	\begin{enumerate}[label=\arabic*)]
+		\item \textbf{Гиперболический} $\; \Longleftrightarrow D>0$;
+		      при этом матрица старших коэффициентов $A=\begin{pmatrix}a&b\\b&c\end{pmatrix}$ имеет $\det A = -D<0$, т.е. квадратичная форма неопределена, ранк $r=2$, индексы инерции $p=q=1$.
 
-\item \textbf{Эллиптический} $\; \Longleftrightarrow D<0$;  
-      тогда $\det A>0$ и квадратичная форма знакоопределена ($p=2,q=0$ или $p=0,q=2$).
+		\item \textbf{Эллиптический} $\; \Longleftrightarrow D<0$;
+		      тогда $\det A>0$ и квадратичная форма знакоопределена ($p=2,q=0$ или $p=0,q=2$).
 
-\item \textbf{Параболический} $\; \Longleftrightarrow D=0$;  
-      тогда $\det A=0$, ранк $r=1$, квадратичная форма вырождена.
-\end{enumerate}
+		\item \textbf{Параболический} $\; \Longleftrightarrow D=0$;
+		      тогда $\det A=0$, ранк $r=1$, квадратичная форма вырождена.
+	\end{enumerate}
 \end{note}
 
 \begin{note}
-Если $a<0$, то умножаем уравнение на $-1$, чтобы сделать $a>0$, тип при этом не меняется.
+	Если $a<0$, то умножаем уравнение на $-1$, чтобы сделать $a>0$, тип при этом не меняется.
 \end{note}
 %ДИПСИЧНОЕ end
 
 \begin{note}
-Лапласиан в декартовой, сферической и цилиндрической системах координат.
-\begin{enumerate}
-% Прямоугольная
-\item Декартовы координаты: $\displaystyle\Delta = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} 
-$
+	Лапласиан в декартовой, сферической и цилиндрической системах координат.
+	\begin{enumerate}
+		% Прямоугольная
+		\item Декартовы координаты: $\displaystyle\Delta = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}
+		      $
 
-% Цилиндрическая
-\item Цилиндрические координаты: $\displaystyle\Delta = \frac{1}{r}\frac{\partial}{\partial r}\left(r \frac{\partial}{\partial r}\right) + \frac{1}{r^2}\frac{\partial^2}{\partial \varphi^2} + \frac{\partial^2}{\partial z^2}
-$
+		      % Цилиндрическая
+		\item Цилиндрические координаты: $\displaystyle\Delta = \frac{1}{r}\frac{\partial}{\partial r}\left(r \frac{\partial}{\partial r}\right) + \frac{1}{r^2}\frac{\partial^2}{\partial \varphi^2} + \frac{\partial^2}{\partial z^2}
+		      $
 
-% Сферическая
-\item Сферические координаты: $\displaystyle\Delta = \frac{1}{\rho^2}\frac{\partial}{\partial \rho}\left(\rho^2 \frac{\partial}{\partial \rho}\right) + \frac{1}{\rho^2 \sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta \frac{\partial}{\partial \theta}\right) + \frac{1}{\rho^2 \sin^2\theta}\frac{\partial^2}{\partial \varphi^2}
-$
-\end{enumerate}
+		      % Сферическая
+		\item Сферические координаты: $\displaystyle\Delta = \frac{1}{\rho^2}\frac{\partial}{\partial \rho}\left(\rho^2 \frac{\partial}{\partial \rho}\right) + \frac{1}{\rho^2 \sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta \frac{\partial}{\partial \theta}\right) + \frac{1}{\rho^2 \sin^2\theta}\frac{\partial^2}{\partial \varphi^2}
+		      $
+	\end{enumerate}
 \end{note}
 \begin{figure}[h]
-  \centering
-  \includegraphics[width=0.85\linewidth]{pics/s1l2.png}
+	\centering
+	\includegraphics[width=0.85\linewidth]{pics/s1l2.png}
 \end{figure}
 
 %FIXME НЕТ КАРТИИИИНОК
@@ -128,9 +128,9 @@ $
 
 \subsection{Характеристические поверхности(линии). Характеристики.}
 \begin{definition}[Характеристические поверхности(линии). Характеристики.]
-Пусть функция $\omega(x_1, \ldots, x_n) \in C^1(G)$ такова, что на плоскости $\omega(x)=0: \operatorname{grad}(\omega)  \neq0$.
-Если на данной плоскости $\omega(x)$ удовлетворяет уравнению 
-$\sum_{i, j=1}^n a_{ij}(x)\frac{\partial\omega}{\partial x_i}\frac{\partial\omega}{\partial x_j}=0$, то эта плоскость ($\omega(x)=0$) называется характеристической плоскостью (линией) или характеристикой для ДУЧП2ПЛОСП(1).
+	Пусть функция $\omega(x_1, \ldots, x_n) \in C^1(G)$ такова, что на плоскости $\omega(x)=0: \operatorname{grad}(\omega)  \neq0$.
+	Если на данной плоскости $\omega(x)$ удовлетворяет уравнению
+	$\sum_{i, j=1}^n a_{ij}(x)\frac{\partial\omega}{\partial x_i}\frac{\partial\omega}{\partial x_j}=0$, то эта плоскость ($\omega(x)=0$) называется характеристической плоскостью (линией) или характеристикой для ДУЧП2ПЛОСП(1).
 \end{definition}
 
 Рассмотрим семейство характеристик $\omega(x, y)=C$, где $\alpha < C < \beta \Rightarrow$ некоторая достаточно малая область $G_\varepsilon$ будет целиком заполнена этими характеристиками, которые не будут пересекаться друг с другом, т.е. через каждую точку из $G_\varepsilon$ будет проходить единственная характеристика.
@@ -140,15 +140,15 @@ $\sum_{i, j=1}^n a_{ij}(x)\frac{\partial\omega}{\partial x_i}\frac{\partial\omeg
 Рассмотрим возможность приведения ДУЧП2ПЛОСП к каноническому виду в некоторой достаточно малой области $G_\varepsilon$. Для этого необходимо выполнение в $G_\varepsilon$ следующих условий:
 
 \begin{quote}
-$\tilde a_{kl}(\xi)=0,\quad k \neq l$
+	$\tilde a_{kl}(\xi)=0,\quad k \neq l$
 
-$\tilde a_{kk}(\xi)=\varepsilon_k\tilde a_{11}(\xi),\quad k=\overline{2, n},\ \varepsilon_k=0,\pm1$
+	$\tilde a_{kk}(\xi)=\varepsilon_k\tilde a_{11}(\xi),\quad k=\overline{2, n},\ \varepsilon_k=0,\pm1$
 \end{quote}
 
 Всего наших соотношений:
 
 \[
-N=\frac{n^2-n}{2}+n-1 \leq n,
+	N=\frac{n^2-n}{2}+n-1 \leq n,
 \]
 где $n$ --- число независимых переменных.
 
@@ -158,11 +158,11 @@ N=\frac{n^2-n}{2}+n-1 \leq n,
 
 %ДИПСИЧНОЕ begin
 \begin{note}(О количестве условий и невозможности приведения при $n>2$)\\
-Пусть требуется обнулить все перекрёстные коэффициенты $\tilde a_{kl}$ ($k\ne l$) и сделать диагональные равными $0$ или $\pm1$.  
-Для этого необходимо выполнить $\frac{n(n-1)}{2}$ условий на производные новых переменных.  
-Однако в нашем распоряжении имеется только $n$ функций (компонент замены $\xi_i(x)$).  
-Система уравнений для коэффициентов оказывается переопределённой при $n>2$, поэтому в общем случае приведение к каноническому виду невозможно.  
-При $n=2$ число условий равно $1$ (обнулить $\tilde a_{12}$), и это достижимо выбором двух функций $\xi,\eta$ (одна степень свободы остаётся для фиксации масштаба).
+	Пусть требуется обнулить все перекрёстные коэффициенты $\tilde a_{kl}$ ($k\ne l$) и сделать диагональные равными $0$ или $\pm1$.
+	Для этого необходимо выполнить $\frac{n(n-1)}{2}$ условий на производные новых переменных.
+	Однако в нашем распоряжении имеется только $n$ функций (компонент замены $\xi_i(x)$).
+	Система уравнений для коэффициентов оказывается переопределённой при $n>2$, поэтому в общем случае приведение к каноническому виду невозможно.
+	При $n=2$ число условий равно $1$ (обнулить $\tilde a_{12}$), и это достижимо выбором двух функций $\xi,\eta$ (одна степень свободы остаётся для фиксации масштаба).
 \end{note}
 %ДИПСИЧНОЕ end
 
@@ -174,9 +174,9 @@ N=\frac{n^2-n}{2}+n-1 \leq n,
 
 Рассмотрим НЗНП:
 \begin{quote}
-$\xi = \xi(x, y) \in C^2(G)$
+	$\xi = \xi(x, y) \in C^2(G)$
 
-$\eta = \eta(x, y) \in C^2(G)$
+	$\eta = \eta(x, y) \in C^2(G)$
 \end{quote}
 
 Тогда в некоторой окрестности точки $\exists$ обратная замена $x=x(\xi, \eta)$ и $y=y(\xi, \eta) \Rightarrow \tilde u(\xi, \eta)=u(x(\xi, \eta), y(\xi, \eta))$ или $u(x, y)=u(\xi(x, y), \eta(x, y))$
@@ -184,38 +184,38 @@ $\eta = \eta(x, y) \in C^2(G)$
 \noindent
 Очевидно,
 \begin{itemize}
-  \item $\displaystyle 
-    \frac{\partial u}{\partial x}
-    = \frac{\partial \tilde u}{\partial \xi}\xi_x
-    + \frac{\partial \tilde u}{\partial \eta}\eta_x
-  $
-  \item $\displaystyle 
-    \frac{\partial u}{\partial y}
-    = \frac{\partial \tilde u}{\partial \xi}\xi_y
-    + \frac{\partial \tilde u}{\partial \eta}\eta_y
-  $
-  \item $\displaystyle 
-    \frac{\partial^2 u}{\partial x^2}
-    = \frac{\partial^2 \tilde u}{\partial \xi^2}\xi_x^2
-    + 2\frac{\partial^2 \tilde u}{\partial \xi \partial \eta}\xi_x\eta_x
-    + \frac{\partial^2 \tilde u}{\partial \eta^2}\eta_x^2
-    + \frac{\partial \tilde u}{\partial \xi}\xi_{xx}
-    + \frac{\partial \tilde u}{\partial \eta}\eta_{xx}
-  $
-  \item $\displaystyle 
-    \frac{\partial^2 u}{\partial x \partial y}
-    = \frac{\partial^2 \tilde u}{\partial \xi^2}\xi_x\xi_y
-    + \frac{\partial^2 \tilde u}{\partial \xi \partial \eta}(\xi_x\eta_y + \xi_y\eta_x)
-    + \frac{\partial^2 \tilde u}{\partial \eta^2}\eta_x\eta_y
-    + \frac{\partial \tilde u}{\partial \xi}\xi_{xy}
-    + \frac{\partial \tilde u}{\partial \eta}\eta_{xy}
-  $
-  \item $\displaystyle 
-    \frac{\partial^2 u}{\partial y^2}
-    = \frac{\partial^2 \tilde u}{\partial \xi^2}\xi_y^2
-    + 2\frac{\partial^2 \tilde u}{\partial \xi \partial \eta}\xi_y\eta_y
-    + \frac{\partial^2 \tilde u}{\partial \eta^2}\eta_y^2
-    + \frac{\partial \tilde u}{\partial \xi}\xi_{yy}
-    + \frac{\partial \tilde u}{\partial \eta}\eta_{yy}
-  $
+	\item $\displaystyle
+		      \frac{\partial u}{\partial x}
+		      = \frac{\partial \tilde u}{\partial \xi}\xi_x
+		      + \frac{\partial \tilde u}{\partial \eta}\eta_x
+	      $
+	\item $\displaystyle
+		      \frac{\partial u}{\partial y}
+		      = \frac{\partial \tilde u}{\partial \xi}\xi_y
+		      + \frac{\partial \tilde u}{\partial \eta}\eta_y
+	      $
+	\item $\displaystyle
+		      \frac{\partial^2 u}{\partial x^2}
+		      = \frac{\partial^2 \tilde u}{\partial \xi^2}\xi_x^2
+		      + 2\frac{\partial^2 \tilde u}{\partial \xi \partial \eta}\xi_x\eta_x
+		      + \frac{\partial^2 \tilde u}{\partial \eta^2}\eta_x^2
+		      + \frac{\partial \tilde u}{\partial \xi}\xi_{xx}
+		      + \frac{\partial \tilde u}{\partial \eta}\eta_{xx}
+	      $
+	\item $\displaystyle
+		      \frac{\partial^2 u}{\partial x \partial y}
+		      = \frac{\partial^2 \tilde u}{\partial \xi^2}\xi_x\xi_y
+		      + \frac{\partial^2 \tilde u}{\partial \xi \partial \eta}(\xi_x\eta_y + \xi_y\eta_x)
+		      + \frac{\partial^2 \tilde u}{\partial \eta^2}\eta_x\eta_y
+		      + \frac{\partial \tilde u}{\partial \xi}\xi_{xy}
+		      + \frac{\partial \tilde u}{\partial \eta}\eta_{xy}
+	      $
+	\item $\displaystyle
+		      \frac{\partial^2 u}{\partial y^2}
+		      = \frac{\partial^2 \tilde u}{\partial \xi^2}\xi_y^2
+		      + 2\frac{\partial^2 \tilde u}{\partial \xi \partial \eta}\xi_y\eta_y
+		      + \frac{\partial^2 \tilde u}{\partial \eta^2}\eta_y^2
+		      + \frac{\partial \tilde u}{\partial \xi}\xi_{yy}
+		      + \frac{\partial \tilde u}{\partial \eta}\eta_{yy}
+	      $
 \end{itemize}
