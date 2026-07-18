@@ -5,14 +5,14 @@
 1) При изучении различных видов волн (упругих, звуковых, электромагнитных) мы приходим к \textit{волновому уравнению}:
 \[
 	\frac{\partial ^{2} u}{\partial t^{2} } =c^{2} \left(\frac{\partial ^{2} u}{\partial x^{2} } + \frac{\partial ^{2} u}{\partial y^{2} } + \frac{\partial ^{2} u}{\partial z^{2} } \right) + f(x,y,z,t)
-\] 
+\]
 где $c$ -- скорость распространения волн в данной среде.
 
 \bigskip
 
 2) Процессы распространения тепла в однородном изотропном теле описываются \textit{уравнением теплопроводности}
 \[
-\frac{\partial u}{\partial t} =a^{2} \left(\frac{\partial ^{2} u}{\partial x^{2} } +\frac{\partial ^{2} u}{\partial y^{2} } +\frac{\partial ^{2} u}{\partial z^{2} } \right)+f(x,y,z,t)\] 
+	\frac{\partial u}{\partial t} =a^{2} \left(\frac{\partial ^{2} u}{\partial x^{2} } +\frac{\partial ^{2} u}{\partial y^{2} } +\frac{\partial ^{2} u}{\partial z^{2} } \right)+f(x,y,z,t)\]
 где $a^{2} $ -- коэффициент температуропроводности данной среды.
 
 \bigskip
@@ -25,7 +25,7 @@
 \bigskip
 
 \noindent При отсутствии источников тепла внутри тела уравнение теплопроводности переходит в \textit{уравнение Лапласа}:
-\[\frac{\partial ^{2} u}{\partial x^{2} } +\frac{\partial ^{2} u}{\partial y^{2} } +\frac{\partial ^{2} u}{\partial z^{2} } =0\] 
+\[\frac{\partial ^{2} u}{\partial x^{2} } +\frac{\partial ^{2} u}{\partial y^{2} } +\frac{\partial ^{2} u}{\partial z^{2} } =0\]
 
 \bigskip
 
@@ -46,111 +46,96 @@
 Дадим необходимые определения.
 
 \begin{definition}
-Пусть $G$ --- область в $\mathit{R}^{n} $, $x=(x_{1} ,...,x_{n} )$ -- точка из $G$. Дифференциальным уравнением в частных производных второго порядка (ДУЧП2П) с независимыми переменными $x_{1} $,{\dots},$x_{n} $ называется соотношение, связывающее значение неизвестной функции $u(x)=u(x_{1} ,...,x_{n} )$ и её частных производных первого и второго порядков: 
-$\frac{\partial u}{\partial x_{1} } $, {\dots}, $\frac{\partial u}{\partial x_{n} } $, $\frac{\partial ^{2} u}{\partial x_{1}^{2} } $, {\dots},$\frac{\partial ^{2} u}{\partial x_{i} \partial x_{j} } $, {\dots}, $\frac{\partial ^{2} u}{\partial x_{n}^{2} } $
-вида: 
-\[F\left(x_{1} ,...,x_{n} ,u,\frac{\partial u}{\partial x_{1} } ,...,\frac{\partial u}{\partial x_{n} } ,\frac{\partial ^{2} u}{\partial x_{1}^{2} } ,...,\frac{\partial ^{2} u}{\partial x_{i} \partial x_{j} } ,...,\frac{\partial ^{2} u}{\partial x_{n}^{2} } \right)=0\] 
+	Пусть $G$ --- область в $\mathit{R}^{n} $, $x=(x_{1} ,...,x_{n} )$ -- точка из $G$. Дифференциальным уравнением в частных производных второго порядка (ДУЧП2П) с независимыми переменными $x_{1} $,{\dots},$x_{n} $ называется соотношение, связывающее значение неизвестной функции $u(x)=u(x_{1} ,...,x_{n} )$ и её частных производных первого и второго порядков:
+	$\frac{\partial u}{\partial x_{1} } $, {\dots}, $\frac{\partial u}{\partial x_{n} } $, $\frac{\partial ^{2} u}{\partial x_{1}^{2} } $, {\dots},$\frac{\partial ^{2} u}{\partial x_{i} \partial x_{j} } $, {\dots}, $\frac{\partial ^{2} u}{\partial x_{n}^{2} } $
+	вида:
+	\[F\left(x_{1} ,...,x_{n} ,u,\frac{\partial u}{\partial x_{1} } ,...,\frac{\partial u}{\partial x_{n} } ,\frac{\partial ^{2} u}{\partial x_{1}^{2} } ,...,\frac{\partial ^{2} u}{\partial x_{i} \partial x_{j} } ,...,\frac{\partial ^{2} u}{\partial x_{n}^{2} } \right)=0\]
 \end{definition}
 
-
 \begin{definition}
-Решением ДУЧП2П называется функция $u(x)$ класса $C^{2} (G)$, которая удовлетворяет данному уравнению.  
+	Решением ДУЧП2П называется функция $u(x)$ класса $C^{2} (G)$, которая удовлетворяет данному уравнению.
 \end{definition}
 
-
-
 \begin{definition}
-Уравнение называется \textit{линейным} относительно старших производных -- производных второго порядка (ДУЧП2ПЛОСП), если оно имеет вид:
-\[\sum _{i,j=1}^{n}a_{ij} (x)\frac{\partial ^{2} u}{\partial x_{i} \partial x_{j} }  +\Phi \left(x,u,{\rm grad}u\right)=0\] 
-где коэффициенты при старших (вторых) производных $a_{ij} (x)\in C(G)$ ($i,j=1,...,n$) являются функциями только независимых переменных $x_{1} $,{\dots},$x_{n} $; а ${\rm grad}u=\left(\frac{\partial u}{\partial x_{1} } ,...,\frac{\partial u}{\partial x_{n} } \right)$ -- градиент функции $u(x)=u(x_{1} ,...,x_{n} )$.
+	Уравнение называется \textit{линейным} относительно старших производных -- производных второго порядка (ДУЧП2ПЛОСП), если оно имеет вид:
+	\[\sum _{i,j=1}^{n}a_{ij} (x)\frac{\partial ^{2} u}{\partial x_{i} \partial x_{j} }  +\Phi \left(x,u,{\rm grad}u\right)=0\]
+	где коэффициенты при старших (вторых) производных $a_{ij} (x)\in C(G)$ ($i,j=1,...,n$) являются функциями только независимых переменных $x_{1} $,{\dots},$x_{n} $; а ${\rm grad}u=\left(\frac{\partial u}{\partial x_{1} } ,...,\frac{\partial u}{\partial x_{n} } \right)$ -- градиент функции $u(x)=u(x_{1} ,...,x_{n} )$.
 \end{definition}
 
-
-\noindent 
+\noindent
 \begin{definition}
-Коэффициенты при старших (вторых) производных образуют квадратную матрицу $A(x)=(a_{ij} (x))$ -- \textit{матрицу старших коэффициентов}:
-\[A(x)=\left(\begin{array}{cccc} {a_{11} (x)} & {a_{12} (x)} & {...} & {a_{1n} (x)} \\ {a_{21} (x)} & {a_{22} (x)} & {...} & {a_{2n} (x)} \\ {.} & {.} & {...} & {.} \\ {a_{n1} (x)} & {a_{n1} (x)} & {...} & {a_{nn} (x)} \end{array}\right)\] 
+	Коэффициенты при старших (вторых) производных образуют квадратную матрицу $A(x)=(a_{ij} (x))$ -- \textit{матрицу старших коэффициентов}:
+	\[A(x)=\left(\begin{array}{cccc} {a_{11} (x)} & {a_{12} (x)} & {...} & {a_{1n} (x)} \\ {a_{21} (x)} & {a_{22} (x)} & {...} & {a_{2n} (x)} \\ {.} & {.} & {...} & {.} \\ {a_{n1} (x)} & {a_{n1} (x)} & {...} & {a_{nn} (x)} \end{array}\right)\]
 \end{definition}
 
 Для дальнейшего нам будет удобно считать матрицу $A(x)$ симметрической ($A^{T} (x)=A(x)$, $a_{ij} (x)=a_{ji} (x)$). Это не умаляет общности, так как в силу справедливых для функций из $C^{2} (G)$ равенств
-\[\frac{\partial ^{2} u}{\partial x_{i} \partial x_{j} } =\frac{\partial ^{2} u}{\partial x_{j} \partial x_{i} } ,  i,j=1,...,n,\] 
-\[\sum _{i,j=1}^{n}a_{ij} (x)\frac{\partial ^{2} u}{\partial x_{i} \partial x_{j} }  =\sum _{i,j=1}^{n}\frac{a_{ij} (x)+a_{ji} (x)}{2} \frac{\partial ^{2} u}{\partial x_{i} \partial x_{j} }  \] 
+\[\frac{\partial ^{2} u}{\partial x_{i} \partial x_{j} } =\frac{\partial ^{2} u}{\partial x_{j} \partial x_{i} } ,  i,j=1,...,n,\]
+\[\sum _{i,j=1}^{n}a_{ij} (x)\frac{\partial ^{2} u}{\partial x_{i} \partial x_{j} }  =\sum _{i,j=1}^{n}\frac{a_{ij} (x)+a_{ji} (x)}{2} \frac{\partial ^{2} u}{\partial x_{i} \partial x_{j} }  \]
 и, следовательно, не меняя уравнения, в качестве матрицы $A(x)$ можно взять симметрическую матрицу $\frac{1}{2} (A(x)+A^{T} (x))$ -- симметрическую часть матрицы $A(x)$:
-\[A(x)=\frac{1}{2} (A(x)+A^{T} (x))+\frac{1}{2} (A(x)-A^{T} (x))\] 
+\[A(x)=\frac{1}{2} (A(x)+A^{T} (x))+\frac{1}{2} (A(x)-A^{T} (x))\]
 
-
-\noindent 
+\noindent
 
 \begin{note}
-Если функция $\Phi \left(x,u,{\rm grad}u\right)$ линейна относительно аргументов $u$, $\frac{\partial u}{\partial x_{1} } $, {\dots}, $\frac{\partial u}{\partial x_{n} } $, то уравнение (ДУЧП2ПЛОСП) называется (просто) \textit{линейным} (без указания относительно чего).
+	Если функция $\Phi \left(x,u,{\rm grad}u\right)$ линейна относительно аргументов $u$, $\frac{\partial u}{\partial x_{1} } $, {\dots}, $\frac{\partial u}{\partial x_{n} } $, то уравнение (ДУЧП2ПЛОСП) называется (просто) \textit{линейным} (без указания относительно чего).
 \end{note}
 
-\noindent 
+\noindent
 
 Рассмотрим в области $G\subset \mathit{R}^{n} $ \textit{линейное дифференциальное уравнение в частных производных второго порядка} (ЛДУЧП2П):
-\[Lu=\sum _{i,j=1}^{n}a_{ij} (x)\frac{\partial ^{2} u}{\partial x_{i} \partial x_{j} }  +\sum _{i=1}^{n}b_{i} (x)\frac{\partial u}{\partial x_{i} }  +c(x)u=f(x)\] 
-где $a_{ij} (x)$, $b_{i} (x)$, $c(x)$ ($i,j=1,...,n$) -- заданные функции из $C(G)$ -- \textit{коэффициенты} уравнения, $f(x)$ -- заданная функция из $C(G)$ -- \textit{свободный член} (\textit{правая часть}) уравнения. Если $f(x)=f(x_{1} ,...,x_{n} )\equiv 0$, то уравнение (ЛДУЧП2П) называется \textit{однородным}, в противном случае -- \textit{неоднородным}. 
-
-
+\[Lu=\sum _{i,j=1}^{n}a_{ij} (x)\frac{\partial ^{2} u}{\partial x_{i} \partial x_{j} }  +\sum _{i=1}^{n}b_{i} (x)\frac{\partial u}{\partial x_{i} }  +c(x)u=f(x)\]
+где $a_{ij} (x)$, $b_{i} (x)$, $c(x)$ ($i,j=1,...,n$) -- заданные функции из $C(G)$ -- \textit{коэффициенты} уравнения, $f(x)$ -- заданная функция из $C(G)$ -- \textit{свободный член} (\textit{правая часть}) уравнения. Если $f(x)=f(x_{1} ,...,x_{n} )\equiv 0$, то уравнение (ЛДУЧП2П) называется \textit{однородным}, в противном случае -- \textit{неоднородным}.
 
 Здесь $L$ -- линейный дифференциальный оператор второго порядка:
-\[L=\sum _{i,j=1}^{n}a_{ij} (x)\frac{\partial ^{2} }{\partial x_{i} \partial x_{j} }  +\sum _{i=1}^{n}b_{i} (x)\frac{\partial }{\partial x_{i} }  +c(x),\] 
+\[L=\sum _{i,j=1}^{n}a_{ij} (x)\frac{\partial ^{2} }{\partial x_{i} \partial x_{j} }  +\sum _{i=1}^{n}b_{i} (x)\frac{\partial }{\partial x_{i} }  +c(x),\]
 преобразующий функции из $C^{2} (G)$ в функции из $C(G)$.
-
-
 
 Если же все коэффициенты $a_{ij} $, $b_{i} $, $c$ ($i,j=1,...,n$) постоянны, то уравнение (ЛДУЧП2П) называется \textit{линейным уравнением с постоянными коэффициентами }(ЛДУЧП2ППК).
 
-\bigskip 
+\bigskip
 
 Рассмотрим в области $G\subset \mathit{R}^{n} $ \textit{линейное дифференциальное уравнение в частных производных второго порядка с постоянными коэффициентами}\textbf{ }(ЛДУЧП2ППК):
-\[Lu=\sum _{i,j=1}^{n}a_{ij} \frac{\partial ^{2} u}{\partial x_{i} \partial x_{j} }  +\sum _{i=1}^{n}b_{i} \frac{\partial u}{\partial x_{i} }  +cu=f(x)\] 
+\[Lu=\sum _{i,j=1}^{n}a_{ij} \frac{\partial ^{2} u}{\partial x_{i} \partial x_{j} }  +\sum _{i=1}^{n}b_{i} \frac{\partial u}{\partial x_{i} }  +cu=f(x)\]
 где $a_{ij} $, $b_{i} $, $c$ ($i,j=1,...,n$) -- \textit{коэффициенты} уравнения, $f(x)$ -- заданная функция из $C(G)$ -- \textit{свободный член} (\textit{правая часть}) уравнения.
 
 \bigskip
 
 Здесь $L$ -- линейный дифференциальный оператор второго порядка с постоянными коэффициентами:
-\[L=\sum _{i,j=1}^{n}a_{ij} \frac{\partial ^{2} }{\partial x_{i} \partial x_{j} }  +\sum _{i=1}^{n}b_{i} \frac{\partial }{\partial x_{i} }  +c,\] 
-преобразующий функции из $C^{2} (G)$ в функции из $C(G)$. 
+\[L=\sum _{i,j=1}^{n}a_{ij} \frac{\partial ^{2} }{\partial x_{i} \partial x_{j} }  +\sum _{i=1}^{n}b_{i} \frac{\partial }{\partial x_{i} }  +c,\]
+преобразующий функции из $C^{2} (G)$ в функции из $C(G)$.
 
 \bigskip
 
 Запишем оператор $L$ в виде:
-\[L=\sum _{i,j=1}^{n}a_{ij} \frac{\partial }{\partial x_{i} } \cdot \frac{\partial }{\partial x_{j} }  +\sum _{i=1}^{n}b_{i} \frac{\partial }{\partial x_{i} }  +c\] 
+\[L=\sum _{i,j=1}^{n}a_{ij} \frac{\partial }{\partial x_{i} } \cdot \frac{\partial }{\partial x_{j} }  +\sum _{i=1}^{n}b_{i} \frac{\partial }{\partial x_{i} }  +c\]
 Первая сумма -- это \textit{квадратичная форма}, вторая -- \textit{линейная форма} от $\frac{\partial }{\partial x_{1} } ,...,\frac{\partial }{\partial x_{n} } $.
 
-\noindent 
-
-
+\noindent
 
 Осуществим в ЛДУЧП2ППК  линейную невырожденную замену переменных:
-\[{\rm \xi }_{k} =\sum _{i=1}^{n}s_{ik} x_{i}  ,   k=1,...,n\] 
+\[{\rm \xi }_{k} =\sum _{i=1}^{n}s_{ik} x_{i}  ,   k=1,...,n\]
 или, иначе, (в матричном виде)
-\[{\rm \xi }=\left(\begin{array}{c} {{\rm \xi }_{1} } \\ {...} \\ {{\rm \xi }_{n} } \end{array}\right)=S^{T} \left(\begin{array}{c} {x_{1} } \\ {...} \\ {x_{n} } \end{array}\right)=S^{T} x,   S=(s_{ik} ),   \det S\ne 0\] 
+\[{\rm \xi }=\left(\begin{array}{c} {{\rm \xi }_{1} } \\ {...} \\ {{\rm \xi }_{n} } \end{array}\right)=S^{T} \left(\begin{array}{c} {x_{1} } \\ {...} \\ {x_{n} } \end{array}\right)=S^{T} x,   S=(s_{ik} ),   \det S\ne 0\]
 или в развернутом виде
-\[\left\{\begin{array}{c} {{\rm \xi }_{1} =s_{11} x_{1} +\ldots +s_{n1} x_{n} } \\ {\ldots } \\ {{\rm \xi }_{k} =s_{1k} x_{1} +\ldots +s_{nk} x_{n} } \\ {\ldots } \\ {{\rm \xi }_{n} =s_{1n} x_{1} +\ldots +s_{nn} x_{n} } \end{array}\right. \] 
+\[\left\{\begin{array}{c} {{\rm \xi }_{1} =s_{11} x_{1} +\ldots +s_{n1} x_{n} } \\ {\ldots } \\ {{\rm \xi }_{k} =s_{1k} x_{1} +\ldots +s_{nk} x_{n} } \\ {\ldots } \\ {{\rm \xi }_{n} =s_{1n} x_{1} +\ldots +s_{nn} x_{n} } \end{array}\right. \]
 Тогда
-\[\frac{\partial {\rm \xi }_{k} }{\partial x_{i} } =s_{ik} ,   i,k=1,...,n.\] 
+\[\frac{\partial {\rm \xi }_{k} }{\partial x_{i} } =s_{ik} ,   i,k=1,...,n.\]
 
 Так как $\det S\ne 0$, то можно выразить переменные $x_{1} ,...,x_{n} $ через переменные ${\rm \xi }_{1} {\rm ,...,\xi }_{n} $: $x=x({\rm \xi })=(S^{-1} )^{T} {\rm \xi }$. Обозначим $u(x({\rm \xi }))=u((S^{-1} )^{T} {\rm \xi })=\tilde{u}({\rm \xi })$, тогда $\tilde{u}(S^{T} x)=u(x)$. Имеем
-\[\frac{\partial u}{\partial x_{i} } =\sum _{k=1}^{n}\frac{\partial \tilde{u}}{\partial {\rm \xi }_{k} } \frac{\partial {\rm \xi }_{k} }{\partial x_{i} }  =\sum _{k=1}^{n}\frac{\partial \tilde{u}}{\partial {\rm \xi }_{k} } s_{ik},\quad   \frac{\partial }{\partial x_{i} } =\sum _{k=1}^{n}s_{ik} \frac{\partial }{\partial {\rm \xi }_{k} }  \] 
-\[\frac{\partial ^{2} u}{\partial x_{i} \partial x_{j} } =\frac{\partial }{\partial x_{i} } \left(\frac{\partial u}{\partial x_{j} } \right)=\left[\frac{\partial }{\partial x_{i} } \cdot \frac{\partial }{\partial x_{j} } \right]u=\left[\sum _{k=1}^{n}s_{ik} \frac{\partial }{\partial {\rm \xi }_{k} }  \cdot \sum _{l=1}^{n}s_{jl} \frac{\partial }{\partial {\rm \xi }_{l} }  \right]\tilde{u}=\] 
-\[=\sum _{k,l=1}^{n}s_{ik} s_{jl} \frac{\partial ^{2} \tilde{u}}{\partial {\rm \xi }_{k} \partial {\rm \xi }_{l} }  \] 
+\[\frac{\partial u}{\partial x_{i} } =\sum _{k=1}^{n}\frac{\partial \tilde{u}}{\partial {\rm \xi }_{k} } \frac{\partial {\rm \xi }_{k} }{\partial x_{i} }  =\sum _{k=1}^{n}\frac{\partial \tilde{u}}{\partial {\rm \xi }_{k} } s_{ik},\quad   \frac{\partial }{\partial x_{i} } =\sum _{k=1}^{n}s_{ik} \frac{\partial }{\partial {\rm \xi }_{k} }  \]
+\[\frac{\partial ^{2} u}{\partial x_{i} \partial x_{j} } =\frac{\partial }{\partial x_{i} } \left(\frac{\partial u}{\partial x_{j} } \right)=\left[\frac{\partial }{\partial x_{i} } \cdot \frac{\partial }{\partial x_{j} } \right]u=\left[\sum _{k=1}^{n}s_{ik} \frac{\partial }{\partial {\rm \xi }_{k} }  \cdot \sum _{l=1}^{n}s_{jl} \frac{\partial }{\partial {\rm \xi }_{l} }  \right]\tilde{u}=\]
+\[=\sum _{k,l=1}^{n}s_{ik} s_{jl} \frac{\partial ^{2} \tilde{u}}{\partial {\rm \xi }_{k} \partial {\rm \xi }_{l} }  \]
 Подставляя найденные выражения для $\frac{\partial u}{\partial x_{i} } $ и $\frac{\partial ^{2} u}{\partial x_{i} \partial x_{j} } $ в  ЛДУЧП2ППК , получим:
-\[\sum _{k,l=1}^{n}\frac{\partial ^{2} \tilde{u}}{\partial {\rm \xi }_{k} \partial {\rm \xi }_{l} } \sum _{i,j=1}^{n}a_{ij} s_{ik} s_{jl}   +\sum _{k=1}^{n}\frac{\partial \tilde{u}}{\partial {\rm \xi }_{k} }  \sum _{i=1}^{n}b_{i} s_{ik}  +c\tilde{u}=\tilde{f}({\rm \xi })\] 
+\[\sum _{k,l=1}^{n}\frac{\partial ^{2} \tilde{u}}{\partial {\rm \xi }_{k} \partial {\rm \xi }_{l} } \sum _{i,j=1}^{n}a_{ij} s_{ik} s_{jl}   +\sum _{k=1}^{n}\frac{\partial \tilde{u}}{\partial {\rm \xi }_{k} }  \sum _{i=1}^{n}b_{i} s_{ik}  +c\tilde{u}=\tilde{f}({\rm \xi })\]
 или
-\[\tilde{L}\tilde{u}=\sum _{k,l=1}^{n}\tilde{a}_{kl} \frac{\partial ^{2} \tilde{u}}{\partial {\rm \xi }_{k} \partial {\rm \xi }_{l} }  +\sum _{k=1}^{n}\tilde{b}_{k} \frac{\partial \tilde{u}}{\partial {\rm \xi }_{k} }  +c\tilde{u}=\tilde{f}({\rm \xi })\] 
+\[\tilde{L}\tilde{u}=\sum _{k,l=1}^{n}\tilde{a}_{kl} \frac{\partial ^{2} \tilde{u}}{\partial {\rm \xi }_{k} \partial {\rm \xi }_{l} }  +\sum _{k=1}^{n}\tilde{b}_{k} \frac{\partial \tilde{u}}{\partial {\rm \xi }_{k} }  +c\tilde{u}=\tilde{f}({\rm \xi })\]
 где
-\[\tilde{a}_{kl} =\sum _{i,j=1}^{n}a_{ij} s_{ik} s_{jl},\quad \tilde{b}_{k} =\sum _{i=1}^{n}b_{i} s_{ik},\quad   \tilde{f}({\rm \xi })=f(x({\rm \xi })),\] 
-\[\tilde{L}=\sum _{k,l=1}^{n}\tilde{a}_{kl} \frac{\partial ^{2} }{\partial {\rm \xi }_{k} \partial {\rm \xi }_{l} }  +\sum _{k=1}^{n}\tilde{b}_{k} \frac{\partial }{\partial {\rm \xi }_{k} }  +c\] 
-
-
+\[\tilde{a}_{kl} =\sum _{i,j=1}^{n}a_{ij} s_{ik} s_{jl},\quad \tilde{b}_{k} =\sum _{i=1}^{n}b_{i} s_{ik},\quad   \tilde{f}({\rm \xi })=f(x({\rm \xi })),\]
+\[\tilde{L}=\sum _{k,l=1}^{n}\tilde{a}_{kl} \frac{\partial ^{2} }{\partial {\rm \xi }_{k} \partial {\rm \xi }_{l} }  +\sum _{k=1}^{n}\tilde{b}_{k} \frac{\partial }{\partial {\rm \xi }_{k} }  +c\]
 
 \noindent Запишем выражение для преобразования коэффициентов $a_{ij} $ ($i,j=1,...,n$) при старших (вторых) производных уравнения (ЛДУЧП2ППК) в матричном виде:
 
 \noindent $\tilde{A}=S^{T} AS$, где $A=(a_{ij} )$, $\tilde{A}=(\tilde{a}_{kl} )$.
-
-
 
 Полученная формула преобразования старших коэффициентов $a_{ij} $~($i,j=1,...,n$) совпадает с формулой преобразования коэффициентов квадратичной формы
 
@@ -161,5 +146,5 @@ $\frac{\partial u}{\partial x_{1} } $, {\dots}, $\frac{\partial u}{\partial x_{n
 \noindent $y_{i} =\sum _{k=1}^{n}s_{ik} {\rm \eta }_{k}  $   (или, иначе, $y=\left(\begin{array}{c} {y_{1} } \\ {...} \\ {y_{n} } \end{array}\right)=S\left(\begin{array}{c} {{\rm \eta }_{1} } \\ {...} \\ {{\rm \eta }_{n} } \end{array}\right)=S{\rm \eta }$),   $\det S\ne 0$,
 
 \noindent приводящей форму $K$ к виду:
-\[K=\sum _{k,l=1}^{n}\tilde{a}_{kl} {\rm \eta }_{k} {\rm \eta }_{l}  ={\rm \eta }^{T} \tilde{A}{\rm \eta }\] 
+\[K=\sum _{k,l=1}^{n}\tilde{a}_{kl} {\rm \eta }_{k} {\rm \eta }_{l}  ={\rm \eta }^{T} \tilde{A}{\rm \eta }\]
 

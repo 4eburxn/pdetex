@@ -2,16 +2,16 @@
 \begin{theorem}[существования и единственности]
 	Решение $u(x, y) \in C^2(\Pi) \cap C^1(\overline{\Pi})$ задачи Гурса:
 	\[
-	Lu = u_{xy} + au_x + b_y + cu = f(x, y),\ (x, y) \in \Pi = (0, l) \times (0, h) \quad (1.f)
+		Lu = u_{xy} + au_x + b_y + cu = f(x, y),\ (x, y) \in \Pi = (0, l) \times (0, h) \quad (1.f)
 	\]
 	\[
-	\textbf{Условия на характеристиках(УХ): } u|_{x=0} = \phi(y),\ 0 \le y 
-	\le h
-	u|_{y=0} = \psi(x),\ 0 \le x \le l 
+		\textbf{Условия на характеристиках(УХ): } u|_{x=0} = \phi(y),\ 0 \le y
+		\le h
+		u|_{y=0} = \psi(x),\ 0 \le x \le l
 	\]
 	\[
-	\textbf{Условия согласования(УС): } \phi(0) = \psi(o) = u(0, 0),
-	\] 
+		\textbf{Условия согласования(УС): } \phi(0) = \psi(o) = u(0, 0),
+	\]
 	\[\text{если } a(x, y) \in C^1(\overline{\Pi}),\ b(x, y), c(x, y), f(x, y) \in C^1(\overline{\Pi}), \phi(y) \in C^2([0, h]),\ \psi \in C^2([0, l]),
 	\] существует и единственно.
 \end{theorem}
@@ -21,10 +21,10 @@
 \subsection{Смешанная задача(СЗ) для однородного уравнения колебаний полубесконечной струны(ОУКПБС), закрепленной на левом конце.}
 
 \begin{align*}
-	& u_{tt} = a^2 u_{xx}, \quad x > 0,\ t > 0 \tag{1.0} \\
-	\textbf{НУ: } \quad & u|_{t=0}=u_0(x),\ u_t|_{t=0}=u_1(x),\ x \ge 0 \tag{2} \\
-	\textbf{ОГУ1Т: } \quad & u|_{x=0}=0,\ t \ge 0 \tag{3.1.0} \\
-	\textbf{УС: } \quad & u_0(0)=u_1(0)=0=u_0^{''}(0), \tag{4.1.0}
+	                       & u_{tt} = a^2 u_{xx}, \quad x > 0,\ t > 0 \tag{1.0}    \\
+	\textbf{НУ: } \quad    & u|_{t=0}=u_0(x),\ u_t|_{t=0}=u_1(x),\ x \ge 0 \tag{2} \\
+	\textbf{ОГУ1Т: } \quad & u|_{x=0}=0,\ t \ge 0 \tag{3.1.0}                      \\
+	\textbf{УС: } \quad    & u_0(0)=u_1(0)=0=u_0^{''}(0), \tag{4.1.0}
 \end{align*}
 
 $u(x, t) \in C^2((0, +\infty) \times (0, \infty)) \cap C^1([0, +\infty) \times [0, \infty))$
@@ -33,7 +33,7 @@ $u_0(x) \in C^2(0, +\infty),\quad u_1(x) \in C^1(0, +\infty)$
 
 Вспоминим Задачу Коши(ЗК) для ОУКБС:
 \begin{align*}
-	& u_{tt} = a^2 u_{xx}, \quad x > 0,\ t > 0 \tag{1.0} \\
+	                    & u_{tt} = a^2 u_{xx}, \quad x > 0,\ t > 0 \tag{1.0}             \\
 	\textbf{НУ: } \quad & u|_{t=0}=u_0(x),\ u_t|_{t=0}=u_1(x),\ x \in \mathbb{R} \tag{2}
 \end{align*}
 $u(x, t) \in C^2(t>0) \cap C^1(t \ge 0),\quad u_0(x) \in C^2(\mathbb{R}),\quad u_1 \in C^1(\mathbb{R})$
@@ -59,8 +59,8 @@ $u(x, t) \in C^2(t>0) \cap C^1(t \ge 0),\quad u_0(x) \in C^2(\mathbb{R}),\quad u
 	\[
 		u(0, t) = \frac{u_0(-at)+u_0(at)}{2} + \frac{1}{2a} \int_{-at}^{at} u_1(\xi)d\xi = 0,
 	\]
-	при $t \ge 0$, т.к. из условий леммы функции $u_0(x)$ и $u_1(x)$ --- нечётные. 
-	
+	при $t \ge 0$, т.к. из условий леммы функции $u_0(x)$ и $u_1(x)$ --- нечётные.
+
 	Аналогично, доказывается вторая лемма с учётом того факта, что если $f(x)$ --- чётная функция, то её производная $f^{'}(x)$ --- нечётная.
 \end{proof}
 
@@ -72,5 +72,5 @@ $u(x, t) \in C^2(t>0) \cap C^1(t \ge 0),\quad u_0(x) \in C^2(\mathbb{R}),\quad u
 
 \begin{theorem}
 	Решение $u(x, t)$ СЗ (1.0), (2), (3.1.0), (4.1.0) для ОУКПБС, закрепленной на левом конце, существует и единственно и представляется обобщенной Ф.Д.0(Ф.Д.0.1):
-	
+
 \end{theorem}
