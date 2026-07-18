@@ -137,8 +137,8 @@ def draw_structure_graph():
 
     # Показываем результат
     plt.tight_layout()
-    # plt.savefig("s1l5_2.png")
-    plt.show()
+    plt.savefig("s1l5_2.png")
+    # plt.show()
 
 if __name__ == '__main__':
     draw_structure_graph()
