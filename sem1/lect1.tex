@@ -1,102 +1,101 @@
 \subsection{Примеры}
 1) распростронение волн - волновое уравнение \par\medskip
 \begin{tabular}{p{0.45\textwidth} p{0.45\textwidth}}
-  \hspace{1cm}\(\displaystyle 
-    \frac{\partial^2 u}{\partial t^2} = c^2 \Delta u + f(x, y, z, t),
-  \) &
-  \(c\) -- скорость распространения, $f$ -- источник
+	\hspace{1cm}\(\displaystyle
+	\frac{\partial^2 u}{\partial t^2} = c^2 \Delta u + f(x, y, z, t),
+	\) &
+	\(c\) -- скорость распространения, $f$ -- источник
 \end{tabular}  \bigskip\\
 2) теплопередача - уравнение теплопроводности \par\medskip
 \begin{tabular}{p{0.45\textwidth} p{0.45\textwidth}}
-  \hspace{1cm}\(\displaystyle 
-    \frac{\partial u}{\partial t} = c^2 \Delta u + f(x, y, z, t) ,
-  \) &
-  $c^2 = \frac{k}{\rho C}$ -- теплопроводность, $f$ -- источник
+	\hspace{1cm}\(\displaystyle
+	\frac{\partial u}{\partial t} = c^2 \Delta u + f(x, y, z, t) ,
+	\) &
+	$c^2 = \frac{k}{\rho C}$ -- теплопроводность, $f$ -- источник
 \end{tabular} \bigskip\\
 3) уравнение Пуассона-Лапласа:\par\medskip
 \begin{tabular}{p{0.45\textwidth} p{0.45\textwidth}}
-  \hspace{1cm}\(\displaystyle 
-    \Delta u = -\tilde f(x, y, z, t) ,
-  \) &
-  $\tilde f=\frac{f}{a^2}$ -- приведенное уравнение
+	\hspace{1cm}\(\displaystyle
+	\Delta u = -\tilde f(x, y, z, t) ,
+	\) &
+	$\tilde f=\frac{f}{a^2}$ -- приведенное уравнение
 \end{tabular} \\
 \begin{tabular}{p{0.45\textwidth} p{0.45\textwidth}}
-  \hspace{1cm}\(\displaystyle 
-    \Delta u = 0
-  \) &
+	\hspace{1cm}\(\displaystyle
+	\Delta u = 0
+	\) &
 \end{tabular} \\
 Это основные уравнения математической физики. Они имеют бесчисленное множество решений.
 \subsection{Постановка задачи}
 Дополнительные условия.
 \begin{enumerate}[nosep]
-  \item граничные условия(краевые)
-  \item начальные условия
+	\item граничные условия(краевые)
+	\item начальные условия
 \end{enumerate}
 
 \begin{definition}[Корректность постановки задач математической физики(МФ)]
-Задача МФ называется поставленной корретно (по Адамару), если её решение:
-\begin{enumerate}[nosep]
-  \item существует;
-  \item единственно;
-  \item устойчиво (непрерывно зависит от данных параметров) - условие физической определенности задачи.
-\end{enumerate}
+	Задача МФ называется поставленной корретно (по Адамару), если её решение:
+	\begin{enumerate}[nosep]
+		\item существует;
+		\item единственно;
+		\item устойчиво (непрерывно зависит от данных параметров) - условие физической определенности задачи.
+	\end{enumerate}
 \end{definition}
 \label{abbr:U4P2P}
 \begin{definition}[Уравнение в частных производных второго порядка(УЧП2П):]
-\begin{wrapfigure}{l}{0.3\textwidth}
-  \centering
-  % Сама картинка масштабируется до 90% от ширины окружения
-  \includegraphics[width=0.9\linewidth]{pics/s1l1.png}
-  \label{fig:example}
-\end{wrapfigure}
+	\begin{wrapfigure}{l}{0.3\textwidth}
+		\centering
+		% Сама картинка масштабируется до 90% от ширины окружения
+		\includegraphics[width=0.9\linewidth]{pics/s1l1.png}
+		\label{fig:example}
+	\end{wrapfigure}
 
-Пусть $G$ --- область в $\mathbb{R}^n$, x=($x_1$, \ldots, $x_n$) --- точка в $\mathbb{R}^n$. УЧП2П называется соотношение, связывающее значение неизвестной функции n переменных u=u(x), и её производных 1\textsuperscript{го} и 2\textsuperscript{го} порядка:
-\[
-\frac{\partial u}{\partial x_1}, \ldots, \frac{\partial u}{\partial x_n}, \frac{\partial^2 u}{\partial^2 x_1}, \ldots, \frac{\partial^2 u}{\partial^2 x_n}
-\] вида:
-\[
-F(x_1, \ldots x_n, \frac{\partial u}{\partial x_1}, \ldots, \frac{\partial u}{\partial x_n}, \frac{\partial^2 u}{\partial^2 x_1}, \ldots, \frac{\partial^2 u}{\partial^2 x_n}, u)=0
-\]
+	Пусть $G$ --- область в $\mathbb{R}^n$, x=($x_1$, \ldots, $x_n$) --- точка в $\mathbb{R}^n$. УЧП2П называется соотношение, связывающее значение неизвестной функции n переменных u=u(x), и её производных 1\textsuperscript{го} и 2\textsuperscript{го} порядка:
+	\[
+		\frac{\partial u}{\partial x_1}, \ldots, \frac{\partial u}{\partial x_n}, \frac{\partial^2 u}{\partial^2 x_1}, \ldots, \frac{\partial^2 u}{\partial^2 x_n}
+	\] вида:
+	\[
+		F(x_1, \ldots x_n, \frac{\partial u}{\partial x_1}, \ldots, \frac{\partial u}{\partial x_n}, \frac{\partial^2 u}{\partial^2 x_1}, \ldots, \frac{\partial^2 u}{\partial^2 x_n}, u)=0
+	\]
 \end{definition}
 \newcommand{\LDUSP}{\hyperref[abbr:U4P2P]{УЧП2П}}
 Решением \LDUSP{} называется функция класса $u(x) \in C^2(G): u(x)$, которая удовлетворяет данному уравнению.
 \begin{note}
-Здесь мы рассматриваем линейные уравнения относительно старших производных (УЧП2ПЛОСП)
-\[
-\sum_{i,j=1}^{n} a_{ij}(x)\frac{\partial^2u}{\partial x_i \partial x_j} + \Phi(x_1, \ldots, x_n, u, \operatorname{grad}(u)) = 0
-\]
-Где $a_{ij}(x) \in C(G)$ -- старшие коэффициенты $i, j = \overline{1,n}$ и\\
-\hspace*{\fill}  $\Phi(x_1, \ldots, x_n, u, \operatorname{grad}(u))$ -- некоторая функция.
+	Здесь мы рассматриваем линейные уравнения относительно старших производных (УЧП2ПЛОСП)
+	\[
+		\sum_{i,j=1}^{n} a_{ij}(x)\frac{\partial^2u}{\partial x_i \partial x_j} + \Phi(x_1, \ldots, x_n, u, \operatorname{grad}(u)) = 0
+	\]
+	Где $a_{ij}(x) \in C(G)$ -- старшие коэффициенты $i, j = \overline{1,n}$ и\\
+	\hspace*{\fill}  $\Phi(x_1, \ldots, x_n, u, \operatorname{grad}(u))$ -- некоторая функция.
 \end{note}
 \begin{note}
-$\operatorname{grad}(u) = (\frac{\partial u}{\partial x_1}, \ldots, \frac{\partial u}{\partial x_n})$.
+	$\operatorname{grad}(u) = (\frac{\partial u}{\partial x_1}, \ldots, \frac{\partial u}{\partial x_n})$.
 \end{note}
 \begin{note}
-Если $\Phi$ - линейная относительно $u(x)$, $\operatorname{grad}(u)$, то получаем линейное уравнение в частных производных 2\textsuperscript{го} порялка(ЛУЧП2П):
-$$\sum_{i,j=1}^{n} a_{ij}(x)\frac{\partial^2u}{\partial x_i \partial x_j} + \sum_{i=1}^{n} b_{i}(x)\frac{\partial u}{\partial x_i} + c(x)u = f(x),$$
-\[
-  x \in G,\quad a_{ij}(x), b_i(x), c(x) \in C(G); \qquad\qquad (i,j = \overline{1,n})
-\]
-$$f(x) \in C(G)$$
+	Если $\Phi$ - линейная относительно $u(x)$, $\operatorname{grad}(u)$, то получаем линейное уравнение в частных производных 2\textsuperscript{го} порялка(ЛУЧП2П):
+	$$\sum_{i,j=1}^{n} a_{ij}(x)\frac{\partial^2u}{\partial x_i \partial x_j} + \sum_{i=1}^{n} b_{i}(x)\frac{\partial u}{\partial x_i} + c(x)u = f(x),$$
+	\[
+		x \in G,\quad a_{ij}(x), b_i(x), c(x) \in C(G); \qquad\qquad (i,j = \overline{1,n})
+	\]
+	$$f(x) \in C(G)$$
 \end{note}
 Иногда пишут:
 $L[u]=f(x)$, где
 $$\displaystyle L= \sum_{i,j=1}^{n} a_{ij}(x)\frac{\partial^2}{\partial x_i \partial x_j} + \sum_{i=1}^{n} b_{i}(x)\frac{\partial }{\partial x_i} + c(x)$$
 $\displaystyle L: C^2(G)\mapsto C(G)$ -- линейный дифференциальный оператор 2\textsuperscript{го} порядка(ЛДО2П).\par\medskip
 
-
 \label{abbr:LDUChPSPPK}
 \newcommand{\LDUChPSPPK}{\hyperref[abbr:LDUChPSPPK]{ЛДУЧП2ППК}}
 Если же все коэффициенты линейного дифференциального уравнения частных производных 2\textsuperscript{го} порядка(ЛДУЧП2П): не зависят от $\vec x$, то получаем ЛДУЧП2П с постоянными коэффициентами (\LDUChPSPPK{}):
 
 \[
-\sum_{i,j=1}^{n} a_{ij}\frac{\partial^2u}{\partial x_i \partial x_j} + \sum_{i=1}^{n} b_{i}\frac{\partial u}{\partial x_i} + cu = f(x), \quad x \in G,
+	\sum_{i,j=1}^{n} a_{ij}\frac{\partial^2u}{\partial x_i \partial x_j} + \sum_{i=1}^{n} b_{i}\frac{\partial u}{\partial x_i} + cu = f(x), \quad x \in G,
 \]
 где \(a_{ij}, b_i, c\) --- коэффициенты, \(i,j = \overline{1,n}\), \(f(x) \in C(G)\) --- правая часть. Это уравнение можно записать как \(L[u]=f\).\\
 Здесь
-$\displaystyle L= 
-  \sum_{i,j=1}^{n} a_{ij}\frac{\partial}{\partial x_i} \frac{\partial}{\partial x_j}
-  +\sum_{i=1}^{n} b_{i}\frac{\partial }{\partial x_i} + c$.\\ Первая сумма это \emph{квадратичная форма}, вторая -- \emph{линейная форма}.
+$\displaystyle L=
+	\sum_{i,j=1}^{n} a_{ij}\frac{\partial}{\partial x_i} \frac{\partial}{\partial x_j}
+	+\sum_{i=1}^{n} b_{i}\frac{\partial }{\partial x_i} + c$.\\ Первая сумма это \emph{квадратичная форма}, вторая -- \emph{линейная форма}.
 \subsection{Линейная невырожденная замена переменных}
 Осуществим в \LDUChPSPPK{} линейную невырожденную замену переменных:\\
 $\displaystyle\vec x=\vec x(\vec \xi),$ где $\displaystyle\vec \xi=(\xi_1, \ldots, \xi_n),\quad \xi_k = \sum_{i=1}^{n}s_{ik}x_i,\ (k=\overline{1,n})$.\\
@@ -104,55 +103,54 @@ $\displaystyle\vec x=\vec x(\vec \xi),$ где $\displaystyle\vec \xi=(\xi_1, \l
 S --- матрица коэффициентов: S = ($s_{ik}$)$\Rightarrow$
 
 \[
-\begin{cases}
-\xi_1 = s_{11}x_1 + \ldots + s_{n1}x_n \\
-\ldots \\
-\xi_i = s_{1i}x_1 + \ldots + s_{ni}x_n \\
-\ldots \\
-\xi_n = s_{1n}x_1 + \ldots + s_{nn}x_n
-\end{cases}\Longrightarrow
-\quad \det S \neq 0 \Longrightarrow \vec x=(S^{-1})^T\vec\xi
+	\begin{cases}
+		\xi_1 = s_{11}x_1 + \ldots + s_{n1}x_n \\
+		\ldots                                 \\
+		\xi_i = s_{1i}x_1 + \ldots + s_{ni}x_n \\
+		\ldots                                 \\
+		\xi_n = s_{1n}x_1 + \ldots + s_{nn}x_n
+	\end{cases}\Longrightarrow
+	\quad \det S \neq 0 \Longrightarrow \vec x=(S^{-1})^T\vec\xi
 \]
 Обозначим
 \[
-u(x(\xi))=\tilde{u}(\xi) \Rightarrow \tilde{u}(\xi)=u(x)\]
+	u(x(\xi))=\tilde{u}(\xi) \Rightarrow \tilde{u}(\xi)=u(x)\]
 \[
-\text{Т.к. } \frac{\partial \xi_k}{\partial x_i} = s_{ik} \text{, то} \frac{\partial u}{\partial x_i} = \sum_{k=1}^n\frac{\partial \tilde{u}}{\partial \xi_i}\frac{\partial \xi_k}{\partial x_i} = \sum_{k=1}^ns_{ik}\frac{\partial \tilde{u}}{\partial \xi_k}
+	\text{Т.к. } \frac{\partial \xi_k}{\partial x_i} = s_{ik} \text{, то} \frac{\partial u}{\partial x_i} = \sum_{k=1}^n\frac{\partial \tilde{u}}{\partial \xi_i}\frac{\partial \xi_k}{\partial x_i} = \sum_{k=1}^ns_{ik}\frac{\partial \tilde{u}}{\partial \xi_k}
 \]
-
 
 \begin{note}
-Из $\displaystyle\frac{\partial }{\partial x_i} = \sum_{k=1}^n s_{ik}\frac{\partial}{\partial \xi_k}$ имеем:
-\[\frac{\partial^2u}{\partial x_i \partial x_j}=\frac{\partial}{\partial x_i}(\frac{\partial u}{\partial x_j})=\sum_{l,k=1}^{n}\frac{\partial^2 \tilde{u}}{\partial\xi_k \partial\xi_l}s_{ik}s_{jl}\]
-Подставляя полученные выражения для $\frac{\partial u}{\partial x_i}$ и $\frac{\partial^2 u}{\partial x_i \partial x_j}$ в \LDUChPSPPK{}, получим:
+	Из $\displaystyle\frac{\partial }{\partial x_i} = \sum_{k=1}^n s_{ik}\frac{\partial}{\partial \xi_k}$ имеем:
+	\[\frac{\partial^2u}{\partial x_i \partial x_j}=\frac{\partial}{\partial x_i}(\frac{\partial u}{\partial x_j})=\sum_{l,k=1}^{n}\frac{\partial^2 \tilde{u}}{\partial\xi_k \partial\xi_l}s_{ik}s_{jl}\]
+	Подставляя полученные выражения для $\frac{\partial u}{\partial x_i}$ и $\frac{\partial^2 u}{\partial x_i \partial x_j}$ в \LDUChPSPPK{}, получим:
 
-\[\xi_k=\sum_{i=1}^{n}s_{ik}x_i,\ \xi=S^Tx, x=(S^{-1})^T\xi\Rightarrow\]
+	\[\xi_k=\sum_{i=1}^{n}s_{ik}x_i,\ \xi=S^Tx, x=(S^{-1})^T\xi\Rightarrow\]
 
-\[
-\sum_{k,l=1}^n \frac{\partial^2 \tilde{u}}{\partial \xi_k \partial \xi_l} \sum_{i,j=1}^n a_{ij}s_{ik}s_{jl} + \sum_{k=1}^n \frac{\partial \tilde{u}}{\partial \xi_k}\sum_{i=1}^nb_is_{ik}+c\tilde{u}=\tilde{f}
-\]
-Обозначим через 
-\[\tilde{a}_{kl}=\sum_{i,j=1}^na_{ij}s_{ik}s_{jl}, \quad\tilde{b}_k=\sum_{i=1}^nb_is_{ik}\]
-получаем:
-$\displaystyle
-\tilde{L}\tilde{u}=\sum_{k,l=1}^n\tilde{a}_{kl}\frac{\partial^2\tilde{u}}{\partial\xi_k\partial\xi_l}+\sum_{k=1}^n\tilde{b}_k\frac{\partial\tilde{u}}{\partial\xi_k}+c\tilde{u}=\tilde{f}(\xi),
-$\\
-где $\tilde{f}(\xi)=f(x(\xi))$\\
-При этом матрица $A=(a_{ik})$ старших коэффициентов исходного ЛУЧП2ППК преобразуется по формулам\\
-$
-\displaystyle
-  \tilde{A}=S^TAS 
-$
-   (из линейной алгебры)\\
-Т.е. при невырожденной линейной замене переменных:
-\[
-\xi=S^Tx, detS\ne0,
-\] матрица A преобразуется по формулам
-\[
-K=\sum_{i,j=1}^na_{ij}y_iy_j=y^TAy,\ y=(y_1, \ldots, y_n)^T
-\]
+	\[
+		\sum_{k,l=1}^n \frac{\partial^2 \tilde{u}}{\partial \xi_k \partial \xi_l} \sum_{i,j=1}^n a_{ij}s_{ik}s_{jl} + \sum_{k=1}^n \frac{\partial \tilde{u}}{\partial \xi_k}\sum_{i=1}^nb_is_{ik}+c\tilde{u}=\tilde{f}
+	\]
+	Обозначим через
+	\[\tilde{a}_{kl}=\sum_{i,j=1}^na_{ij}s_{ik}s_{jl}, \quad\tilde{b}_k=\sum_{i=1}^nb_is_{ik}\]
+	получаем:
+	$\displaystyle
+		\tilde{L}\tilde{u}=\sum_{k,l=1}^n\tilde{a}_{kl}\frac{\partial^2\tilde{u}}{\partial\xi_k\partial\xi_l}+\sum_{k=1}^n\tilde{b}_k\frac{\partial\tilde{u}}{\partial\xi_k}+c\tilde{u}=\tilde{f}(\xi),
+	$\\
+	где $\tilde{f}(\xi)=f(x(\xi))$\\
+	При этом матрица $A=(a_{ik})$ старших коэффициентов исходного ЛУЧП2ППК преобразуется по формулам\\
+	$
+		\displaystyle
+		\tilde{A}=S^TAS
+	$
+	(из линейной алгебры)\\
+	Т.е. при невырожденной линейной замене переменных:
+	\[
+		\xi=S^Tx, detS\ne0,
+	\] матрица A преобразуется по формулам
+	\[
+		K=\sum_{i,j=1}^na_{ij}y_iy_j=y^TAy,\ y=(y_1, \ldots, y_n)^T
+	\]
 \end{note}
 
 \begin{note}
-считаем A --- симметричной ($A^T=A$)
+	считаем A --- симметричной ($A^T=A$)
 \end{note}
