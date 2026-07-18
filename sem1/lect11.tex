@@ -1,0 +1,121 @@
+\subsection{Волновое уравнение}
+
+Рассмотрим ЗК $(1.0),\ (2)$ для ОВУ. Пусть начальные возмущения локализованы в пространстве, т.е. $u_0(x)$ и $u_1(x)$ --- финитны, а их носители $supp\ u_0(x)$ и $supp\ u_1(x)$ --- ограниченные множества, т.е. содержатся в некотором компакте $M$. Пусть $x \notin M$.
+
+Обозначим $t_1 = \frac{1}{a} \inf\limits_{y \in M} |y - x|$; $t_2 = \frac{1}{a} \sup\limits_{y \in M} |y - x|$.
+
+\textbf{Утверждение:} $\forall t \notin [t_1, t_2] \Rightarrow u(x, t) \equiv 0$ --- решение ЗК $(1.0),\ (2)$ ОВУ.
+
+Получаем --- принцип Гюйгенса.
+
+"Локализованное в пространстве возмущение вызывает действие, локализованное во времени. Т.е. $\exists$ передний и задний фронт волны."
+
+\subsection{Волновое уравнение в $\mathbb{R}^2$. Задача Коши. Теорема единственности.}
+
+\begin{align*}
+	& \frac{\partial^2 u}{\partial t^2} = a^2 \Delta u + f(x, t),\ x = (x_1,\ x_2) \in \mathbb{R}^2,\ t > 0 \tag{1.f}    \\
+	\textbf{НУ: } \quad    & u|_{t=0}=u_0(x),\ u_t|_{t=0}=u_1(x),\ x  \in \mathbb{R}^2 \tag{2}
+\end{align*}
+
+$u(x, t) \in C^2(t>0) \cap C^1(t \ge 0)$
+
+$u_0(x) \in C^3(\mathbb{R}^2),\ u_1(x) \in C^2(\mathbb{R}^2)$
+
+\begin{theorem}[существования и единственности]
+	Решение задачи Коши $(1.0), (2)$ для ОВУ на $\mathbb{R}^2$ в рассматриваемом классе функций существует и единственно, и представляется формулой Пуассона (Ф.П.0):
+\end{theorem}
+
+\subsection{Метод спуска}
+"Погрузим"\  плоскость $\mathbb{R}^2$ переменных $(x_1,\ x_2)$ в пространство $\mathbb{R}^3$ переменных $(x_1,\ x_2,\ x_3)$. Обозначим:
+
+ $\tilde{x} = (x_1,\ x_2,\ x_3) \in \mathbb{R}^3,\ x = (x_1,\ x_2) \in \mathbb{R}^2$ и $\tilde{u} = \tilde{u}(x_1,\ x_2,\ x_3,\ t)$. Тогда относительно функций $\tilde{u}(\tilde{x}, t)$ получим ЗК для ОВУ в $\mathbb{R}^3$:
+
+\begin{align*}
+	& \tilde{u}_{tt} = a^2 \Delta \tilde{u},\ \tilde{x} \in \mathbb{R}^3,\ t > 0 \tag{$\widetilde{1.0}$}    \\
+	\textbf{НУ: } \quad    & \tilde{u}(\tilde{x}, 0)=\tilde{u}_0(x_1, x_2, x_3) = u_0(x_1, x_2),\ \tilde{u}_t(\tilde{x}, 0)=\tilde{u}_1(x_1, x_2, x_3) = u_1(x_1, x_2),\ \tilde{x}  \in \mathbb{R}^3 \tag{$\widetilde{2}$}
+\end{align*}
+
+Тогда по формуле Кирхгофа
+\[
+	\tilde{u}(\tilde{x}, t) = \frac{1}{4\pi a^2t} \iint_{|\tilde{y} - \tilde{x}| = at} u_1(y) \, dS_{\tilde{y}} + 
+	\frac{\partial}{\partial t} \left[ \frac{1}{4\pi a^2t} \iint_{|\tilde{y} - \tilde{x}| = at} u_0(y) \, dS_{\tilde{y}} \right] = u(x, t)
+\]
+
+Рассмотрим в этой формуле первое слагаемое (второе рассматривается аналогично). Тогда
+\[
+	u(x, t) = 2 \iint_{|\tilde{y} - \tilde{x}| = at,\ (\vec{n}, \vec{e_3}) > 0} u_1(y) \, dS_y \left( \frac{1}{4\pi a^2t} \right)
+\]
+
+Заменим, $dS_y = \frac{dy_1 dy_2}{\tilde{n}_3}$, где $\vec{\tilde{n}}$ --- единичный вектор внешней нормали к сфере радиуса $at$ с центром в т. $\tilde{x}$. Очевидно $\vec{\tilde{n}} = \frac{\tilde{y}  - \tilde{x}}{at} = \frac{1}{at}(y_1 - x_1,y_2 - x_2,y_3 - x_3),\ |\vec{\tilde{n}}| = 1$.
+
+Поэтому $\tilde{n}_3 = \frac{y_3 - x_3}{at}$ и $y_3 - x_3 = \sqrt{(at)^2 - |y-x|^2}$ и т.о.
+\[
+	u(x, t) = \frac{2}{4\pi a^2 t} \iint_{|y-x| \le at} u_1(y) dy_1 dy_2 \frac{at}{\sqrt{(at)^2 - |y-x|^2}}
+\]
+или иначе
+\[
+	u(x, t) = \frac{1}{2\pi a} \iint_{|y-x| \le at} \frac{u_1(y)dy}{\sqrt{(at)^2 - |y-x|^2}}
+\]
+
+\begin{theorem}[существования и единственности]
+	Решение ЗК $(1.f),\ (2)$ ВУ в $\mathbb{R}^2$ в рассматриваемых классах функций существует и единственно, и представляется формулой Пуассона(Ф.П.f):
+\[
+\begin{aligned}
+	u(x,t) = & \frac{\partial}{\partial t} \left[ \frac{1}{2\pi a} \iint\limits_{|y-x| \le at} \frac{u_0(y)}{\sqrt{(at)^2 - |y-x|^2}} \, dy \right] \\
+	& + \frac{1}{2\pi a} \iint\limits_{|y-x| \le at} \frac{u_1(y)}{\sqrt{(at)^2 - |y-x|^2}} \, dy \\
+	& + \frac{1}{2\pi a} \int_0^t d\tau \iint\limits_{|y-x| \le a(t-\tau)} \frac{f(y,\tau)}{\sqrt{(a(t-\tau))^2 - |y-x|^2}} \, dy,
+\end{aligned}
+\]
+где \(dy = dy_1\,dy_2\).
+\end{theorem}
+
+\begin{note}
+	В случае локализованного возмущения на плоскости у волны имеется передний фронт, но нет заднего (диффузия волн).
+\end{note}
+
+\subsection{Уравнение теплопроводности(УТ)}
+
+Рассмотрим распространение тепла в тонком однородном стержне длины l, теплоизолированном с боков.
+
+Рассмотрим элемент $dx$ этого стержня. Поток тепла через сечение $x=const$ этого стержня по закону Фурье:
+$q = -\varkappa S \frac{\partial u}{\partial x}$, где $S$ --- площадь сечения стержня $u(x, t)$ --- температура стержня в т. $x$ в момент времени $t$, $\varkappa$ --- коэффициент теплопроводности.
+
+Первый закон термодинамики:
+\[
+	\delta Q = dU + \delta A
+\]
+
+В случае стержня $\delta A = 0, U = mcu, m$ --- масса стержня, $c$ --- удельная теплоёмкость.
+
+Тогда для участка стержня длины $dx$ получим:
+
+\[
+	\frac{\partial}{\partial t} (\rho cSu)dxdt = [-q(x+dx, t) + q(x, t)]dt = 
+	 \varkappa S \left[ \frac{\partial u(x+\Delta x, t)}{\partial x} - \frac{\partial u(x, t)}{\partial x} \right] dt \approx \varkappa S \frac{\partial^2 u(x, t)}{\partial x^2}dtdx
+\]
+
+ Отсюда и получаем УТ:
+ \[
+ 	\rho c \frac{\partial u}{\partial t} = \varkappa \frac{\partial^2 u}{\partial x^2}
+ \]
+ или же
+ \[
+ 	\frac{\partial u}{\partial t} = a^2 \frac{\partial^2 u}{\partial x^2},
+ \]
+ где $a^2 = \frac{\varkappa}{\rho c}$ --- коэффициент температуропроводности.
+ 
+ $c\rho u_t = \varkappa \frac{\partial^2 u}{\partial x^2} + F(x, t),\ x \in (0, l),\ 0 \le t \le T$ --- неоднородное уравнение теплопроводности, или
+ \[
+ 	u_t = a^2 u_{xx} + f(x, t),\ x \in (0, l), 0 \le t \le T
+ \]
+ 
+ Дополнительные условия, которым должно удовлетворять решение УТ $u(x, t)$:
+ 
+ 1. НУ: $u|_{t=0} = u_0(x),\ x \in [0, l]$
+ 
+ 2.1. ГУ1Т: $u|_{x=0} = \mu(t),\ t \in [0, T]$
+ 
+ 2.2. ГУ2Т: $u_x|_{x=l} = \nu(t),\ t \in [0, T]$ --- задан тепловой поток на правом конце
+ 
+ 3. УС: $u_0(0) = \mu(0) (=u(0, 0));\quad \frac{\partial u_0(l)}{\partial x} = \nu(0) (=u_x(0, 0))$
+ 
