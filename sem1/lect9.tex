@@ -75,43 +75,43 @@ $u(x, t) \in C^2(t>0) \cap C^1(t \ge 0),\quad u_0(x) \in C^2(\mathbb{R}),\quad u
 \end{theorem}
 
 \[
-u(x,t)=
-\begin{cases}
-	\dfrac{u_0(x-at)+u_0(x+at)}{2}+\dfrac{1}{2a}\displaystyle\int_{x-at}^{at+x} u_1(\xi)\,d\xi, & x\ge at,\ t\ge 0,\\[1.2em]
-	\dfrac{u_0(at+x)-u_0(at-x)}{2}+\dfrac{1}{2a}\displaystyle\int_{at-x}^{at+x} u_1(\xi)\,d\xi, & 0<x<at,\ t\ge 0.
-\end{cases}
+	u(x,t)=
+	\begin{cases}
+		\dfrac{u_0(x-at)+u_0(x+at)}{2}+\dfrac{1}{2a}\displaystyle\int_{x-at}^{at+x} u_1(\xi)\,d\xi, & x\ge at,\ t\ge 0, \\[1.2em]
+		\dfrac{u_0(at+x)-u_0(at-x)}{2}+\dfrac{1}{2a}\displaystyle\int_{at-x}^{at+x} u_1(\xi)\,d\xi, & 0<x<at,\ t\ge 0.
+	\end{cases}
 \]
 
 Получим данное решение.
 \begin{proof}
-		В соответствии со \textbf{Следствием 1}, сведем эту СЗ к ЗК для ОУКБС, продолжив нечетным образом НУ влево за т. $x=0$. Таким образом, получим следующую ЗК:
-		
-		\begin{align*}
-			& u_{tt} = a^2 u_{xx}, \quad x \in \mathbb{R},\ t > 0 \tag{1.0}             \\
-			\textbf{НУ: } \quad & u|_{t=0}=U_0(x)=
-			\begin{cases}
-				u_0(x),\ x \ge 0\\
-				-u_0(-x),\ x < 0
-			\end{cases}
-			,\ u_t|_{t=0}=U_1(x) = 
-			\begin{cases}
-				u_1(x),\ x \ge 0\\
-				-u_1(-x),\ x < 0
-			\end{cases},
+	В соответствии со \textbf{Следствием 1}, сведем эту СЗ к ЗК для ОУКБС, продолжив нечетным образом НУ влево за т. $x=0$. Таким образом, получим следующую ЗК:
+
+	\begin{align*}
+		                    & u_{tt} = a^2 u_{xx}, \quad x \in \mathbb{R},\ t > 0 \tag{1.0} \\
+		\textbf{НУ: } \quad & u|_{t=0}=U_0(x)=
+		\begin{cases}
+			u_0(x),\ x \ge 0 \\
+			-u_0(-x),\ x < 0
+		\end{cases}
+		,\ u_t|_{t=0}=U_1(x) =
+		\begin{cases}
+			u_1(x),\ x \ge 0 \\
+			-u_1(-x),\ x < 0
+		\end{cases},
 		\ x \in \mathbb{R} \tag{2}
-		\end{align*}
-	
+	\end{align*}
+
 	Решение $u(x, t)$ ЗК для ОУКБС существует и представляется Ф.Д.0:
 	\[
 		u(x, t) = \frac{U_0(x-at) + U_0(x+at)}{2} + \frac{1}{2a} \int_{x-at}^{x+at} U_1(\xi) d\xi,\ x \in \mathbb{R},\ t > 0
 	\]
 	При $x \ge at,\ t \ge 0\ (x-at \ge 0)$:
 	\[
-	u(x, t) = \frac{u_0(x-at) + u_0(x+at)}{2} + \frac{1}{2a} \int_{x-at}^{at+x} u_1(\xi) d\xi,\ x \ge at,\ t \ge 0
+		u(x, t) = \frac{u_0(x-at) + u_0(x+at)}{2} + \frac{1}{2a} \int_{x-at}^{at+x} u_1(\xi) d\xi,\ x \ge at,\ t \ge 0
 	\]
 	При $0 \le x \le at,\ t \ge 0\ (x-at \le 0)$:
 	\[
-	u(x, t) = \frac{u_0(at+x) - u_0(at-x)}{2} + \frac{1}{2a} \int_{at-x}^{at+x} u_1(\xi) d\xi,\ 0 < x < at,\ t \ge 0
+		u(x, t) = \frac{u_0(at+x) - u_0(at-x)}{2} + \frac{1}{2a} \int_{at-x}^{at+x} u_1(\xi) d\xi,\ 0 < x < at,\ t \ge 0
 	\]
 \end{proof}
 
@@ -128,9 +128,9 @@ u(x,t)=
 
 СЗ для ОУКПБС, со свободным левым концом
 \begin{align*}
-	& u_{tt} = a^2 u_{xx}, \quad x > 0,\ t > 0 \tag{1.0}    \\
+	                       & u_{tt} = a^2 u_{xx}, \quad x > 0,\ t > 0 \tag{1.0}    \\
 	\textbf{НУ: } \quad    & u|_{t=0}=u_0(x),\ u_t|_{t=0}=u_1(x),\ x \ge 0 \tag{2} \\
-	\textbf{ОГУ2Т: } \quad & u_x|_{x=0}=0,\ t \ge 0 \tag{3.2.0}                      \\
+	\textbf{ОГУ2Т: } \quad & u_x|_{x=0}=0,\ t \ge 0 \tag{3.2.0}                    \\
 	\textbf{УС: } \quad    & u_0^{'}(0)=u_1(0)=0, \tag{4.2.0}
 \end{align*}
 
@@ -140,13 +140,13 @@ $u_0(x) \in C^2[0, +\infty),\quad u_1(x) \in C^1[0, +\infty)$
 
 \begin{theorem}[о существовании и единственности]
 	Решение $u(x, t)$ СЗ $(1.0),\ (2),\ (3.2.0),\ (4.2.0)$ для ОУКПБС со свободным левым концом в рассматриваемом классе функций существует и единственно и представляется Ф.Д.0.2:
-\[
-u(x,t)=
-\begin{cases}
-	\dfrac{u_0(x-at)+u_0(x+at)}{2}+\dfrac{1}{2a}\displaystyle\int_{x-at}^{x+at} u_1(\xi)\,d\xi, & x\ge at,\ t>0,\\[1.2em]
-	\dfrac{u_0(x+at)+u_0(x-at)}{2}+\dfrac{1}{2a}\left(\displaystyle\int_{0}^{at-x} u_1(\xi)\,d\xi+\displaystyle\int_{0}^{at+x} u_1(\xi)\,d\xi\right), & 0\le x<at,\ t>0.
-\end{cases}
-\]
+	\[
+		u(x,t)=
+		\begin{cases}
+			\dfrac{u_0(x-at)+u_0(x+at)}{2}+\dfrac{1}{2a}\displaystyle\int_{x-at}^{x+at} u_1(\xi)\,d\xi,                                                       & x\ge at,\ t>0,   \\[1.2em]
+			\dfrac{u_0(x+at)+u_0(x-at)}{2}+\dfrac{1}{2a}\left(\displaystyle\int_{0}^{at-x} u_1(\xi)\,d\xi+\displaystyle\int_{0}^{at+x} u_1(\xi)\,d\xi\right), & 0\le x<at,\ t>0.
+		\end{cases}
+	\]
 \end{theorem}
 
 Физический смысл: ОР ОУКПБС: $u(x, t) = f(x-at) + g(x+at);$

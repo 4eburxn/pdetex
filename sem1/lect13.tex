@@ -1,0 +1,159 @@
+\subsection{СЗ для однородного УТ на полубесконечной оси с ГУ1Т.}
+
+\begin{align*}
+	& u_{t} = a^2 u_{xx}, \quad x > 0,\ t > 0 \tag{1.0}    \\
+	\textbf{НУ: } \quad    & u|_{t=0}=u_0(x),\ x \ge 0 \tag{2} \\
+	\textbf{ГУ1Т: } \quad & u|_{x=0} = \mu(t),\ t \ge 0 \tag{3.1}                      \\
+	\textbf{УС1Т: } \quad    & u_0(0)=\mu(0)=u(0, 0), \tag{4.1}
+\end{align*}
+
+\[
+	u(x, t) \in C^2(x > 0, t > 0) \cap C(x \ge 0, t \ge 0) \cap B(0 \le t \le T),\quad \forall T \ge 0
+\]
+\[
+	u_0(x) \in C[0, +\infty) \cap B[0, +\infty),\quad
+	\mu(t) \in C[0, +\infty) \cap B[0, +\infty)
+\]
+
+\begin{lemma}
+	Пусть функция $\phi(x) \in C(\mathbb{R}) \cap B(\mathbb{R}) \Rightarrow$ функция $u(x, t) = \frac{1}{\sqrt{4\pi a^2 t}}\int_{-\infty}^{+\infty} \phi(y) e^{-\frac{|y-x|^2}{4a^2 t}} dy$ равна нулю при $x=0$, если $\phi(x)$ --- нечетна.
+\end{lemma}
+
+\textbf{Следстиве 1:} СЗ для ОУТПБО с ОГУ1Т
+
+\begin{align*}
+	& u_{t} = a^2 u_{xx}, \quad x > 0,\ t > 0 \tag{1.0}    \\
+	\textbf{НУ: } \quad    & u|_{t=0}=u_0(x),\ x \ge 0 \tag{2} \\
+	\textbf{ГУ1Т: } \quad & u|_{x=0} = 0,\ t \ge 0 \tag{3.1.0}                      \\
+	\textbf{УС1Т: } \quad    & u_0(0)=0, \tag{4.1.0}
+\end{align*}
+
+В соответствующих классах функций сводится к ЗК для ОУТ для БП нечетным продолжением НУ за точку $x=0$ влево, т.о. получим следующую ЗК для ОУТБП:
+
+\begin{align*}
+	& u_{t} = a^2 u_{xx}, \quad x \in \mathbb{R},\ t > 0 \tag{1.0}    \\
+	\textbf{НУ: } \quad    & u|_{t=0}=U_0(x)=
+	\begin{cases}
+		u_0(x),\ x \ge 0\\
+		-u_0(-x),\ x \le 0
+	\end{cases} \tag{2.НУ}
+\end{align*}
+
+Решение этой задачи дается формулой Пуассноа (Ф.П.0):
+
+\[
+	u(x, t) = \frac{1}{\sqrt{4\pi a^2t}} \int_{-\infty}^{+\infty} U_0(y) e^{-\frac{(y-x)^2}{4a^{2}t}} dy = 
+	\frac{1}{\sqrt{4\pi a^2t}} \int_{0}^{+\infty} u_0(y) \left\{ e^{-\frac{(y-x)^2}{4a^{2}t}} - e^{-\frac{(y+x)^2}{4a^{2}t}} \right\} dy,\quad
+	x \ge 0,\ t \ge 0
+\]
+
+\textbf{Замечание:} автомодельное решение $u(x, t)$ ОУТ $u(x, t) = g \left( \frac{x}{\sqrt{t}} \right) = \frac{1}{\sqrt{\pi}} \int_{-\infty}^{\frac{x}{\sqrt{4a^{2}t}}} e^{-s^2} ds$ является решением следующей ЗК для ОУТ:
+
+\begin{align*}
+	& u_{t} = a^2 u_{xx}, \quad x \in \mathbb{R},\ t > 0 \tag{1.0}    \\
+	\textbf{НУ: } \quad    & u|_{t=0}=
+	\begin{cases}
+		1,\ t > 0\\
+		\frac{1}{2},\ t=0\\
+		0,\ t < 0
+	\end{cases},\ \text{(Почти Хевисайд, $t \neq 0$)} \tag{2.НУ}
+\end{align*}
+
+Следовательно, $u(x, t) = \frac{2}{\sqrt{\pi}} \int_{0}^{\frac{x}{\sqrt{4a^{2}t}}} e^{-s^2} ds = \Phi \left( \frac{x}{\sqrt{4a^{2}t}} \right)$, где $\Phi (z)$ --- функция ошибок, являющаяся решением СЗ для ОУТПБО с ГУ1Т вида:
+
+\begin{align*}
+	& u_{t} = a^2 u_{xx}, \quad x > 0,\ t > 0 \tag{1.0}    \\
+	\textbf{НУ: } \quad    & u|_{t=0}=1,\ x > 0 \tag{2} \\
+	\textbf{ГУ1Т: } \quad & u|_{x=0}=0,\ t > 0 \tag{3.1.0}
+\end{align*}
+
+\textbf{Замечание:} функция $v(x, t) = 1 - \Phi \left( \frac{x}{\sqrt{4a^{2}t}} \right)$ является решением СЗ для ОУТПБО с ГУ1Т вида:
+
+\begin{align*}
+	& u_{t} = a^2 u_{xx}, \quad x > 0,\ t > 0 \tag{1.0}    \\
+	\textbf{НУ: } \quad    & u|_{t=0}=0,\ x \ge 0 \tag{2.0} \\
+	\textbf{ГУ1Т: } \quad & u|_{x=0}=1,\ t \ge 0 \tag{3.1}
+\end{align*}
+
+\subsection{СЗ для ОУТПБО с ГУ2Т.}
+
+\begin{align*}
+	& u_{t} = a^2 u_{xx}, \quad x > 0,\ t > 0 \tag{1.0}    \\
+	\textbf{НУ: } \quad    & u|_{t=0}=u_0(x),\ x \ge 0 \tag{2} \\
+	\textbf{ГУ2Т: } \quad & u_x|_{x=0} = \nu(t),\ t \ge 0 \tag{3.2}                      \\
+	\textbf{УС2Т: } \quad    & \frac{d}{dx}u(0)=\nu(0), \tag{4.2}
+\end{align*}
+
+\[
+u(x, t) \in C^2(x > 0, t > 0) \cap C^1(x \ge 0, t \ge 0) \cap B(0 \le t \le T),\quad \forall T \ge 0
+\]
+\[
+u_0(x) \in C^1[0, +\infty) \cap B[0, +\infty),\quad
+\nu(t) \in C[0, +\infty) \cap B[0, +\infty)
+\]
+
+\begin{lemma}
+	Пусть функция $\phi (x) \in C(\mathbb{R}) \cap B(\mathbb{R}) \Rightarrow$ функция $u(x, t) = \frac{1}{\sqrt{4\pi a^2 t}}\int_{-\infty}^{+\infty} \phi(y) e^{-\frac{(y-x)^2}{4a^2 t}} dy,\ t>0$ имеет производную по $x (u_x)$, равную нулю при $x=0$, если $\phi(x)$ --- четна. 
+\end{lemma}
+
+\textbf{Следствие 2:} СЗ для ОУТПБО с ОГУ2Т
+
+\begin{align*}
+	& u_{t} = a^2 u_{xx}, \quad x > 0,\ t > 0 \tag{1.0}    \\
+	\textbf{НУ: } \quad    & u|_{t=0}=u_0(x),\ x \ge 0 \tag{2} \\
+	\textbf{ГУ2Т: } \quad & u_x|_{x=0} = 0,\ t \ge 0 \tag{3.2.0}                      \\
+	\textbf{УС2Т: } \quad    & u_x(0)=0, \tag{4.2.0}
+\end{align*}
+
+В соответствующих классах функций сводится к ЗК для ОУТ для БП четным продолжением НУ за точку $x=0$ влево; т.о. получим следующую ЗК для ОУТБО:
+
+\begin{align*}
+	& u_{t} = a^2 u_{xx}, \quad x \in \mathbb{R},\ t > 0 \tag{1.0}    \\
+	\textbf{НУ: } \quad    & u|_{t=0}=U_0(x)=
+	\begin{cases}
+		u_0(x),\ x \ge 0\\
+		u_0(-x),\ x < 0
+	\end{cases} \tag{2}
+\end{align*}
+
+Решение этой задачи дается формулой Пуассона (Ф.П.0):
+\[
+	u(x, t) = \frac{1}{\sqrt{4\pi a^2t}} \int_{-\infty}^{+\infty} U_0(y) e^{-\frac{(y-x)^2}{4a^{2}t}} dy = 
+	\frac{1}{\sqrt{4\pi a^2t}} \int_{0}^{+\infty} u_0(y) \left\{ e^{-\frac{(y-x)^2}{4a^{2}t}} + e^{-\frac{(y+x)^2}{4a^{2}t}} \right\} dy,\quad
+	x \ge 0,\ t \ge 0
+\]
+
+Рассмотрим СЗ для ОУТПБО с ОНУ и ГУ2Т:
+
+\begin{align*}
+	& u_{t} = a^2 u_{xx}, \quad x > 0,\ t > 0 \tag{1.0}    \\
+	\textbf{НУ: } \quad    & u|_{t=0}=0,\ x \ge 0 \tag{2.0} \\
+	\textbf{ГУ2Т: } \quad & u_x|_{x=0} = -q(t),\ t \ge 0 \tag{3.2}                      \\
+	\textbf{ОУС2Т: } \quad    &  q(0)=0, \tag{4.2.0}
+\end{align*}
+
+В соответствующих классах функций. Эту СЗ можно свести к ЗК для УТБО вида:
+\[
+	Lu = u_t - a^2 \Delta u = 2a^2q(t)\delta(x),\ x \in \mathbb{R}
+\]
+и все функции $\equiv 0$ при $t<0$.
+
+\begin{proof}
+	\[
+		\int_{-\varepsilon}^{\varepsilon} u_{t} dx-
+		\int_{-\varepsilon}^{\varepsilon} a^{2}u_{xx} dx = 
+		2a^{2}q(t) \int_{-\varepsilon}^{\varepsilon} \delta(x) dx
+	\]
+	При $\varepsilon \rightarrow +0$ имеем:
+	\[
+		0 - a^{2}u_x|_{x=-\varepsilon}^{x=+\varepsilon}=
+		2a^{2}q(t) \Rightarrow u_x|_{x=0} = -q(t)
+	\]
+	Следовательно, $u(x, t) = 
+	\int_{-\infty}^{+\infty}d\tau
+	\int_{-\infty}^{+\infty}
+	\frac{\theta(t-\tau)e^{-\frac{(y-x)^2}{4a^{2}(t-\tau)}}}
+	{\sqrt{4\pi a^2(t-\tau)}}2a^2q(\tau) \theta(\tau) \delta(y) dy =\\ =\frac{a}{\sqrt{\pi}} \int_0^t \frac{q(\tau) e^{-\frac{x^2}{4a^2(t-\tau)}}}{\sqrt{t-\tau}} d\tau,\ x>0,\ t>0$
+\end{proof}
+
+\textbf{Замечание:} $\mu(t) = u(0, t) = \frac{a}{\sqrt{\pi}} \int_0^t \frac{q(\tau)}{\sqrt{t-\tau}} d\tau$ --- интегральное уравнение Абеля.
