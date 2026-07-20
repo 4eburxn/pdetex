@@ -34,8 +34,8 @@ def draw_vector_with_dashed_extension(ax, x0, y0, dx, dy, label,
     ax.arrow(x0, y0, dx, dy, **arrow_kw)
 
     # Подпись у конца стрелки (автоматическое смещение)
-    offset_x = 0.15 if dx >= 0 else -0.15 - len(label) * 0.1
-    offset_y = 0.15 if dy >= 0 else -0.15
+    offset_x = -0.15 if dx >= 0 else -0.15 - len(label) * 0.1
+    offset_y = 0.15 if dy >= 0 else -0.2
     ax.text(x0 + dx + offset_x, y0 + dy + offset_y, label, **text_kw)
 
     # Дуга угла между вектором и положительной осью X
@@ -43,13 +43,13 @@ def draw_vector_with_dashed_extension(ax, x0, y0, dx, dy, label,
         angle_deg = np.degrees(np.arctan2(dy, dx))   # угол от +x, в градусах
         # Если угол отрицательный, дуга идёт по часовой стрелке (вниз)
         # Arc принимает theta1 и theta2 как углы от горизонтали (в градусах)
-        arc = Arc((x0, y0), width=2*arc_radius, height=2*arc_radius,
+        arc = Arc((x0, y0), width=2.6*arc_radius, height=2.6*arc_radius,
                   angle=0, theta1=0, theta2=angle_deg,
-                  color=arc_color, **arc_kw)
+                  color=arc_color, **arc_kw,zorder=100)
         ax.add_patch(arc)
 
         # Метка угла на биссектрисе
-        mid_angle = np.radians(angle_deg / 2)
+        mid_angle = np.radians(angle_deg / 2)-0.1
         r = arc_radius * (1 + label_offset)   # смещение за пределы дуги
         ax.text(x0 + r * np.cos(mid_angle),
                 y0 + r * np.sin(mid_angle),
@@ -58,11 +58,11 @@ def draw_vector_with_dashed_extension(ax, x0, y0, dx, dy, label,
 
 def draw_structure_graph():
     # 1. Создаем фигуру и оси
-    fig, ax = plt.subplots(figsize=(8, 6))
+    fig, ax = plt.subplots(figsize=(4, 3))
     
     # Убираем стандартные границы
-    ax.set_xlim(-0.5, 4.5)
-    ax.set_ylim(-0.5, 4.0)
+    # ax.set_xlim(-0.5, 4.5)
+    # ax.set_ylim(-0.5, 4.0)
     ax.axis('off')
 
     # 2. Рисуем тетрадную сетку (по желанию, для имитации клетки)
@@ -74,17 +74,17 @@ def draw_structure_graph():
     # 3. Рисуем оси координат со стрелками
     # Ось X
     ax.arrow(-0.5, 0, 4.2-1, 0, head_width=0.08, head_length=0.15, fc='black', ec='black')
-    ax.text(3.7-1, -0.2, '$x$', fontsize=20)
+    ax.text(3.7-1, -0.25, '$x$', fontsize=20)
     # Ось U
     ax.arrow(0, -0.4, 0, 3.5-1, head_width=0.08, head_length=0.15, fc='black', ec='black')
     ax.text(-0.2, 3.15-1, '$u$', fontsize=20)
     # Точка O
-    ax.text(-0.2, -0.2, '$O$', fontsize=20)
+    ax.text(-0.25, -0.28, '$O$', fontsize=20)
 
     # 4. Задаем функцию для кривой (парабола)
     extremum = 1.5
     def u_func(x):
-        return -0.2 * (x)**2 + x
+        return -0.3 * (x)**2 + 1.4*x
 
     # Генерируем точки для отрисовки плавной кривой
     x_vals = np.linspace(extremum - 1.1, extremum + 1.1, 200)
@@ -112,8 +112,8 @@ def draw_structure_graph():
     # 6. Рисуем векторы T (касательные)
     # Находим производную в точках: u'(x) = -0.6 * (x - 1.5)
     # Производные
-    slope1 = -0.4 * x1 + 1
-    slope2 = -0.4 * x2 + 1
+    slope1 = -0.6 * x1 + 1.4
+    slope2 = -0.6 * x2 + 1.4
 
     # Вектор T в x1 (вверх-вправо)
     dx1, dy1 = 0.5, 0.5 * slope1
@@ -137,7 +137,7 @@ def draw_structure_graph():
 
     # Показываем результат
     plt.tight_layout()
-    plt.savefig("s1l5_2.png")
+    plt.savefig("s1l5_2.png", bbox_inches='tight',dpi=300)
     # plt.show()
 
 if __name__ == '__main__':

@@ -4,11 +4,11 @@ from matplotlib.patches import Arc
 
 def draw_structure_graph():
     # 1. Создаем фигуру и оси
-    fig, ax = plt.subplots(figsize=(8, 6))
+    fig, ax = plt.subplots(figsize=(4, 3))
     
     # Убираем стандартные границы
-    ax.set_xlim(-0.5, 4.5)
-    ax.set_ylim(-0.5, 4.0)
+    # ax.set_xlim(-0.5, 4.5)
+    # ax.set_ylim(-0.5, 4.0)
     ax.axis('off')
 
     # 2. Рисуем тетрадную сетку (по желанию, для имитации клетки)
@@ -20,12 +20,12 @@ def draw_structure_graph():
     # 3. Рисуем оси координат со стрелками
     # Ось X
     ax.arrow(-0.5, 0, 4.2, 0, head_width=0.08, head_length=0.15, fc='black', ec='black')
-    ax.text(3.7, -0.2, '$x$', fontsize=20)
+    ax.text(3.75, -0.32, '$x$', fontsize=20)
     # Ось U
     ax.arrow(0, -0.4, 0, 3.5, head_width=0.08, head_length=0.15, fc='black', ec='black')
-    ax.text(-0.2, 3.15, '$u$', fontsize=20)
+    ax.text(-0.25, 3.15, '$u$', fontsize=20)
     # Точка O
-    ax.text(-0.2, -0.2, '$O$', fontsize=20)
+    ax.text(-0.35, -0.4, '$O$', fontsize=20)
 
     # 4. Задаем функцию для кривой (парабола)
     # u(x) = -0.3 * (x - 1.5)^2 + 2
@@ -53,7 +53,7 @@ def draw_structure_graph():
 
     # --- ДОБАВЛЯЕМ ГОРИЗОНТАЛЬНУЮ ЛИНИЮ ИЗ ТОЧКИ x2 ---
     # Горизонтальная пунктирная линия от (x2, u2) до оси u (x=0)
-    ax.hlines(y=u2, xmin=x2, xmax=2.5, colors='blue', linestyles='dashed', linewidth=2)
+    ax.hlines(y=u2, xmin=x2, xmax=2.5, colors='blue', linestyles='dashed', linewidth=1.5)
 
     # 6. Рисуем векторы T (касательные)
     # Находим производную в точках: u'(x) = -0.6 * (x - 1.5)
@@ -82,19 +82,19 @@ def draw_structure_graph():
     # Угол наклона вектора T к горизонтали (в градусах)
     angle_deg = np.degrees(np.arctan(slope2))
     # Рисуем дугу от горизонтали (0°) до направления вектора
-    arc = Arc((x2, u2), width=1.5, height=1.5, angle=0,
+    arc = Arc((x2, u2), width=2.5, height=2.5, angle=0,
               theta1=0, theta2=angle_deg, color='red', lw=2)
     ax.add_patch(arc)
     # Подпись угла (чуть смещена внутрь дуги)
     mid_angle = np.radians(angle_deg / 2)
     label_r = .6
-    ax.text(x2 + 1.3*label_r * np.cos(mid_angle),
-            u2 + 1.1 * label_r * np.sin(mid_angle),
+    ax.text(x2 + 2.23*label_r * np.cos(mid_angle),
+            u2 + 1.5 * label_r * np.sin(mid_angle),
             r'$\alpha$', fontsize=20, color='red')
 
     # Показываем результат
     plt.tight_layout()
-    plt.savefig("s1l5_1.png")
+    plt.savefig("s1l5_1.png",bbox_inches='tight',dpi=300)
     # plt.show()
 
 if __name__ == '__main__':
