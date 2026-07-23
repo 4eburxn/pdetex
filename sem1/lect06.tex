@@ -64,15 +64,30 @@ cледовательно решение задачи коши для ОУКБС
 	u(x,t)=\frac{u_0(x-at)+u_0(x+at)}2 +\frac{1}{2a} \int^{x+at}_{x-at}u_1(\xi)\mathrm{d}\xi,\quad x\in\mathbb R,\,t\ge0
 	\tag*{--- формула Даламбера(однородная)}
 \end{equation}
-\underline{\emph{Физический смысл}}:  ``метод распределения волн''.\\%FIXME КАРТИИИИИИИИИИИИНКААААААААА
+
+\begin{wrapfigure}{r}{0.3\textwidth}
+	\centering
+	\includegraphics[width=1.\linewidth]{pics/s1l6_1.png}
+\end{wrapfigure}
+\underline{\emph{Физический смысл}}:  ``метод распределения волн''.\\
 Рассмотрим ОРУКБС вида
 $$u(x,t)=f(x-at),\;g=0$$
 Пусть наблюдатель движется в положительном направлении со скоростью $a$ и $x(t=0)=0$.
-Свяжем с наблюдателем $O'x't'\;\Longrightarrow\; x=x'+at',\,t=t'$ (\emph{преобразование Галилея}) или $x'=x-at,\,t'=t\;\Longrightarrow$ в сиситеме координат $O'x't'$, связанной с наблюдателем решение будет иметь вид:
+Свяжем с наблюдателем $O'x't'\;\Longrightarrow\; x=x'+at',\,t=t'$ (\emph{преобразование Галилея}) или $x'=x-at,\,t'=t\;\Longrightarrow$ в сиситеме координат $O'x't'$, связанной с наблюдателем решение будет иметь вид:\\
+
+\begin{wrapfigure}[8]{l}{0.3\textwidth}
+	\centering
+	\includegraphics[width=1.\linewidth]{pics/s1l6_2.png}
+\end{wrapfigure}
 $u=f(x')$, то есть наблюдатель движется в право со скоростью $a$. В его системе координат будет наблюдаться постоянный профиль струны, следовательно функция $f(x-at)$ описывает волну, бегущую вправо со скоростью $a$.\\
 Аналогично, функция $g(x+at)$ \textbf{---//---}, бегущую влево со скоростью $a$.\\
 Таким образом, в соответствии с формулой Даламбера(однородной):
 $$ f,g(s)=\frac12u_0(s)\pm\frac1{2a}\int_0^xu_1(\xi)\mathrm d\xi\pm\frac C2 $$
+
+\begin{wrapfigure}[8]{r}{0.3\textwidth}
+	\centering
+	\includegraphics[width=1.\linewidth]{pics/s1l6_3.png}
+\end{wrapfigure}
 \begin{note}
 	Пусть решение ОУКБС $u(x,t)=f(x-at)$, причем $f(x)=0$ вне интервала $(x_1,\ x_2)$, то есть $f(x)$ -- финитная функция.\\
 	Тогда характеристики $x-at=x_1$ и $x-at=x_2$ разбивают $Oxt$ на 3 подобласти,%FIXME КРТИНКА
